@@ -1,0 +1,115 @@
+@use '../../../globals.module';
+
+.burgerMenu {
+  position: absolute;
+  z-index: 100;
+
+}
+
+.burger {
+
+  z-index: 100;
+  width: 30px;
+  height: 20px;
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  color: white;;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* Animation states */
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.overLopened {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  z-index: 80;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  transition: 0.2s;
+  visibility: visible;
+  position: fixed;
+  left: 0;
+}
+
+.overLclosed {
+
+  background-color: black;
+  z-index: 80;
+  width: 1px;
+  height: 100vh;
+  color: white;
+  transition: 0.2s;
+  visibility: hidden;
+  position: fixed;
+  right: 0;
+}
+
+.el {
+  margin: 0 10px;
+  transition: 0.2s;
+  width: 50px;
+  height: 50px;
+}
+
+.ancorItem {
+  margin: 10px 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.insta {
+  margin: 0;
+  transition: 0.2s;
+  width: 65px;
+  height: 65px;
+}
+
+.bgg {
+  background-color: black;
+}
+
+.logoImg {
+  margin: 30px 0 50px 30px;
+  width: 260px;
+  height: 30px;
+}
+
+.light {
+  width: 300px;
+  object-fit: cover;
+  position: absolute;
+}
+
+.phone {
+  margin-top: 50px;
+  margin-left: 30px;
+
+  color: white;
+  font-size: 20px;
+}

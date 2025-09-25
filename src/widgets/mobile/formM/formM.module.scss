@@ -1,0 +1,124 @@
+@use '../../../globals.module';
+
+.pad {
+  position: absolute;
+  z-index: 10;
+  //top: 100px;
+  width: 100%;
+}
+
+.padPopUp {
+  position: absolute;
+  z-index: 10;
+  top: 380px;
+
+}
+
+.logoImg {
+  width: 70%;
+  height: 70%;
+}
+
+.content {
+  @include globals.flexColCenter;
+  min-height: 856px;
+  //min-width: 1126px;
+  z-index: 30;
+}
+
+.invertLine {
+  margin-top: 40px;
+  transform: rotate(180deg);
+  width: 400px;
+  height: 20px;
+}
+
+.line {
+  //transform: rotate(180deg);
+  width: 400px;
+  height: 20px;
+}
+
+.formText {
+  //height: 426px;
+  width: 80%;
+  opacity: 0.59;
+
+  font-weight: 400;
+
+  font-size: 20px;
+
+  line-height: 120%;
+  letter-spacing: 1px;
+
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.formInp {
+  width: 80%;
+  height: 25px;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+
+  font-weight: 400;
+
+  font-size: 20px;
+
+  line-height: 120%;
+  letter-spacing: 1px;
+  vertical-align: middle;
+
+}
+
+.formInpTall {
+  width: 80%;
+  height: 70px;
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+
+  font-weight: 400;
+
+  font-size: 20px;
+
+  line-height: 120%;
+
+  //vertical-align:;
+
+}
+
+.cardContent {
+  background: #F05018;
+  border-radius: 14px; /* slightly smaller than outer for visible border */
+  padding: 5px 50px;
+  text-align: center;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 100%;
+  text-transform: uppercase;
+  @include globals.spaceFont;
+  letter-spacing: 2px;
+}
+
+.gradientBorder {
+  padding: 2px; /* border width */
+  border-radius: 16px;
+  background: linear-gradient(to bottom, white, black);
+  display: inline-block;
+
+  margin: 10px 0 10px 0;
+  cursor: pointer;
+}
+
+.formPad {
+  width: 100%;
+  background: linear-gradient(179.92deg, #201E1F -7.42%, #071B26 99.93%);
+  margin: 0 0 30px 0;
+  border-radius: 20px;
+}

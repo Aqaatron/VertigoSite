@@ -1,0 +1,151 @@
+@use '../../../globals.module';
+
+@font-face {
+  font-family: 'Space Ranger';
+  src: url('/Space_Ranger_Rus/spacerangerrus.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.orangeBtn {
+  background-color: #F05018;
+  width: 100px;
+  height: 44px;
+  padding-top: 31.94px;
+  padding-right: 63.89px;
+  padding-bottom: 31.94px;
+  padding-left: 63.89px;
+  border-radius: 10px;
+  border-width: 1px;
+  border: 1px solid;
+  border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(102, 102, 102, 0) 100%);
+
+
+}
+
+.header {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.contentWrapper {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoImg {
+  //margin-right: 80px;
+  width: 260px;
+  height: 30px;
+  //scale: (1.5);
+}
+
+.light {
+  position: absolute;
+  //left: 500px;
+  scale: 1;
+}
+
+.line {
+  position: absolute;
+  //right: 600px
+}
+
+.gradientBorder {
+  padding: 2px; /* border width */
+  border-radius: 16px;
+  background: linear-gradient(to bottom, white, black);
+  display: inline-block;
+  width: 100%;
+  margin: 0 10px 0 0;
+  cursor: pointer;
+}
+
+.cardContent {
+  text-align: center;
+  align-self: center;
+  background: #F05018;
+  border-radius: 14px; /* slightly smaller than outer for visible border */
+  padding: 15px 20px;
+  width: fit-content;
+  font-size: 24px;
+  font-family: 'Space Ranger', sans-serif;
+  @include globals.spaceFont;
+  letter-spacing: 2px;
+
+}
+
+
+.mainTitle {
+  height: 86px;
+  width: 95%;
+  font-size: 30px;
+  margin: 30px 0 0 0;
+  text-align: center;
+  font-family: 'Space Ranger', sans-serif;
+}
+
+.fillerText {
+  width: 90%;
+  font-size: 20px;
+  font-family: Jura, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  line-height: 150%;
+
+  vertical-align: middle;
+
+  margin: 30px 0;
+}
+
+.ancorItem {
+  margin: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.backgroundVideo {
+  position: absolute;
+
+  z-index: -1;
+  //transform: translate(-50%, -50%);
+  object-fit: cover;
+  //top: 50%;
+  //left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.videoWrapper {
+  position: absolute;
+  height: 120vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
+
+}
+
+@media (max-width: 380px) {
+  .logoImg {
+    width: 80%;
+    margin-left: -10px;
+  }
+  .cardContent {
+    font-size: 19px
+  }
+}
+
+@media (min-width: 380px) and (max-width: 490px) {
+  .logoImg {
+    width: 80%;
+  }
+}

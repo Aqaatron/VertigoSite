@@ -1,0 +1,150 @@
+@use '../../globals.module';
+
+@font-face {
+  font-family: 'Space Ranger';
+  src: url('/Space_Ranger_Rus/spacerangerrus.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.orangeBtn {
+  background-color: #F05018;
+  width: 171px;
+  height: 44px;
+  padding-top: 31.94px;
+  padding-right: 63.89px;
+  padding-bottom: 31.94px;
+  padding-left: 63.89px;
+  border-radius: 10px;
+  border-width: 1px;
+  border: 1px solid;
+  border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(102, 102, 102, 0) 100%);
+
+
+}
+
+.header {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.contentWrapper {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 1200px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+
+.logoImg {
+  z-index: 1000;
+  margin-right: 80px;
+  //scale: (0.5);
+  width: 260px;
+  height: 30px;
+}
+
+.light {
+  position: absolute;
+  left: 500px;
+  scale: 2;
+}
+
+.line {
+  position: absolute;
+  right: 400px
+}
+
+.gradientBorder {
+  padding: 2px; /* border width */
+  border-radius: 16px;
+  background: linear-gradient(to bottom, white, black);
+  display: inline-block;
+  width: fit-content;
+  margin: 0 30px 0 0;
+  cursor: pointer;
+}
+
+.cardContent {
+  background: #F05018;
+  border-radius: 14px; /* slightly smaller than outer for visible border */
+  padding: 20px 50px;
+  width: fit-content;
+  font-size: 22px;
+  font-family: 'Space Ranger', sans-serif;
+
+}
+
+
+.mainTitle {
+  height: 86px;
+  width: 750px;
+  font-size: 55px;
+  //font-weight: bold;
+  margin: 30px 0;
+  font-family: 'Space Ranger', sans-serif;
+  letter-spacing: 1px;
+}
+
+.fillerText {
+  width: 650px;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 3px;
+  vertical-align: middle;
+
+  margin: 80px 0;
+}
+
+.ancorItem {
+  margin: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.videoWrapper {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+
+@media (min-width: 490px) and (max-width: 1920px) {
+  .contentWrapper {
+    width: 1030px;
+    margin-top: 40px;
+  }
+  .line {
+    position: absolute;
+    right: 100px
+  }
+  .light {
+    position: absolute;
+    left: 250px;
+    scale: 2;
+  }
+}
