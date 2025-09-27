@@ -57,18 +57,18 @@ export const Gallery = () => {
             style={{color: '#F05018'}}>ОСТОРОжНО</span> ФОТО С ИГР</h1>
         <div className={compStyles.galRowUp}>
             <div className={compStyles.vertOr}>verTiGO</div>
-            <Image onClick={toggleFs} className={compStyles.pic} src={pic3} alt={'pic'}/>
-            <Image onClick={toggleFs} className={compStyles.pic} src={pic2} alt={'pic'}/>
-            <Image onClick={toggleFs} className={compStyles.pic} src={pic1} alt={'pic'}/>
+            <Image onClick={toggleFs} className={classNames(compStyles.pic,compStyles.pic40)} src={pic3} alt={'pic'}/>
+            <Image onClick={toggleFs} className={classNames(compStyles.pic,compStyles.pic20)} src={pic2} alt={'pic'}/>
+            <Image onClick={toggleFs} className={classNames(compStyles.pic,compStyles.pic20)} src={pic1} alt={'pic'}/>
         </div>
         <div className={compStyles.galRowDown}>
-            <Image onClick={toggleFs} className={compStyles.pic} src={pic4} alt={'pic'}/>
-            <Image onClick={toggleFs} className={compStyles.pic} src={pic5} alt={'pic'}/>
-            <Image onClick={toggleFs} className={compStyles.pic} src={pic6} alt={'pic'}/>
+            <Image onClick={toggleFs} className={classNames(compStyles.pic,compStyles.pic20)} src={pic4} alt={'pic'}/>
+            <Image onClick={toggleFs} className={classNames(compStyles.pic,compStyles.pic20)} src={pic5} alt={'pic'}/>
+            <Image onClick={toggleFs} className={classNames(compStyles.pic,compStyles.pic40)} src={pic6} alt={'pic'}/>
             <div className={compStyles.vertPur}>verTiGO</div>
         </div>
         <Image className={compStyles.circle} src={circle} alt={'logo'}/>
-        <h1 style={{fontSize: '50px'}} className={compStyles.spaceF}>ПОВЫШАЮТ <span
+        <h1 style={{fontSize: '50px',marginBottom:'100px'}} className={compStyles.spaceF}>ПОВЫШАЮТ <span
             style={{color: '#685BC7'}}>АДРеНАЛИН</span> В кРОВИ
         </h1>
         {fs && <div className={compStyles.fs}>
