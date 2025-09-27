@@ -30,6 +30,12 @@
   cursor: pointer;
 }
 
+.eclipse {
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+}
+
 .line {
   width: 90%;
 }
@@ -47,17 +53,25 @@
 
 .triangleOpened {
   transition: 0.3s;
+  margin-left: 10px;
+  width: 15px;
+  height: 15px;
 }
 
 .triangleClosed {
   transition: 0.3s;
   transform: rotate(-90deg);
+  margin-left: 10px;
+  width: 15px;
+  height: 15px;
 }
 
 .bodyTextOpened {
   margin-top: 10px;
+
   transition: 0.5s;
   opacity: 1;
+  text-align: start;
 }
 
 .bodyTextClosed {
@@ -96,11 +110,15 @@
 .spaceF {
   @include globals.spaceFont;
   letter-spacing: 2px;
+  line-height: 150%;
+  vertical-align: middle;
+  font-size: 23px;
+  text-align: center;
+  width: 80%;
 }
 
 
 @media (max-width: 380px) {
-
   .Btn {
     font-size: 19px;
     padding: 5px 20px;

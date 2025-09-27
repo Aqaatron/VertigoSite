@@ -19,16 +19,15 @@
   border-width: 1px;
   border: 1px solid;
   border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(102, 102, 102, 0) 100%);
-
-
 }
 
 .header {
+  position: relative;
   margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-
+  margin-left: 300px;
 }
 
 .contentWrapper {
@@ -39,7 +38,7 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  background-color: rgba(0, 0, 0, 0.5);
+  //background-color: rgba(0, 0, 0, 0.5);
   padding: 30px;
   border-radius: 20px;
 }
@@ -53,6 +52,17 @@
   height: 30px;
 }
 
+.logoImg2 {
+  position: absolute;
+  z-index: 1000;
+  left: -500px;
+  top: -40px;
+  //margin-right: 80px;
+  //scale: (0.5);
+  width: 680px;
+  height: 200px;
+}
+
 .light {
   position: absolute;
   left: 500px;
@@ -61,7 +71,8 @@
 
 .line {
   position: absolute;
-  right: 400px
+  right: -200px;
+  width: 1600px;
 }
 
 .gradientBorder {
@@ -87,7 +98,7 @@
 
 .mainTitle {
   height: 86px;
-  width: 750px;
+  width: 900px;
   font-size: 55px;
   //font-weight: bold;
   margin: 30px 0;
@@ -96,7 +107,7 @@
 }
 
 .fillerText {
-  width: 650px;
+  width: 900px;
   font-size: 20px;
   line-height: 150%;
   letter-spacing: 3px;
@@ -107,7 +118,7 @@
 
 .ancorItem {
   margin: 10px 20px;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -126,10 +137,26 @@
 
 .videoWrapper {
   position: absolute;
-  height: 100vh;
-  width: 100%;
+  top: 80px;
+  left: 30%;
+  height: 60vh;
+  width: 80vw;
   overflow: hidden;
   z-index: -1;
+}
+
+.videoWrapper::after {
+  content: "";
+  position: absolute;
+  scale: (1);
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+                  ellipse at center,
+                  rgba(0, 0, 0, 0) 10%, /* transparent in the middle */
+
+                  rgba(20, 25, 28, 1) 75% /* almost black at corners */
+  );
 }
 
 
@@ -140,7 +167,7 @@
   }
   .line {
     position: absolute;
-    right: 100px
+    right: -200px
   }
   .light {
     position: absolute;

@@ -36,7 +36,7 @@ export const EventsM = ({showP}: { showP: Function }) => {
     return <div id={'events'} className={globals.contentBlock} style={{minHeight: '700px', backgroundColor: '#F05018'}}>
         {/*<Image className={compStyles.pad} src={padd} alt={'logo'}/>*/}
         <div style={{
-            marginTop: '50px',
+            marginTop: '20px',
             zIndex: '20',
             display: 'flex',
             alignItems: 'center',
@@ -52,7 +52,7 @@ export const EventsM = ({showP}: { showP: Function }) => {
                    src={corp}
                    alt={'logo'}/>
         </div>
-        <div style={{zIndex: '20', width: '320px', display: 'flex', flexDirection: 'column'}}>
+        <div className={compStyles.contentWrapper}>
             <h1 className={compStyles.title}>{content === 'bday' ? textsBday.title : textsCorp.title}</h1>
             <h2 className={compStyles.text}>
                 {content === 'bday' ? textsBday.body : textsCorp.body}

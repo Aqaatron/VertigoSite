@@ -24,15 +24,26 @@
 }
 
 .header {
-  margin-top: 30px;
+  position: relative;
+  //margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
 
+.logoImg {
+  //margin-right: 80px;
+  height: 180px;
+  width: 100vw;
+  top: -45px;
+  position: absolute;
+  //overflow: hidden;
+  object-position: center;
+  object-fit: cover;
 }
 
 .contentWrapper {
-  margin-top: 20px;
+  margin-top: 80px;
   margin-bottom: 50px;
   width: 100%;
   display: flex;
@@ -40,12 +51,6 @@
   align-items: center;
 }
 
-.logoImg {
-  //margin-right: 80px;
-  width: 260px;
-  height: 30px;
-  //scale: (1.5);
-}
 
 .light {
   position: absolute;
@@ -87,8 +92,9 @@
   height: 86px;
   width: 95%;
   font-size: 30px;
-  margin: 30px 0 0 0;
-  text-align: center;
+  margin: 30px 0 0 20px;
+  text-align: start;
+
   font-family: 'Space Ranger', sans-serif;
 }
 
@@ -97,7 +103,7 @@
   font-size: 20px;
   font-family: Jura, sans-serif;
   font-weight: 400;
-  text-align: center;
+  text-align: start;
   line-height: 150%;
 
   vertical-align: middle;
@@ -135,17 +141,17 @@
 }
 
 @media (max-width: 380px) {
-  .logoImg {
-    width: 80%;
-    margin-left: -10px;
-  }
+  //.logoImg {
+  //  width: 80%;
+  //  margin-left: -10px;
+  //}
   .cardContent {
     font-size: 19px
   }
 }
 
 @media (min-width: 380px) and (max-width: 490px) {
-  .logoImg {
-    width: 80%;
-  }
+  //.logoImg {
+  //  width: 80%;
+  //}
 }

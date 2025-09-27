@@ -181,10 +181,6 @@ export const Slider = () => {
         if (event.target.dataset.name === 'right') {
             console.log('right')
             if (index < 10) {
-                // document.getElementById('gg')?.scrollTo({
-                //     left: 60 + 305 * (index),
-                //     behavior: 'smooth',
-                // })
                 switch (index) {
                     case 1:
                         document.getElementById('gg')?.scrollTo({

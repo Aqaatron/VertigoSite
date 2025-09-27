@@ -41,8 +41,8 @@ export const FaqM = ({showP}: { showP: Function }) => {
     const show = () => {
         showP()
     }
-    return <div id={'faq'} className={globals.contentBlock} style={{marginTop: '50px'}}>
-        <h1 style={{fontSize: '30px', textAlign: 'center', width: '90%'}} className={compStyles.spaceF}>FAQ - часто
+    return <div id={'faq'} className={globals.contentBlock} style={{marginTop: '20px'}}>
+        <h1 className={compStyles.spaceF}>FAQ - часто
             задаваемые
             вопросы</h1>
         <Image src={line} alt={'line'} className={compStyles.line}/>

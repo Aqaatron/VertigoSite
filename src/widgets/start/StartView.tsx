@@ -2,6 +2,7 @@ import globals from '../../globals.module.scss'
 import compStyles from './start.module.scss'
 import vertigo from '../../../public/vertigo.png'
 import light from '../../../public/RIM_Light_purple.png'
+import logo from './logo.png'
 import lineHeader from '../../../public/lineHeader.png'
 import Image from "next/image";
 import React, {useEffect} from "react";
@@ -28,8 +29,8 @@ export const StartView = ({showP}: { showP: Function }) => {
 
     return <div className={globals.contentBlock}>
         <div id={'main'} className={compStyles.header}>
-            <Image className={compStyles.logoImg} src={vertigo} alt={'logo'}/>
-            <Image className={compStyles.light} src={light} alt={'logo'}/>
+            <Image className={compStyles.logoImg2} src={logo} alt={'logo'}/>
+            {/*<Image className={compStyles.light} src={light} alt={'logo'}/>*/}
             <Image className={compStyles.line} src={lineHeader} alt={'logo'}/>
             <div style={{display: 'flex', width: '950px', zIndex: '100'}}>
                 <div className={compStyles.ancorItem}>Главная</div>
@@ -58,10 +59,6 @@ export const StartView = ({showP}: { showP: Function }) => {
             </div>
             <div className={compStyles.fillerText}>{texts.start.main}
             </div>
-            {/*<div className={compStyles.fillerText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do*/}
-            {/*    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud*/}
-            {/*    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.*/}
-            {/*</div>*/}
             <div style={{display: 'flex', justifyContent: 'start'}}>
                 <div className={compStyles.gradientBorder}>
                     <div className={compStyles.cardContent} onClick={show}>Связаться со мной</div>

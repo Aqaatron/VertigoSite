@@ -69,9 +69,9 @@
 }
 
 .picEl {
-  margin: 5px;
-  width: 60px;
-  height: 60px;
+  margin: 15px;
+  width: 90px;
+  height: 90px;
 }
 
 .gradientBorder {
@@ -99,10 +99,11 @@
 }
 
 .title {
-  font-size: 30px;
+  font-size: 23px;
   @include globals.spaceFont;
   letter-spacing: 2px;
   text-align: center;
+  margin-top: 50px;
 }
 
 .leftDown {
@@ -127,7 +128,7 @@
     font-size: 19px;
     padding: 5px 20px;
   }
-  
+
 }
 
 @media (min-width: 420px) and (max-width: 490px) {

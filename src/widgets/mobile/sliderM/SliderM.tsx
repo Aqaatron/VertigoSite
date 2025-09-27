@@ -233,7 +233,6 @@ export const SliderM = () => {
         //console.log(document.getElementById('gg').scrollLeft)
     }
     useEffect(() => document.getElementById('gg')?.scrollTo({
-
         left: 348 + 640,
         behavior: 'smooth',
     }), [])
@@ -243,7 +242,7 @@ export const SliderM = () => {
             getIdxPlus(index)
             index < 10 ? setIndex(index + 1) : setIndex(1)
         } else {
-            console.log(index, 'INDEEX!!!')
+            console.log(index, 'INDEX!!!')
             getIdxMinus(index)
             if (index === 1) {
                 setIndex(10)
