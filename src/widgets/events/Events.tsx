@@ -34,14 +34,7 @@ export const Events = ({showP}: { showP: Function }) => {
     const [content, setContent] = React.useState('bday')
     return <div id={'events'} className={classNames(globals.contentBlock, compStyles.block)}>
         <Image className={compStyles.pad} src={padd} alt={'logo'}/>
-        <div style={{
-            marginTop: '150px',
-            zIndex: '20',
-            display: 'flex',
-            alignItems: 'start',
-            justifyContent: 'space-around',
-            width: '1200px'
-        }}>
+        <div className={compStyles.content}>
             <div className={compStyles.eventPad}>
                 <Image onClick={changeEvent} data-name='bday' className={compStyles.photoCard} src={bday} alt={'logo'}/>
                 <h1 className={compStyles.title}>{textsBday.title}</h1>

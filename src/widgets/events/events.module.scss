@@ -72,7 +72,14 @@
   font-family: 'Space Ranger', sans-serif;
 
 }
-
+.content{
+  width: 1200px;
+  justify-content: space-around;
+  display: flex;
+  align-items: start;
+  margin-top: 150px;
+  z-index: 20;
+}
 .eventPad {
   background-color: #071B26;
   padding: 10px;
@@ -114,5 +121,8 @@
 @media (min-width: 490px) and (max-width: 1920px) {
   .pad {
     top: -70px;
+  }
+  .content{
+    margin-top: 80px;
   }
 }
