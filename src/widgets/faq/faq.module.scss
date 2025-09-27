@@ -36,6 +36,12 @@
   align-items: center;
 }
 
+.eclipse {
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+}
+
 .triangleOpened {
   transition: 0.3s;
 }
@@ -51,10 +57,13 @@
   opacity: 1;
   font-size: 22px;
   visibility: visible;
-  font-weight: normal;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 20px;
+  letter-spacing: 3px;
+  line-height: 150%;
+  vertical-align: middle;
+  font-weight: lighter;
 }
 
 .bodyTextClosed {
@@ -68,7 +77,11 @@
 
 .qTitle {
   margin: 10px;
-  font-size: 35px;
+  font-size: 30px;
+  letter-spacing: 3px;
+  line-height: 150%;
+  vertical-align: middle;
+  font-weight: lighter;
 }
 
 .Btn {
