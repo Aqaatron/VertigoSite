@@ -64,7 +64,8 @@ export const EventsM = ({showP}: { showP: Function }) => {
             <Image src={people} alt={'people'} className={compStyles.ico}/>
             <div className={compStyles.icoTextLong}>2-20 игроков</div>
         </div>
-        <div className={compStyles.icons}><Image src={ps} alt={'pistol'} className={compStyles.ico}/>
+        <div className={compStyles.icons}>
+            <Image src={ps} alt={'pistol'} className={compStyles.ico}/>
             <div className={compStyles.icoTextShort}>PS5</div>
             <Image src={pizza} alt={'pizza'} className={compStyles.ico}/>
             <div className={compStyles.icoTextLong}>Lounge зона</div>
