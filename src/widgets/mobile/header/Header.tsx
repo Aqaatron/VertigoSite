@@ -20,7 +20,7 @@ export const Header = ({showP}: { showP: Function }) => {
     const show = () => {
         showP(true)
     }
-    return <div className={globals.contentBlock} style={{minHeight:'90vh'}}>
+    return <div className={globals.contentBlock} style={{minHeight: '90vh'}}>
         <div id={'main'} className={compStyles.header}>
             <Image className={compStyles.logoImg} src={vertigo} alt={'logo'}/>
         </div>

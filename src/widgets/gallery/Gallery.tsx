@@ -70,11 +70,13 @@ export const Gallery = () => {
             <div className={compStyles.vertPur}>verTiGO</div>
         </div>
         <Image className={compStyles.circle} src={circle} alt={'logo'}/>
-        <h1 style={{fontSize: '50px', marginBottom: '100px'}} className={compStyles.spaceF}>ПОВЫШАЮТ <span
+        <h1 style={{fontSize: '50px', marginBottom: '200px'}} className={compStyles.spaceF}>ПОВЫШАЮТ <span
             style={{color: '#685BC7'}}>АДРеНАЛИН</span> В кРОВИ
         </h1>
+        {fs && <div style={{minHeight: '400px'}}></div>}
         {fs && <div className={compStyles.fs}>
             <SliderG close={closeFs}/>
-        </div>}
+        </div>
+        }
     </div>
 }

@@ -65,7 +65,7 @@
   z-index: 10;
   //bottom: -200px;
   left:-100px;
-
+  transform: rotate(180deg);
 }
 
 .gradientBorder {
@@ -152,5 +152,6 @@
   }
   .circle{
     left:-100px;
+    transform: rotate(0deg);
   }
 }
