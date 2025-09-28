@@ -5,7 +5,7 @@ $theme-font-color: #F74D80;
 @font-face {
   font-family: 'Space Ranger';
   src: url('/Space_Ranger_Rus/spacerangerrus.otf') format('truetype');
-  font-weight: normal;
+  font-weight: lighter;
 }
 
 @mixin spaceFont {

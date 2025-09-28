@@ -22,7 +22,6 @@
 
 .questionEl {
   z-index: 20;
-  margin: 5px;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -68,7 +67,8 @@
 
 .bodyTextOpened {
   margin-top: 10px;
-
+  margin-left: 20px;
+  font-weight: lighter;
   transition: 0.5s;
   opacity: 1;
   text-align: start;
@@ -126,7 +126,6 @@
 }
 
 @media (min-width: 380px) and (max-width: 490px) {
-
   .Btn {
     font-size: 19px;
     padding: 5px 20px;

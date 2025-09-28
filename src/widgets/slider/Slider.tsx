@@ -1,13 +1,14 @@
 import globals from '../../globals.module.scss'
 import compStyles from './slider.module.scss'
 import Image from "next/image";
-import pad from './pPad.png'
+import pad from '../../../public/purpPadClean.png'
 import line from '../../../public/Vector7.png'
 import {SliderElement} from "@/widgets/slider/SliderElement";
 import triangle from '../../../public/ui/btnSlider.png'
 import React, {useEffect, useRef} from "react";
 import {texts} from "@/texts";
-import {linkGc} from "next/dist/client/app-link-gc";
+import girlSlider from '../../../public/girlSlider.png'
+import circle from "../../../public/circle.png";
 
 const games = texts.slider.games
 export const Slider = () => {
@@ -380,6 +381,8 @@ export const Slider = () => {
     //     }
     // }
     return <div id={'games'} className={globals.contentBlock}>
+        <Image src={girlSlider} className={compStyles.girlSlider} alt={'girlSlider'}/>
+        <Image className={compStyles.circle} src={circle} alt={'logo'}/>
         <div className={compStyles.content}>
             <h1 className={compStyles.title}>ИГРЫ</h1>
             <Image src={line} alt={'line'}/>

@@ -1,5 +1,5 @@
 import globals from '../../globals.module.scss'
-import padd from '../../../public/padOr.png'
+import padd from '../../../public/orPadClean.png'
 import Image from "next/image";
 import compStyles from "@/widgets/events/events.module.scss";
 import bday from "../../../public/photos/bday.jpg";
@@ -9,9 +9,9 @@ import ps from "../../../public/events/PS5.png"
 import people from "../../../public/events/peopls.png"
 import pizza from "../../../public/events/lauge.png"
 import React from "react";
-import pistol from './pistol.png'
-
+import robot from '../../../public/robot.png'
 import classNames from "classnames";
+import circle from "../../../public/circle.png";
 
 const textsBday = {
     name: 'bday',
@@ -34,6 +34,8 @@ export const Events = ({showP}: { showP: Function }) => {
     const [content, setContent] = React.useState('bday')
     return <div id={'events'} className={classNames(globals.contentBlock, compStyles.block)}>
         <Image className={compStyles.pad} src={padd} alt={'logo'}/>
+        <Image className={compStyles.robot} src={robot} alt={'robot'}/>
+        <Image className={compStyles.circle} src={circle} alt={'logo'}/>
         <div className={compStyles.content}>
             <div className={compStyles.eventPad}>
                 <Image onClick={changeEvent} data-name='bday' className={compStyles.photoCard} src={bday} alt={'logo'}/>

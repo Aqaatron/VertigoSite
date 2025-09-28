@@ -17,7 +17,8 @@
 .content {
   margin-top: 100px;
   position: relative;
-  z-index: 20;
+
+  z-index: 100;
 
   @include globals.flexColCenter;
 }
@@ -76,19 +77,36 @@
   //height: 220px;
   transform: scale(1.1);
 }
-.title{
+
+.title {
   font-size: 60px;
   margin: 20px 0;
   @include globals.spaceFont;
   letter-spacing: 3px;
 }
-.subtitle{
+
+.girlSlider {
+  position: absolute;
+  right: -114px;
+  z-index: 90;
+  scale: 0.8;
+}
+
+.circle {
+  position: absolute;
+  left: -100px;
+  transform: rotate(180deg);
+  z-index: 300;
+}
+
+.subtitle {
   font-size: 30px;
   margin: 20px 0 0 0;
   //@include globals.spaceFont;
   letter-spacing: 3px;
   font-weight: lighter;
 }
+
 .picActive {
   transition: 0.3s;
   transform: scale(1.1);
@@ -197,4 +215,10 @@
 
 .spaceF {
 
+}
+
+@media (min-width: 490px) and (max-width: 1920px) {
+  .girlSlider {
+    right: -114px;
+  }
 }

@@ -53,6 +53,5 @@ export default function Page() {
         {!isMobile && <Sertificate showP={showP}/> || <SertificateM showP={showP}/>}
         {/*{!isMobile && <MyForm/> || <MyFormM/>}*/}
         {!isMobile && <Footer/> || <FooterM/>}
-
     </div>
 }
