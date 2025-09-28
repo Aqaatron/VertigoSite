@@ -26,7 +26,6 @@ export const Gallery = () => {
         }
     }
     const handleClickOutside = (event: any) => {
-
         const name = event.target.dataset.name
         if (!name) {
             setFs(false);
@@ -38,6 +37,9 @@ export const Gallery = () => {
     //         console.log("Clicked outside!");
     //     }
     // };
+    const closeFs=()=>{
+        setFs(false)
+    }
     React.useEffect(() => {
         if (fs) {
             document.addEventListener("mousedown", handleClickOutside);
@@ -72,7 +74,7 @@ export const Gallery = () => {
             style={{color: '#685BC7'}}>АДРеНАЛИН</span> В кРОВИ
         </h1>
         {fs && <div className={compStyles.fs}>
-            <SliderG/>
+            <SliderG close={closeFs}/>
         </div>}
     </div>
 }

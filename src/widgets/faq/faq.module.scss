@@ -4,10 +4,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
   transform: translate(-50%, -50%);
   object-fit: cover;
@@ -57,7 +56,7 @@
   margin: 10px 10px 10px 30px;
   transition: 0.2s;
   opacity: 1;
-  font-size: 22px;
+  font-size: 15px;
   visibility: visible;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
@@ -136,7 +135,7 @@
 
 .spaceF {
   @include globals.spaceFont;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   line-height: 200%;
 }
 
@@ -146,7 +145,8 @@
   }
   .qTitle {
     margin: 10px;
-    font-size: 25px;
+    font-size: 20px;
+
   }
   .Btn {
     margin: 100px 0 50px 0;

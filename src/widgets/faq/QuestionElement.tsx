@@ -11,13 +11,13 @@ export const QuestionElement = ({data}: { data: any }) => {
         setActive(!active)
     }
     React.useEffect(() => {
-        const el = document.getElementById('evTitle')
+        const el = document.getElementById(data.title)
         if (el) {
             if (active) {
-                console.log('fire');
+
                 el.style.setProperty('--circle-bg', 'white')
             } else {
-                console.log('fire');
+
                 el.style.setProperty('--circle-bg', 'transparent')
             }
         }
@@ -25,7 +25,7 @@ export const QuestionElement = ({data}: { data: any }) => {
     }, [active])
     return <div onClick={changeActive} className={compStyles.questionEl}>
         <div onClick={changeActive} className={compStyles.headLine}>
-            <h1 id={'evTitle'} className={compStyles.qTitle}>{toUpperCase(data.title)}</h1>
+            <h1 id={data.title} className={compStyles.qTitle}>{toUpperCase(data.title)}</h1>
             <Image onClick={changeActive} src={triangle} alt={'triangle'}
                    className={!active ? compStyles.triangleOpened : compStyles.triangleClosed}/></div>
         <div className={active ? compStyles.bodyTextOpened : compStyles.bodyTextClosed}>{data.body}</div>

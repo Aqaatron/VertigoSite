@@ -42,10 +42,10 @@ export const Faq = ({showP}: { showP: Function }) => {
         showP()
     }
     return <div id={'faq'} className={globals.contentBlock}>
-        <h1 style={{fontSize: '60px'}} className={compStyles.spaceF}>FAQ - часто задаваемые вопросы</h1>
-        <Image src={line} alt={'line'} style={{margin: '10px 0 20px 0', width:'150%'}}/>
+        <h1 style={{fontSize: '60px', margin:'10px'}} className={compStyles.spaceF}>FAQ - часто задаваемые вопросы</h1>
+        <Image src={line} alt={'line'} style={{margin: '0 0 20px 0', width: '1200px'}}/>
         {questions.map((question) => <QuestionElement key={question.title} data={question}/>)}
-        <Image src={line} alt={'line'} style={{margin: '40px 0 0 0', width:'150%'}}/>
+        <Image src={line} alt={'line'} style={{margin: '40px 0 0 0', width: '1200px'}}/>
         <div className={compStyles.videoWrapper}>
             <video
                 autoPlay

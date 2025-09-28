@@ -10,9 +10,12 @@ import classNames from "classnames";
 import {setIn} from "immutable";
 
 const pics = ['', 'pic1', 'pic2', 'pic3', 'pic4', 'pic5', '']
-
-export const SliderG = () => {
+type SliderGProps = {
+    close: () => void; // explicitly type the close prop
+};
+export const SliderG = ({close}: SliderGProps) => {
     const [index, setIndex] = React.useState('pic1')
+    const open = true
     const getScroll = (name: string) => {
         let scroll
         switch (name) {
@@ -57,20 +60,21 @@ export const SliderG = () => {
             document.body.style.overflow = 'auto';
         };
     }, []);
-    useEffect(() => {
-        const gg = document.getElementById('gg');
-        if (!gg) return; // Guard clause: stop if element is not found
 
-        const handleScroll = () => {
-            console.log("Container scroll:", gg.scrollLeft);
-        };
-
-        gg.addEventListener("scroll", handleScroll);
-
-        return () => {
-            gg.removeEventListener("scroll", handleScroll);
-        };
-    }, [])
+    // useEffect(() => {
+    //     const gg = document.getElementById('gg');
+    //     if (!gg) return; // Guard clause: stop if element is not found
+    //
+    //     const handleScroll = () => {
+    //         console.log("Container scroll:", gg.scrollLeft);
+    //     };
+    //
+    //     gg.addEventListener("scroll", handleScroll);
+    //
+    //     return () => {
+    //         gg.removeEventListener("scroll", handleScroll);
+    //     };
+    // }, [])
     const slide = (event: any) => {
 
         const idx = pics.findIndex((name) => name === index)
@@ -107,13 +111,28 @@ export const SliderG = () => {
             idx === 1 ? setIndex('pic5') : setIndex('pic' + (idx - 1))
         }
     }
-
     return <div id={'pics'} data-name={'gallery'} className={classNames(compStyles.slider, globals.contentBlock)}>
         <div className={compStyles.content}>
-            <h1 style={{fontSize: '60px'}} className={compStyles.spaceF}>ИГРЫ</h1>
-            <Image src={line} alt={'line'}/>
-            <h2 style={{fontSize: '50px'}} className={compStyles.spaceF}>Полное погружение</h2>
-            <Image src={line} alt={'line'}/>
+            <div onClick={close} className={compStyles.close}>
+                <div onClick={() => close}
+                     className={compStyles.burger}>
+        <span
+            className={`block h-1 w-full bg-white rounded transition-transform duration-300 ${
+                open ? "rotate-45 translate-y-[7px]" : ""
+            }`}
+        />
+                    <span
+                        className={`block h-1 w-full bg-white rounded transition-opacity duration-300 ${
+                            open ? "opacity-0" : "opacity-100"
+                        }`}
+                    />
+                    <span
+                        className={`block h-1 w-full bg-white rounded transition-transform duration-300 ${
+                            open ? "-rotate-45 -translate-y-[10px]" : ""
+                        }`}
+                    />
+                </div>
+            </div>
             <div id={'gg'} className={compStyles.sliderCont}>
                 {pics.map((pic, idx) => <SliderElementG key={pic} data={pic} onnClick={getIdx}/>)}
             </div>

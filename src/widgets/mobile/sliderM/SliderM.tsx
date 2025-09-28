@@ -94,25 +94,9 @@ const games = [
 ]
 export const SliderM = () => {
     const [index, setIndex] = React.useState(2)
-
-    // const getIdx = (idx: number) => {
-    //     setIndex(idx)
-    //     let scroll = 640 + 350 * (idx - 1)
-    //     console.log(idx, scroll)
-    //     document.getElementById('gg')?.scrollTo({
-    //         left: scroll,
-    //         behavior: 'smooth',
-    //     })
-    //     games.forEach((el, idxx) => {
-    //         if (idxx === idx + 1) {
-    //             el.active = true
-    //         } else {
-    //             el.active = false
-    //         }
-    //     })
-    //     //console.log(document.getElementById('gg').scrollLeft)
-    // }
-    const getIdxPlus = (idx: number) => {
+    const [scrl, setScrl] = React.useState(0)
+    const [initLeft, setInitLeft] = React.useState(0)
+    const getIdxPlus2 = (idx: number) => {
         let scroll
         setIndex(idx)
         switch (idx) {
@@ -172,7 +156,7 @@ export const SliderM = () => {
         })
         //console.log(document.getElementById('gg').scrollLeft)
     }
-    const getIdxMinus = (idx: number) => {
+    const getIdxMinus2 = (idx: number) => {
         let scroll
         setIndex(idx)
         switch (idx) {
@@ -232,17 +216,94 @@ export const SliderM = () => {
         })
         //console.log(document.getElementById('gg').scrollLeft)
     }
-    useEffect(() => document.getElementById('gg')?.scrollTo({
-        left: 348 + 640,
-        behavior: 'smooth',
-    }), [])
+    const getIdxMinus = (idx: number) => {
+        setIndex(idx)
+        if (idx === 1) {
+            document.getElementById('gg')?.scrollTo({
+                left: initLeft + scrl * (10),
+                behavior: 'smooth',
+            })
+            games.forEach((el, idxx) => {
+                if (idxx === 11) {
+                    el.active = true
+                } else {
+                    el.active = false
+                }
+            })
+        } else {
+            document.getElementById('gg')?.scrollTo({
+                left: initLeft + scrl * (idx - 1),
+                behavior: 'smooth',
+            })
+            games.forEach((el, idxx) => {
+                if (idxx === idx) {
+                    el.active = true
+                } else {
+                    el.active = false
+                }
+            })
+        }
 
+    }
+    const getIdxPlus = (idx: number) => {
+        console.log(idx)
+        setIndex(idx)
+        if (idx === 10) {
+            document.getElementById('gg')?.scrollTo({
+                left: initLeft + scrl * (1),
+                behavior: 'smooth',
+            })
+            games.forEach((el, idxx) => {
+                if (idxx === 2) {
+                    el.active = true
+                } else {
+                    el.active = false
+                }
+            })
+        } else {
+            document.getElementById('gg')?.scrollTo({
+                left: initLeft + scrl * (idx + 1),
+                behavior: 'smooth',
+            })
+            games.forEach((el, idxx) => {
+                if (idxx === idx + 2) {
+                    el.active = true
+                } else {
+                    el.active = false
+                }
+            })
+        }
+
+    }
+    useEffect(() => {
+        const slider = document.getElementById("gg");
+
+        if (slider) {
+            const sliderWidth = slider.offsetWidth;
+            const sliderScrollWidth = slider.scrollWidth;
+            const elCount = slider.childElementCount;
+
+            // 3*2 diff between active border and other el borders
+            if (sliderWidth && sliderScrollWidth && elCount) {
+                const scrl = (sliderScrollWidth - 3 * 2) / elCount;
+                const initLeft = sliderWidth / 2 - scrl - scrl / 2;
+                const moduleInitLeft = initLeft < 0 ? initLeft * -1 : initLeft;
+
+                slider.scrollTo({
+                    left: moduleInitLeft + scrl * 2,
+                    behavior: "smooth",
+                });
+
+                setScrl(scrl);
+                setInitLeft(moduleInitLeft);
+            }
+        }
+    }, []);
     const slide = (event: any) => {
         if (event.target.dataset.name === 'right') {
             getIdxPlus(index)
             index < 10 ? setIndex(index + 1) : setIndex(1)
         } else {
-            console.log(index, 'INDEX!!!')
             getIdxMinus(index)
             if (index === 1) {
                 setIndex(10)
@@ -251,184 +312,7 @@ export const SliderM = () => {
             }
         }
     }
-    // const slide = (event: any) => {
-    //     console.log('INDEX = ', index)
-    //     if (event.target.dataset.name === 'right') {
-    //         console.log('right')
-    //         if (index < 10) {
-    //             document.getElementById('gg')?.scrollTo({
-    //                 left: 640 + 345 * (index),
-    //                 behavior: 'smooth',
-    //             })
-    //             games.forEach((el, idxx) => {
-    //                 console.log('массива', idxx - 1, 'нажатый', index + 1)
-    //                 if (idxx - 1 === index + 1) {
-    //                     el.active = true
-    //                 } else {
-    //                     el.active = false
-    //                 }
-    //             })
-    //             setIndex(index + 1)
-    //         } else {
-    //             setIndex(1)
-    //             document.getElementById('gg')?.scrollTo({
-    //                 left: 640 + 345 * (0),
-    //                 behavior: 'smooth',
-    //             })
-    //             games.forEach((el, idxx) => {
-    //                 console.log('массива', idxx - 1, 'нажатый', 1)
-    //                 if (idxx - 1 === 1) {
-    //                     el.active = true
-    //                 } else {
-    //                     el.active = false
-    //                 }
-    //             })
-    //             console.log('last right item')
-    //         }
-    //     } else {
-    //         if (index > 1) {
-    //             console.log('left')
-    //             document.getElementById('gg')?.scrollTo({
-    //                 left: 640 + 345 * (index - 2),
-    //                 behavior: 'smooth',
-    //             })
-    //             games.forEach((el, idxx) => {
-    //                 console.log('массива', idxx, 'нажатый', index - 1)
-    //                 if (idxx - 1 === index - 1) {
-    //                     el.active = true
-    //                 } else {
-    //                     el.active = false
-    //                 }
-    //             })
-    //             setIndex(index - 1)
-    //         } else {
-    //             console.log('last left item')
-    //             console.log('left')
-    //             document.getElementById('gg')?.scrollTo({
-    //                 left: 640 + 345 * (10 - 1),
-    //                 behavior: 'smooth',
-    //             })
-    //             games.forEach((el, idxx) => {
-    //                 console.log('массива', idxx, 'нажатый', 10 - 1)
-    //                 if (idxx - 1 === 10) {
-    //                     el.active = true
-    //                 } else {
-    //                     el.active = false
-    //                 }
-    //             })
-    //             setIndex(10)
-    //         }
-    //     }
-    // }
-    // const slide2 = (event: any) => {
-    //     const cont = document.getElementById('gg')
-    //     const game = games[index].src
-    //     const doc = document.getElementById(game)
-    //     const offset = document.getElementById(game).offsetLeft
-    //     const www = document.body.offsetWidth / 2
-    //     const sss= document.getElementById('gg').scrollWidth
-    //     console.log(www, '!',sss)
-    //     if (doc) {
-    //         //ss 2519
-    //         //sh 2829 2780 is center 49 is diff
-    //         const yy = offset - 20
-    //         cont.scrollTo({left: yy, behavior: 'smooth'})
-    //     }
-    //     if (event.target.dataset.name === 'right') {
-    //         if (index === 10) {
-    //             const game = games[index].src
-    //             const doc = document.getElementById(game)
-    //             if (doc) {
-    //                 const yy = 500
-    //                 cont.scrollTo({left: yy, behavior: 'smooth'})
-    //             }
-    //             setIndex(1)
-    //         } else {
-    //             console.log(event.target.dataset.name, games[index + 2].src)
-    //             setIndex(index + 1)
-    //         }
-    //     } else {
-    //         if (index === 1) {
-    //             console.log(event.target.dataset.name, games[10].src)
-    //             setIndex(10)
-    //         } else {
-    //             console.log(event.target.dataset.name, games[index].src)
-    //             setIndex(index - 1)
-    //         }
-    //
-    //     }
-    //
-    // }
 
-    // const slideSwype = (dir: string) => {
-    //     console.log('INDEX = ', index)
-    //     if (dir === 'right') {
-    //         console.log('right')
-    //         if (index < 10) {
-    //             document.getElementById('gg')?.scrollTo({
-    //                 left: 640 + 345 * (index),
-    //                 behavior: 'smooth',
-    //             })
-    //             games.forEach((el, idxx) => {
-    //                 //console.log('массива', idxx - 1, 'нажатый', index + 1)
-    //                 if (idxx - 1 === index + 1) {
-    //                     el.active = true
-    //                 } else {
-    //                     el.active = false
-    //                 }
-    //             })
-    //             setIndex(index + 1)
-    //         } else {
-    //             setIndex(1)
-    //             document.getElementById('gg')?.scrollTo({
-    //                 left: 640 + 345 * (0),
-    //                 behavior: 'smooth',
-    //             })
-    //             games.forEach((el, idxx) => {
-    //                 //console.log('массива', idxx - 1, 'нажатый', 1)
-    //                 if (idxx - 1 === 1) {
-    //                     el.active = true
-    //                 } else {
-    //                     el.active = false
-    //                 }
-    //             })
-    //             console.log('last right item')
-    //         }
-    //     } else {
-    //         if (index > 1) {
-    //             console.log('left')
-    //             document.getElementById('gg')?.scrollTo({
-    //                 left: 640 + 345 * (index - 2),
-    //                 behavior: 'smooth',
-    //             })
-    //             games.forEach((el, idxx) => {
-    //                 //console.log('массива', idxx, 'нажатый', index - 1)
-    //                 if (idxx - 1 === index - 1) {
-    //                     el.active = true
-    //                 } else {
-    //                     el.active = false
-    //                 }
-    //             })
-    //             setIndex(index - 1)
-    //         } else {
-    //             console.log('last left item')
-    //             console.log('left')
-    //             document.getElementById('gg')?.scrollTo({
-    //                 left: 640 + 345 * (10 - 1),
-    //                 behavior: 'smooth',
-    //             })
-    //             games.forEach((el, idxx) => {
-    //                 //console.log('массива', idxx, 'нажатый', 10 - 1)
-    //                 if (idxx - 1 === 10 - 1) {
-    //                     el.active = true
-    //                 } else {
-    //                     el.active = false
-    //                 }
-    //             })
-    //             setIndex(10)
-    //         }
-    //     }
-    // }
     const slideSwype = (dir: string) => {
         if (dir === 'right') {
             getIdxPlus(index)
@@ -465,7 +349,6 @@ export const SliderM = () => {
             slideSwype('left')
         }
     };
-    //console.log(document.getElementById('gg')?.scrollLeft)
     return <div id={'games'} className={globals.contentBlock} style={{backgroundColor: '#685BC7', minHeight: '1100px'}}>
         <div className={compStyles.content}>
             <h1 style={{fontSize: '30px'}} className={compStyles.spaceF}>НАШИ ИГРЫ</h1>

@@ -24,10 +24,50 @@
 
 .slider {
   position: absolute;
-  top: -25%;
-
+  top: 15%;
+  width: 100vw;
 }
 
+.close {
+  position: absolute;
+  cursor: pointer;
+  right:350px;
+}
+.burger {
+  z-index: 100;
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  color: white;;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* Animation states */
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
 .sliderCont {
   display: flex;
   overflow: scroll;

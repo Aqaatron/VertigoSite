@@ -34,7 +34,7 @@ export default function Page() {
         setIsMobile(mobile);
         //window.innerWidth > 480 ? setIsMobile(false) : setIsMobile(true)
     }, []);
-
+    const [i, setI] = React.useState(1)
     const closeMe = () => {
         setShow(false)
     }
@@ -48,10 +48,11 @@ export default function Page() {
         {!isMobile && <StartView showP={showP}/> || <Header showP={showP}/>}
         {!isMobile && <Events showP={showP}/> || <EventsM showP={showP}/>}
         {!isMobile && <Gallery/>}
-        {/*/!*{!isMobile && <Slider/> || <SliderM/>}*!/*/}
+        {!isMobile && <Slider/> || <SliderM/>}
         {!isMobile && <Faq showP={showP}/> || <FaqM showP={showP}/>}
         {!isMobile && <Sertificate showP={showP}/> || <SertificateM showP={showP}/>}
         {/*{!isMobile && <MyForm/> || <MyFormM/>}*/}
         {!isMobile && <Footer/> || <FooterM/>}
+
     </div>
 }

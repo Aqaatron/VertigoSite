@@ -92,7 +92,6 @@
   width: fit-content;
   font-size: 22px;
   font-family: 'Space Ranger', sans-serif;
-
 }
 
 
@@ -109,10 +108,10 @@
 .fillerText {
   width: 900px;
   font-size: 20px;
+  font-weight: lighter;
   line-height: 150%;
   letter-spacing: 3px;
   vertical-align: middle;
-
   margin: 80px 0;
 }
 
@@ -165,6 +164,12 @@
     width: 1030px;
     margin-top: 140px;
   }
+  .mainTitle{
+
+  }
+  .fillerText{
+    font-weight: lighter;
+  }
   .line {
     position: absolute;
     right: -200px
@@ -173,5 +178,40 @@
     position: absolute;
     left: 250px;
     scale: 2;
+  }
+  .backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+
+  .videoWrapper {
+    position: absolute;
+    top: 80px;
+    left: 30%;
+    height: 60vh;
+    width: 70vw;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .videoWrapper::after {
+    content: "";
+    position: absolute;
+    scale: (1);
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+                    ellipse at center,
+                    rgba(0, 0, 0, 0) 10%, /* transparent in the middle */
+                    rgba(20, 25, 28, 1) 75% /* almost black at corners */
+    );
   }
 }
