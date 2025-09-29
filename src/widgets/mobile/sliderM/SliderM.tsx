@@ -145,7 +145,7 @@ export const SliderM = () => {
             slideSwype('left')
         }
     };
-    return <div id={'games'} className={globals.contentBlock} style={{backgroundColor: '#685BC7', minHeight: '800px'}}>
+    return <div id={'games'} className={globals.contentBlock} style={{backgroundColor: '#685BC7', minHeight: '850px'}}>
         <div className={compStyles.content}>
             <h1 style={{fontSize: '30px'}} className={compStyles.spaceF}>НАШИ ИГРЫ</h1>
             <div onTouchStart={handleTouchStart}

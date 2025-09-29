@@ -112,27 +112,28 @@ export const SliderG = ({close}: SliderGProps) => {
         }
     }
     return <div id={'pics'} data-name={'gallery'} className={classNames(compStyles.slider, globals.contentBlock)}>
-        <div className={compStyles.content}>
-            <div onClick={close} className={compStyles.close}>
-                <div onClick={() => close}
-                     className={compStyles.burger}>
+        <div onClick={close} className={compStyles.close}>
+            <div onClick={() => close}
+                 className={compStyles.burger}>
         <span
             className={`block h-1 w-full bg-white rounded transition-transform duration-300 ${
                 open ? "rotate-45 translate-y-[7px]" : ""
             }`}
         />
-                    <span
-                        className={`block h-1 w-full bg-white rounded transition-opacity duration-300 ${
-                            open ? "opacity-0" : "opacity-100"
-                        }`}
-                    />
-                    <span
-                        className={`block h-1 w-full bg-white rounded transition-transform duration-300 ${
-                            open ? "-rotate-45 -translate-y-[10px]" : ""
-                        }`}
-                    />
-                </div>
+                <span
+                    className={`block h-1 w-full bg-white rounded transition-opacity duration-300 ${
+                        open ? "opacity-0" : "opacity-100"
+                    }`}
+                />
+                <span
+                    className={`block h-1 w-full bg-white rounded transition-transform duration-300 ${
+                        open ? "-rotate-45 -translate-y-[10px]" : ""
+                    }`}
+                />
             </div>
+        </div>
+        <div className={compStyles.content}>
+
             <div id={'gg'} className={compStyles.sliderCont}>
                 {pics.map((pic, idx) => <SliderElementG key={pic} data={pic} onnClick={getIdx}/>)}
             </div>
