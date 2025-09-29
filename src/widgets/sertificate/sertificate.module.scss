@@ -8,6 +8,13 @@
   height: 120%;
 }
 
+.circle {
+  position: absolute;
+  left: 0;
+  z-index: 11;
+  transform:rotate(180deg);
+}
+
 .content {
   display: flex;
   align-items: center;
@@ -66,9 +73,11 @@
   @include globals.spaceFont;
   letter-spacing: 2px;
 }
-.picEl{
-  margin:20px
+
+.picEl {
+  margin: 20px
 }
+
 .gradientBorder {
 
   padding: 2px; /* border width */

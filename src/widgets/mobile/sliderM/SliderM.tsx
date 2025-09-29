@@ -13,126 +13,6 @@ export const SliderM = () => {
     const [index, setIndex] = React.useState(2)
     const [scrl, setScrl] = React.useState(0)
     const [initLeft, setInitLeft] = React.useState(0)
-    const getIdxPlus2 = (idx: number) => {
-        let scroll
-        setIndex(idx)
-        switch (idx) {
-            case 1:
-                scroll = 995
-                break
-            case 2:
-                scroll = 1330
-                break
-
-            case 3:
-                scroll = 1670
-                break
-
-            case 4:
-                //pz
-                scroll = 2005
-                break
-
-            case 5:
-                //pg
-                scroll = 2355
-                break
-
-            case 6:
-                //ss
-                scroll = 2695
-                break
-
-            case 7:
-                //sh
-                scroll = 3030
-                break
-
-            case 8:
-                //js
-                scroll = 3375
-                break
-            case 9:
-                //bs
-                scroll = 3710
-                break
-            case 10:
-                scroll = 655
-                break
-        }
-        document.getElementById('gg')?.scrollTo({
-            left: scroll,
-            behavior: 'smooth',
-        })
-        games.forEach((el, idxx) => {
-            if (idxx === idx + 2) {
-                el.active = true
-            } else {
-                el.active = false
-            }
-        })
-        //console.log(document.getElementById('gg').scrollLeft)
-    }
-    const getIdxMinus2 = (idx: number) => {
-        let scroll
-        setIndex(idx)
-        switch (idx) {
-            case 1:
-                scroll = 3710
-                break
-            case 2:
-                scroll = 655
-                break
-
-            case 3:
-                scroll = 995
-                break
-
-            case 4:
-                //pz
-                scroll = 1330
-                break
-
-            case 5:
-                //pg
-                scroll = 1670
-                break
-
-            case 6:
-                //ss
-                scroll = 2005
-                break
-
-            case 7:
-                //sh
-                scroll = 2355
-                break
-
-            case 8:
-                //js
-                scroll = 2695
-                break
-            case 9:
-                //bs
-                scroll = 3030
-                break
-            case 10:
-                scroll = 3375
-                break
-        }
-        document.getElementById('gg')?.scrollTo({
-            left: scroll,
-            behavior: 'smooth',
-        })
-        games.forEach((el, idxx) => {
-            if (idxx === idx) {
-                el.active = true
-            } else {
-                el.active = false
-            }
-        })
-        //console.log(document.getElementById('gg').scrollLeft)
-    }
     const getIdxMinus = (idx: number) => {
         setIndex(idx)
         if (idx === 1) {
@@ -260,13 +140,12 @@ export const SliderM = () => {
             // Swiped left
             slideSwype('right')
         }
-
         if (touchEndX - touchStartX > 5) {
             // Swiped right
             slideSwype('left')
         }
     };
-    return <div id={'games'} className={globals.contentBlock} style={{backgroundColor: '#685BC7', minHeight: '1100px'}}>
+    return <div id={'games'} className={globals.contentBlock} style={{backgroundColor: '#685BC7', minHeight: '800px'}}>
         <div className={compStyles.content}>
             <h1 style={{fontSize: '30px'}} className={compStyles.spaceF}>НАШИ ИГРЫ</h1>
             <div onTouchStart={handleTouchStart}

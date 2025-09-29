@@ -2,11 +2,10 @@ import globals from '../../globals.module.scss'
 import compStyles from './smm.module.scss'
 import Image from "next/image";
 import upp from './hover.png'
-import phone from './call.png'
+import phone from './phone.png'
 import Link from "next/link";
 import React, {useEffect} from "react";
 import tg from "@/widgets/smm/Tg.png";
-import vk from "@/widgets/smm/VK.png";
 import wa from "@/widgets/smm/whatsappp.png";
 
 export const Smm = () => {
@@ -32,7 +31,7 @@ export const Smm = () => {
     return <div className={compStyles.cont}>
         {!up && <Image onClick={scrollUp} src={upp} alt={'smm'} className={compStyles.up}/>}
         <Link href={'tel:7 902 710 02 10'}>
-            <Image src={phone} alt={'smm'} className={compStyles.el}/>
+            <Image src={phone} alt={'smm'} className={compStyles.elphone}/>
         </Link>
         <Link href={'https://t.me/vertigovr'}>
             <Image src={tg} alt={'smm'} className={compStyles.el}/>

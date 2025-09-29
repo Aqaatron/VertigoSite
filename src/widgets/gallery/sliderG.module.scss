@@ -31,8 +31,9 @@
 .close {
   position: absolute;
   cursor: pointer;
-  right:350px;
+  right: 350px;
 }
+
 .burger {
   z-index: 100;
   width: 30px;
@@ -68,6 +69,7 @@
 .burger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
+
 .sliderCont {
   display: flex;
   overflow: scroll;
@@ -211,4 +213,13 @@
 .spaceF {
   @include globals.spaceFont;
   letter-spacing: 2px;
+}
+
+@media(max-width: 1920px) {
+
+  .slider {
+    position: absolute;
+    top: 8%;
+    width: 100vw;
+  }
 }

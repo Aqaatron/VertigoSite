@@ -1,13 +1,15 @@
 import globals from '../../globals.module.scss'
 import compStyles from './sertificate.module.scss'
 import Image from "next/image";
-import pad from '../../../public/orPadClear.png'
+import pad from '../../../public/orPadClean.png'
 import leftImg from './Sertificat.png'
 import pic1 from './icon_1.png'
 import pic2 from './icon_2.png'
 import pic3 from './icon_3.png'
 import slide1 from './Slide1.png'
 import classNames from "classnames";
+import circle from "../../../public/circle.png";
+import React from "react";
 
 export const Sertificate = ({showP}: { showP: Function }) => {
     const show = () => {
@@ -47,5 +49,6 @@ export const Sertificate = ({showP}: { showP: Function }) => {
             </div>
         </div>
         <Image className={compStyles.pad} src={pad} alt={'pad'}/>
+        <Image className={compStyles.circle} src={circle} alt={'logo'}/>
     </div>
 }

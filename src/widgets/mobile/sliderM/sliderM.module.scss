@@ -14,10 +14,9 @@
 }
 
 .content {
-  margin-top: 50px;
+  margin-top: 20px;
   position: absolute;
   z-index: 20;
-  min-height: 500px;
   @include globals.flexColCenter;
 }
 
@@ -25,7 +24,6 @@
   display: flex;
   overflow: scroll;
   width: 400px;
-  //min-height: 700px;
   scrollbar-width: none;
   align-items: center;
   touch-action: none
@@ -181,7 +179,7 @@
 .spaceF {
   @include globals.spaceFont;
   letter-spacing: 2px;
-  margin: 0 0 10px 0;
+  margin: 0;
 }
 
 .gameTitle {
@@ -212,7 +210,6 @@
     display: flex;
     overflow: scroll;
     width: 300px;
-    //min-height: 700px;
     scrollbar-width: none;
     align-items: center;
     touch-action: none
@@ -261,7 +258,6 @@
     margin: 10px;
     transition: 0.3s;
     min-width: 280px;
-    //min-height: 500px;
     overflow: hidden;
     border-radius: 25px;
     border:5px solid transparent;
