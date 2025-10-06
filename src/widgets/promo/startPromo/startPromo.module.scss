@@ -1,0 +1,191 @@
+@use '@/globals.module';
+
+//@font-face {
+//  font-family: 'Space Ranger';
+//  src: url('/Space_Ranger_Rus/spacerangerrus.otf') format('truetype');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+
+.orangeBtn {
+  background-color: #F05018;
+  width: 171px;
+  height: 44px;
+  padding-top: 31.94px;
+  padding-right: 63.89px;
+  padding-bottom: 31.94px;
+  padding-left: 63.89px;
+  border-radius: 10px;
+  border-width: 1px;
+  border: 1px solid;
+  border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(102, 102, 102, 0) 100%);
+}
+
+.header {
+  position: relative;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 300px;
+}
+
+.contentWrapper {
+  margin-top: 120px;
+  //margin-bottom: 100px;
+  width: 1200px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.logoImg {
+  z-index: 1000;
+  margin-right: 80px;
+  //scale: (0.5);
+  width: 260px;
+  height: 30px;
+}
+
+.logoImg2 {
+  position: absolute;
+  z-index: 1000;
+  left: -500px;
+  top: -40px;
+  //margin-right: 80px;
+  //scale: (0.5);
+  width: 680px;
+  height: 200px;
+}
+
+.light {
+  position: absolute;
+  left: 500px;
+  scale: 2;
+}
+
+.line {
+  position: absolute;
+  right: -200px;
+  width: 1600px;
+}
+
+.mainTitle {
+  //height: 86px;
+  width: 1100px;
+  font-size: 60px;
+  font-weight: bold;
+  margin: 30px 0;
+  //font-family: 'Space Ranger', sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.fillerText {
+  width: 900px;
+  font-size: 20px;
+  font-weight: lighter;
+  line-height: 150%;
+  letter-spacing: 3px;
+  vertical-align: middle;
+ //margin: 140px 0 100px 0;
+  text-align: center;
+}
+
+.ancorItem {
+  margin: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.backgroundVideo {
+
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  //transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.videoWrapper {
+  //position: absolute;
+  //top: 80px;
+  //left: 30%;
+  height: 30vh;
+  width: 40vw;
+  overflow: hidden;
+  z-index: -1;
+  margin-bottom: 50px;
+}
+
+//.videoWrapper::after {
+//  content: "";
+//  position: absolute;
+//  scale: (1);
+//  inset: 0;
+//  pointer-events: none;
+//  background: radial-gradient(
+//                  ellipse at center,
+//                  rgba(0, 0, 0, 0) 10%, /* transparent in the middle */
+//
+//                  rgba(20, 25, 28, 1) 75% /* almost black at corners */
+//  );
+//}
+
+
+@media (min-width: 490px) and (max-width: 1920px) {
+  .contentWrapper {
+    width: 1030px;
+    //margin-top: 140px;
+  }
+  .mainTitle {
+
+  }
+  .fillerText {
+    font-weight: lighter;
+  }
+  .line {
+    position: absolute;
+    right: -200px
+  }
+  .light {
+    position: absolute;
+    left: 250px;
+    scale: 2;
+  }
+  .backgroundVideo {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    //transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+
+  .videoWrapper {
+    height: 30vh;
+    width: 40vw;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .videoWrapper::after {
+    content: "";
+    position: absolute;
+    scale: (1);
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+                    ellipse at center,
+                    rgba(0, 0, 0, 0) 10%, /* transparent in the middle */
+                    rgba(20, 25, 28, 1) 75% /* almost black at corners */
+    );
+  }
+}
