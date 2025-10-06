@@ -4,7 +4,7 @@ import globals from "@/globals.module.scss";
 import compStyles from './packages.module.scss'
 import promoStyles from '../promoCommon.module.scss'
 
-export const Packages = ({action}: { action: Function }) => {
+export const Packages = ({action}:{action:any}) => {
 
     return <div className={globals.contentBlock} style={{backgroundColor: "lightgray", color: 'black'}}>
         <h1 className={promoStyles.title}>{texts.promo.packages.title}</h1>

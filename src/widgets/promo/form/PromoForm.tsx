@@ -104,7 +104,7 @@ export const PromoForm = () => {
                 <input onChange={() => setAgreed(!agreed)} type={"checkbox"}/>
                 <div className={compStyles.field}>Я согласен на обработку моих персональных данных</div>
             </div>
-            <div className={globals.gradientBorder} style={{width:'100%'}}>
+            <div className={globals.gradientBorder} style={{width: '100%'}}>
                 <div className={globals.cardContent}> Получить индивидуальный расчет и забронировать</div>
             </div>
         </div>

@@ -14,7 +14,7 @@ import {PromoForm} from "@/widgets/promo/form/PromoForm";
 
 export const pack = React.createContext('start')
 export default function Promo() {
-    const [packagge, setPackagge] = React.useState(undefined)
+    const [packagge, setPackagge] = React.useState('start')
 
     const handlePackagge = (event: any) => {
         setPackagge(event.target.dataset.name)
