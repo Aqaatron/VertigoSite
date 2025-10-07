@@ -1,6 +1,5 @@
 import globals from '../../../globals.module.scss'
-//import compStyles from './startPromo.module.scss'
-
+import promoStyles from '../promoCommon.module.scss'
 import Image from "next/image";
 import React, {useEffect} from "react";
 import {texts} from "@/texts";
@@ -41,8 +40,8 @@ export const StartViewPromo = () => {
             </video>
         </div>
         <div style={{display: 'flex', justifyContent: 'start'}}>
-            <div className={globals.gradientBorder}>
-                <div className={globals.cardContent}>{texts.promo.start.btn}</div>
+            <div className={promoStyles.gradientBorder}>
+                <div className={promoStyles.cardContent}>{texts.promo.start.btn}</div>
             </div>
         </div>
 

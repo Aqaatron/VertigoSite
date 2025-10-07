@@ -31,11 +31,9 @@ export const People = () => {
                 <div className={compStyles.cardText}>{texts.promo.people.p3subtitle}</div>
                 <div className={compStyles.cardText}>{texts.promo.people.p3text}</div>
             </div>
-
-
         </div>
-        <div className={globals.gradientBorder}>
-            <div className={globals.cardContent}>{texts.promo.people.btn}</div>
+        <div className={promoStyles.gradientBorder}>
+            <div className={promoStyles.cardContent}>{texts.promo.people.btn}</div>
         </div>
     </div>
 }

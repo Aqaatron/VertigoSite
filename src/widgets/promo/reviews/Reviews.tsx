@@ -2,12 +2,15 @@ import globals from "@/globals.module.scss";
 import compStyles from './reviews.module.scss'
 import {texts} from "@/texts";
 import React from "react";
+import promoStyles from '../promoCommon.module.scss'
+import Image from "next/image";
+import uruyk from './uryuk.jpg'
 
 export const Reviews = () => {
 
-    return <div className={globals.contentBlock}>
-        <h1 className={compStyles.title}>{texts.promo.reviews.title}</h1>
-        <h2 className={compStyles.subtitle}>{texts.promo.reviews.subtitle}</h2>
+    return <div className={globals.contentBlock} style={{backgroundColor: 'lightgray'}}>
+        <h1 className={promoStyles.title}>{texts.promo.reviews.title}</h1>
+        <h2 className={promoStyles.subtitle}>{texts.promo.reviews.subtitle}</h2>
         <div className={compStyles.videoWrapper}>
             <video
                 autoPlay
@@ -20,7 +23,7 @@ export const Reviews = () => {
                 Your browser does not support the video tag.
             </video>
         </div>
-        <div className={compStyles.cardsWrapper}>
+        <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
                 <h3 className={compStyles.cardTitle}>{texts.promo.reviews.sub1}</h3>
                 <div className={compStyles.cardText}>{texts.promo.reviews.subText1}</div>
@@ -38,8 +41,26 @@ export const Reviews = () => {
                 <div className={compStyles.cardText}>{texts.promo.reviews.subText4}</div>
             </div>
         </div>
-        <div className={globals.gradientBorder}>
-            <div className={globals.cardContent}>{texts.promo.reviews.btn}</div>
+        <div className={compStyles.blocks}>
+            <div className={compStyles.blocksEl}><span className={compStyles.blockTitle
+            }>1238+</span> <p/> счастливых отзывов на Яндекс.Картах
+            </div>
+            <div className={compStyles.blocksEl}><span className={compStyles.blockTitle
+            }>5.0 / 5 </span>  <p/> средний рейтинг
+            </div>
+            <div className={compStyles.blocksEl}><span className={compStyles.blockTitle
+            }>7 лет</span> <p/> успешной работы в сфере VR
+            </div>
+        </div>
+        <h3 style={{color: '#555555', fontSize: '26px'}}>Нам доверяют партнеры по доставке еды:</h3>
+        <div className={compStyles.blocks} style={{width: '500px', marginBottom: '60px'}}>
+            <Image src={uruyk} alt={'uruyk'} className={compStyles.pLogo}/>
+            <Image src={uruyk} alt={'uruyk'} className={compStyles.pLogo}/>
+            <Image src={uruyk} alt={'uruyk'} className={compStyles.pLogo}/>
+        </div>
+
+        <div className={promoStyles.gradientBorder}>
+            <div className={promoStyles.cardContent}>{texts.promo.reviews.btn}</div>
         </div>
     </div>
 }

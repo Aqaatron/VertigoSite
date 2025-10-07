@@ -4,8 +4,7 @@ import globals from "@/globals.module.scss";
 import compStyles from './packages.module.scss'
 import promoStyles from '../promoCommon.module.scss'
 
-export const Packages = ({action}:{action:any}) => {
-
+export const Packages = ({action}: { action: any }) => {
     return <div className={globals.contentBlock} style={{backgroundColor: "lightgray", color: 'black'}}>
         <h1 className={promoStyles.title}>{texts.promo.packages.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.packages.subtitle}</h2>
@@ -34,7 +33,11 @@ export const Packages = ({action}:{action:any}) => {
                     <div className={globals.cardContent} data-name={'vip'} onClick={action}>Выбрать пакет</div>
                 </div>
             </div>
-        </div>
 
+        </div>
+        <h3 style={{fontWeight: 'lighter', fontSize: '18px'}}>{texts.promo.packages.preBtn}</h3>
+        <div className={promoStyles.gradientBorder}>
+            <div className={promoStyles.cardContent}>{texts.promo.packages.btn}</div>
+        </div>
     </div>
 }

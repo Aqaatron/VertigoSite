@@ -23,33 +23,40 @@
 }
 
 .card {
-  width: 520px;
-  min-height: 400px;
-  margin: 0 0 30px 0;
-  padding: 30px;
+  width: 560px;
+  min-height: 250px;
+  margin: 0 0 10px 0;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e0e0e0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
+  justify-content: center;
+  border-left: 6px solid #666666;
+  background-color: white;
+  color: #333333;
 }
 
 .cardTitle {
-  font-weight: bold;
+  font-weight: lighter;
+  font-style: italic;
   margin-top: 0;
   margin-bottom: 5px;
-  font-size: 24px;
+  margin-left: 30px;
+  font-size: 16px;
   line-height: 1.4;
   width: 450px;
-  text-align: center;
+  text-align: start;
 }
 
 .cardText {
   margin-top: 20px;
-  font-weight: lighter;
+  font-weight: normal;
   font-size: 16px;
   line-height: 1.6;
+  align-self: end;
+  margin-right: 30px;
 }
 
 .backgroundVideo {
@@ -67,16 +74,47 @@
   //position: absolute;
   //top: 80px;
   //left: 30%;
-  height: 30vh;
-  width: 40vw;
+  height: 450px;
+  width: 1200px;
   overflow: hidden;
   z-index: -1;
   margin-bottom: 50px;
 }
 
+
+.blocks {
+  display: flex;
+  align-items: center;
+  width: 1100px;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.blockTitle{
+  font-size: 40px;
+  font-weight: bold;
+}
+.blocksEl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 200px;
+  min-height: 120px;
+  background-color: #333333;
+  color: white;
+  padding: 25px 35px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pLogo {
+  width: 100px;
+  height: 80px;
+}
+
 @media (min-width: 490px) and (max-width: 1920px) {
   .cardsWrapper {
-    width: 80vw;
+    width: 1200px;
     display: flex;
     flex-wrap: wrap;
   }

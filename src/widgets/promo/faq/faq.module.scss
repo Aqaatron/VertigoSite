@@ -134,7 +134,7 @@
 
 
 .spaceF {
-  @include globals.spaceFont;
+  //@include globals.spaceFont;
   letter-spacing: 3px;
   line-height: 200%;
 }

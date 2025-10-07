@@ -2,12 +2,13 @@ import {texts} from "@/texts";
 import React from "react";
 import globals from "@/globals.module.scss";
 import compStyles from './merits.module.scss'
+import promoStyles from '../promoCommon.module.scss'
 
 export const Merits = () => {
 
-    return <div className={globals.contentBlock} style={{backgroundColor:"#685BC7"}}>
-        <h1 className={compStyles.title}>{texts.promo.merits.title}</h1>
-        <div className={compStyles.cardsWrapper}>
+    return <div className={globals.contentBlock} style={{backgroundColor: "#685BC7"}}>
+        <h1 className={promoStyles.title}>{texts.promo.merits.title}</h1>
+        <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
                 <h3 className={compStyles.cardTitle}>{texts.promo.merits.sub1}</h3>
                 <div className={compStyles.cardText}>{texts.promo.merits.subText1}</div>
@@ -25,6 +26,5 @@ export const Merits = () => {
                 <div className={compStyles.cardText}>{texts.promo.merits.subText4}</div>
             </div>
         </div>
-
     </div>
 }

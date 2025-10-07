@@ -6,9 +6,9 @@ import promoStyles from '../promoCommon.module.scss'
 
 export const Special = () => {
 
-    return <div className={globals.contentBlock} style={{backgroundColor: "#"}}>
-        <h1 className={compStyles.title}>{texts.promo.special.title}</h1>
-        <h2 className={compStyles.subtitle}>{texts.promo.special.subtitle}</h2>
+    return <div className={globals.contentBlock}>
+        <h1 className={promoStyles.title}>{texts.promo.special.title}</h1>
+        <h2 className={promoStyles.subtitle}>{texts.promo.special.subtitle}</h2>
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
                 <h3 className={compStyles.cardTitle}>{texts.promo.special.sub1}</h3>
@@ -32,7 +32,7 @@ export const Special = () => {
             </div>
         </div>
         <div className={globals.gradientBorder}>
-            <div className={globals.cardContent}>{texts.promo.flow.btn}</div>
+            <div className={globals.cardContent}>{texts.promo.special.btn}</div>
         </div>
     </div>
 }

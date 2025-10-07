@@ -9,7 +9,7 @@ import {Reviews} from "@/widgets/promo/reviews/Reviews";
 import {Faq} from "@/widgets/promo/faq/Faq";
 import {Adults} from "@/widgets/promo/adults/Adults";
 import {Packages} from "@/widgets/promo/packages/Packages";
-import React, {useContext} from "react";
+import React from "react";
 import {PromoForm} from "@/widgets/promo/form/PromoForm";
 
 export const pack = React.createContext('start')

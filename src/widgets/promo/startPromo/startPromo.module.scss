@@ -104,10 +104,8 @@
 
 .backgroundVideo {
 
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  height: 450px;
+  width: 1200px;
   z-index: -1;
   //transform: translate(-50%, -50%);
   object-fit: cover;
@@ -117,8 +115,8 @@
   //position: absolute;
   //top: 80px;
   //left: 30%;
-  height: 30vh;
-  width: 40vw;
+  height: 450px;
+  width: 1200px;
   overflow: hidden;
   z-index: -1;
   margin-bottom: 50px;
@@ -160,18 +158,16 @@
     scale: 2;
   }
   .backgroundVideo {
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    height: 450px;
+    width: 1200px;
     z-index: -1;
     //transform: translate(-50%, -50%);
     object-fit: cover;
   }
 
   .videoWrapper {
-    height: 30vh;
-    width: 40vw;
+    height: 450px;
+    width: 1200px;
     overflow: hidden;
     z-index: -1;
   }

@@ -107,7 +107,10 @@ export const PromoForm = () => {
             <div className={globals.gradientBorder} style={{width: '100%'}}>
                 <div className={globals.cardContent}> Получить индивидуальный расчет и забронировать</div>
             </div>
+
+
         </div>
+        <h3 style={{fontSize:'18px',fontWeight:'lighter'}}>Предпочитаете общаться голосом? <span style={{textDecoration:'underline'}}>Позвоните нам по номеру 8 902 710 02 10!</span></h3>
         {sended && <div className={compStyles.done}>
             <h1>СПАСИБО!</h1>
             <div> Мы скоро свяжемся с Вами</div>

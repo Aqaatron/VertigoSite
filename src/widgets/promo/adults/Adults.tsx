@@ -7,9 +7,8 @@ import promoStyles from '../promoCommon.module.scss'
 
 export const Adults = () => {
     return <div className={globals.contentBlock}>
-        <h1 className={compStyles.title}>{texts.promo.adults.title}</h1>
-        <h2 className={compStyles.subtitle}>{texts.promo.adults.subtitle}</h2>
-
+        <h1 className={promoStyles.title}>{texts.promo.adults.title}</h1>
+        <h2 className={promoStyles.subtitle}>{texts.promo.adults.subtitle}</h2>
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
                 <h3 className={compStyles.cardTitle}>{texts.promo.adults.sub1}</h3>
@@ -21,8 +20,8 @@ export const Adults = () => {
             </div>
 
         </div>
-        <div className={globals.gradientBorder}>
-            <div className={globals.cardContent}>{texts.promo.adults.btn}</div>
+        <div className={promoStyles.gradientBorder}>
+            <div className={promoStyles.cardContent}>{texts.promo.adults.btn}</div>
         </div>
     </div>
 }
