@@ -3,7 +3,7 @@ import compStyles from './promoForm.module.scss'
 import promoStyles from '../promoCommon.module.scss'
 import {texts} from "@/texts";
 import React, {useEffect} from "react";
-import {pack} from "@/pages/promo";
+import {pack} from "@/pages/birthday";
 
 export const PromoForm = () => {
     const packk = React.useContext(pack)
@@ -17,7 +17,7 @@ export const PromoForm = () => {
     const [sended, setSended] = React.useState(false)
     const [isMobile, setIsMobile] = React.useState(false)
     const [phoneVal, setPhoneVal] = React.useState('compStyles.valFail')
-
+    const [date, setDate] = React.useState(undefined)
     React.useEffect(() => {
         if (name && phone && phone.length === 11 && agreed) {
             setCanSend(true)
@@ -45,7 +45,7 @@ export const PromoForm = () => {
         }
     }
     const sendMessage = async () => {
-        const body = ` ФИО - ${name}\n Тел - ${phone}\n Комментарий - ${comment}`
+        const body = ` ФИО - ${name}\n Тел - ${phone}\n Комментарий - ${comment}+ n\ Дата - ${date}`
 
         if (canSend) {
             //ym(104030838, 'reachGoal', 'fos');
@@ -68,7 +68,7 @@ export const PromoForm = () => {
                     {
                         "name": name,
                         "phone": phone,
-                        "comment": comment
+                        "comment": comment + '\n Дата из формы: ' + date
                     })
             })
             setSended(true)
@@ -82,7 +82,10 @@ export const PromoForm = () => {
             setPhoneVal('valOk')
         }
     }, [phone]);
-
+    console.log(date)
+    const handleDate = (event: any) => {
+        setDate(event.target.value)
+    }
     return <div className={globals.contentBlock} style={{backgroundColor: '#333333'}}>
         <h1 className={promoStyles.title}>{texts.promo.form.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.form.subtitle}</h2>
@@ -93,7 +96,8 @@ export const PromoForm = () => {
             <div className={compStyles.field}>Номер телефона:</div>
             <input data-name={'phone'} className={compStyles.inp} placeholder={'+7 (ХХХ) ХХХ ХХ ХХ'}/>
             <div className={compStyles.field}>Желаемая дата праздника:</div>
-            <input data-name={'date'} className={compStyles.inp} type={"date"} placeholder={'Иван Иванов'}/>
+            <input data-name={'date'} onChange={handleDate} className={compStyles.inp} type={"date"}
+                   />
             <div className={compStyles.field}>Количество человек (детей и взрослых):</div>
             <input data-name={'peopleCount'} className={compStyles.inp}
                    placeholder={'Например: 4 взрослых и 10 детей'}/>
@@ -104,13 +108,16 @@ export const PromoForm = () => {
                 <input onChange={() => setAgreed(!agreed)} type={"checkbox"}/>
                 <div className={compStyles.field}>Я согласен на обработку моих персональных данных</div>
             </div>
-            <div className={globals.gradientBorder} style={{width: '100%'}}>
-                <div className={globals.cardContent}> Получить индивидуальный расчет и забронировать</div>
+            <div className={promoStyles.gradientBorder} style={{width: '100%'}}>
+                <div className={promoStyles.cardContent} onClick={sendMessage}> Получить индивидуальный расчет и
+                    забронировать
+                </div>
             </div>
 
 
         </div>
-        <h3 style={{fontSize:'18px',fontWeight:'lighter'}}>Предпочитаете общаться голосом? <span style={{textDecoration:'underline'}}>Позвоните нам по номеру 8 902 710 02 10!</span></h3>
+        <h3 style={{fontSize: '18px', fontWeight: 'lighter'}}>Предпочитаете общаться голосом? <span
+            style={{textDecoration: 'underline'}}>Позвоните нам по номеру 8 902 710 02 10!</span></h3>
         {sended && <div className={compStyles.done}>
             <h1>СПАСИБО!</h1>
             <div> Мы скоро свяжемся с Вами</div>

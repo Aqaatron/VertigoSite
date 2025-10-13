@@ -12,7 +12,7 @@ export const PopUpForm = () => {
     const [comment, setComment] = React.useState('')
     const [argeed, setAgreed] = React.useState(false)
 
-    const handleInput = (event:any) => {
+    const handleInput = (event: any) => {
         console.log(event.target.dataset.name)
         console.log(event.target.value)
         switch (event.target.dataset.name) {
@@ -88,11 +88,11 @@ export const PopUpForm = () => {
                         <div className={compStyles.cardContent} onClick={sendMessage}> СВЯЖИТЕСЬ СО МНОЙ</div>
                     </div>
                 </div>
-                <div className={compStyles.formText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.
-                </div>
+                {/*<div className={compStyles.formText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do*/}
+                {/*    eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur*/}
+                {/*    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod*/}
+                {/*    tempor incididunt ut labore et dolore magna aliqua.*/}
+                {/*</div>*/}
             </div>
         </div>
 

@@ -45,39 +45,8 @@ export const Footer = () => {
                     }}>
                         8 902 710 02 10
                     </Link>
-
-{/*                    <div*/}
-{/*                        id="mapContainer"*/}
-{/*                        style={{width: "500px", height: "400px", border: "1px solid #a3a3a3", marginLeft: "50px"}}*/}
-{/*                    >*/}
-{/*                        <iframe*/}
-{/*                            title="2GIS Map"*/}
-{/*                            srcDoc={`*/}
-{/*      <html>*/}
-{/*        <head>*/}
-{/*          <script src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>*/}
-{/*        </head>*/}
-{/*        <body style="margin:0; padding:0;">*/}
-{/*<!--          <div id="map" style="width:100%; height:100%;"></div>-->*/}
-{/*          <script>*/}
-{/*            new DGWidgetLoader({*/}
-{/*              container: "map",*/}
-{/*              width: "500px",*/}
-{/*              height: "400px",*/}
-{/*              borderColor: "#a3a3a3",*/}
-{/*              pos: { lat: 51.531367, lon: 46.02742, zoom: 16 },*/}
-{/*              opt: { city: "saratov" },*/}
-{/*              org: [{ id: "70000001103326442" }]*/}
-{/*            });*/}
-{/*          </script>*/}
-{/*        </body>*/}
-{/*      </html>*/}
-{/*    `}*/}
-{/*                            width="500px"*/}
-{/*                            height="400px"*/}
-{/*                            style={{border: "none"}}*/}
-{/*                        />*/}
-{/*                    </div>*/}
+                    <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=103489904717" width="560" height="400"
+                            frameBorder="0"></iframe>
                 </div>
             </div>
         </div>

@@ -16,10 +16,11 @@
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e0e0e0;
+  //border: 0px solid #e0e0e0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #F05018;
 }
 
 .cardTitle {
@@ -44,7 +45,9 @@
 .video {
   min-height: 300px;
   min-width: 500px;
-  border: 1px solid white;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 20px 0;
 }
 
 @media (min-width: 490px) and (max-width: 1920px) {
@@ -53,4 +56,55 @@
     display: flex;
     flex-wrap: wrap;
   }
+}
+
+@media (max-width: 490px) {
+  .cardsWrapper {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .card {
+    width: 300px;
+    min-height: 650px;
+    margin: 0 0 30px 0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 0 solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F05018;
+  }
+
+  .cardTitle {
+    font-weight: bold;
+    margin: 20px 0;
+    font-size: 24px;
+    line-height: 1.4;
+    width: 100%;
+    text-align: center;
+    min-height: 30px;
+  }
+
+  .cardText {
+    margin-top: 20px;
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 105px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .video {
+    min-height: 200px;
+    min-width: 320px;
+    border: 1px solid white;
+  }
+
 }

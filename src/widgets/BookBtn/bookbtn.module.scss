@@ -1,0 +1,60 @@
+@use "@/globals.module";
+
+.btn {
+  position: fixed;
+  bottom: -70px;
+  right: -20px;
+  z-index: 200;
+}
+
+.gradientBorder {
+  padding: 2px; /* border width */
+  border-radius: 16px;
+  background: linear-gradient(to bottom, white, black);
+  display: inline-block;
+  width: fit-content;
+  margin: 0 30px 100px 0;
+  cursor: pointer;
+}
+
+.cardContent {
+  background: #F05018;
+  border-radius: 14px; /* slightly smaller than outer for visible border */
+  padding: 20px 50px;
+  width: fit-content;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+  font-family: 'Space Ranger', sans-serif;
+}
+
+@media (max-width: 490px) {
+  .btn {
+    position: fixed;
+    align-self: center;
+    bottom: -80px;
+    left: 20%;
+    z-index: 200;
+  }
+
+  .gradientBorder {
+    padding: 2px; /* border width */
+    border-radius: 16px;
+    background: linear-gradient(to bottom, white, black);
+    display: inline-block;
+    width: fit-content;
+    margin: 0 30px 100px 0;
+    cursor: pointer;
+  }
+
+  .cardContent {
+    background: #F05018;
+    border-radius: 14px; /* slightly smaller than outer for visible border */
+    padding: 10px 20px;
+    width: fit-content;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    font-family: 'Space Ranger', sans-serif;
+  }
+}

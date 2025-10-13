@@ -4,22 +4,27 @@ import Image from "next/image";
 import React, {useEffect} from "react";
 import {texts} from "@/texts";
 import compStyles from '@/widgets/promo/startPromo/startPromo.module.scss'
+import {anchorTo} from "@/helpers/helpers";
+import logo from "@/widgets/start/logo.png";
+import vertigo from "@/widgets/mobile/header/logo.png";
 
 export const StartViewPromo = () => {
     const [isMobile, setIsMobile] = React.useState(false)
     useEffect(() => {
-        window.innerWidth > 480 ? setIsMobile(false) : setIsMobile(true)
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobile = /iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
+        setIsMobile(mobile);
     }, []);
-    const anchorTo = (event: any) => {
-        const name = event.target.dataset.name
-        const doc = document.getElementById(name)
-        if (doc) {
-            const yy = doc.offsetTop
-            window.scrollTo({top: yy, behavior: 'smooth'})
-        }
+
+    const slideTo = () => {
+        anchorTo('form')
     }
 
-    return <div className={globals.contentBlock}>
+    return <div className={promoStyles.contentBlock}>
+        {!isMobile && <Image className={compStyles.logoImg2} src={logo} alt={'logo'}/> ||
+            <div id={'main'} className={compStyles.header}>
+                <Image className={compStyles.logoImg} src={vertigo} alt={'logo'}/>
+            </div>}
         <div className={compStyles.contentWrapper}>
             <div className={compStyles.mainTitle}>{texts.promo.start.header}
             </div>
@@ -40,7 +45,7 @@ export const StartViewPromo = () => {
             </video>
         </div>
         <div style={{display: 'flex', justifyContent: 'start'}}>
-            <div className={promoStyles.gradientBorder}>
+            <div className={promoStyles.gradientBorder} onClick={slideTo}>
                 <div className={promoStyles.cardContent}>{texts.promo.start.btn}</div>
             </div>
         </div>

@@ -1,23 +1,7 @@
 import globals from '../../../globals.module.scss'
 import compStyles from './burger.module.scss'
-//
-// export const BurgerMenu = () => {
-//     const open = () => {
-//         const burger = document.getElementById('burger');
-//         burger.addEventListener('click', () => {
-//             burger.classList.toggle('open');
-//         });
-//     }
-//     return <div className={compStyles.burgerMenu}>
-//         <div className={compStyles.burger} id="burger" onClick={open}>
-//             <span></span>
-//             <span></span>
-//             <span></span>
-//         </div>
-//     </div>
-// }
 import React, {useState} from "react";
-import vertigo from "../../../../public/vertigo.png";
+import vertigo from "@/widgets/mobile/header/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import tg from "@/widgets/smm/Tg.png";
@@ -25,12 +9,15 @@ import vk from "@/widgets/smm/VK.png";
 import wa from "@/widgets/smm/whatsappp.png";
 import insta from "@/widgets/smm/insta.png";
 
-export const BurgerMenu = () => {
+export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
     const [open, setOpen] = useState(false);
     React.useEffect(() => {
+
         if (open) {
+            smmToggle(true)
             document.body.style.overflow = 'hidden';
         } else {
+            smmToggle(false)
             document.body.style.overflow = 'auto';
         }
         return () => {
@@ -46,9 +33,6 @@ export const BurgerMenu = () => {
             window.scrollTo({top: yy, behavior: 'smooth'})
         }
         setOpen(false)
-    }
-    const toggleBurger = () => {
-        setOpen(!open)
 
     }
     return (
@@ -83,7 +67,9 @@ export const BurgerMenu = () => {
             <div className={open ? compStyles.overLopened : compStyles.overLclosed}>
                 <Image className={compStyles.logoImg} src={vertigo} alt={'logo'}/>
                 {/*<Image className={compStyles.light} src={light} alt={'logo'}/>*/}
-                <div onClick={anchorTo} data-name={'main'} className={compStyles.ancorItem}>Главная</div>
+                <div onClick={anchorTo} data-name={'main'} className={compStyles.ancorItem}
+                     style={{marginTop: '100px'}}>Главная
+                </div>
                 <div onClick={anchorTo} data-name={'events'} className={compStyles.ancorItem}>Мероприятия</div>
                 <div onClick={anchorTo} data-name={'gallery'} className={compStyles.ancorItem}>Галерея</div>
                 <div onClick={anchorTo} data-name={'games'} className={compStyles.ancorItem}>Игры</div>

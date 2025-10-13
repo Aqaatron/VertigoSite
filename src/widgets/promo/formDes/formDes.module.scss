@@ -1,0 +1,276 @@
+@use '../../../globals.module';
+
+.pad {
+  position: absolute;
+  z-index: 10;
+  height: 1050px;
+}
+
+.padPopUp {
+  position: absolute;
+  z-index: 10;
+  top: 380px;
+}
+
+.logoImg {
+  width: 80%;
+  height: 80%;
+}
+
+.contt {
+  display: flex;
+  width: 500px;
+  margin: 5px 0;
+  align-items: center;
+}
+
+.baggyMargin {
+  margin-top: 350px;
+}
+
+.content {
+  margin-top: 50px;
+  @include globals.flexColCenter;
+  min-height: 856px;
+  min-width: 1126px;
+  z-index: 30;
+  font-family: 'Jura', sans-serif;
+}
+
+.invertLine {
+  transform: rotate(180deg);
+}
+
+.formText {
+  height: 426px;
+  opacity: 0.59;
+  font-weight: lighter;
+  font-size: 30px;
+  line-height: 120%;
+  width: 533px;
+  margin-top: 60px;
+  font-family: 'Jura', sans-serif;
+
+}
+
+.formInp {
+  width: 500px;
+  height: 30px;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  vertical-align: middle;
+  font-family: 'Jura', sans-serif;
+}
+
+.formInpTall {
+  width: 500px;
+  height: 80px;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  vertical-align: middle;
+  font-family: 'Jura', sans-serif;
+
+}
+
+.cardContent {
+  background: #F05018;
+  border-radius: 14px; /* slightly smaller than outer for visible border */
+  padding: 5px 50px;
+  width: 410px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 26px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  @include globals.spaceFont
+
+}
+
+
+.gradientBorder {
+  padding: 2px; /* border width */
+  border-radius: 16px;
+  background: linear-gradient(to bottom, white, black);
+  display: inline-block;
+
+  margin: 30px 0 100px 0;
+  cursor: pointer;
+}
+
+.formPad {
+  background: linear-gradient(90deg, #201E1F -7.42%, #071B26 99.93%);
+  margin: 80px 0;
+  border-radius: 20px;
+}
+
+.inp {
+  width: 95%;
+  height: 30px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: lighter;
+  letter-spacing: 0.05em;
+  padding: 10px;
+}
+
+.aftbtn {
+  margin-bottom: 40px;
+  font-weight: lighter;
+  font-size: 18px;
+}
+
+@media (max-width: 490px) {
+
+  .pad {
+    position: absolute;
+    z-index: 10;
+    //height: 1050px;
+  }
+
+  .padPopUp {
+    position: absolute;
+    z-index: 10;
+    top: 380px;
+  }
+  .contt {
+    width: 95%;
+    margin:0;
+  }
+  .logoImg {
+    width: 80%;
+    height: 80%;
+  }
+
+  .content {
+    margin-top: 50px;
+    @include globals.flexColCenter;
+    min-height: 400px;
+    min-width: 200px;
+    z-index: 30;
+    font-family: 'Jura', sans-serif;
+  }
+
+  .invertLine {
+    transform: rotate(180deg);
+    width: 100%;
+  }
+
+  .formText {
+    height: 426px;
+    opacity: 0.59;
+    font-weight: lighter;
+    font-size: 30px;
+    line-height: 120%;
+    width: 300px;
+    margin-top: 60px;
+    font-family: 'Jura', sans-serif;
+  }
+
+  .formInp {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    vertical-align: middle;
+    font-family: 'Jura', sans-serif;
+  }
+
+  .formInpTall {
+    width: 90%;
+    height: 60px;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    vertical-align: middle;
+    font-family: 'Jura', sans-serif;
+
+  }
+  .personal {
+    width: 300px;
+    font-size: 13px;
+  }
+  .cardContent {
+    background: #F05018;
+    border-radius: 14px; /* slightly smaller than outer for visible border */
+    padding: 5px 50px;
+    width: 300px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    @include globals.spaceFont
+
+  }
+
+  .gradientBorder {
+    padding: 2px; /* border width */
+    border-radius: 16px;
+    background: linear-gradient(to bottom, white, black);
+    display: inline-block;
+    margin: 30px 0 30px 0;
+    cursor: pointer;
+  }
+
+  .formPad {
+    background: linear-gradient(90deg, #201E1F -7.42%, #071B26 99.93%);
+    margin: 0;
+    border-radius: 20px;
+  }
+  .line {
+    width: 100%;
+  }
+  .inp {
+    width: 90%;
+    height: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: lighter;
+    letter-spacing: 0.05em;
+    padding: 10px;
+    -webkit-appearance: none;
+    background-color: white;
+    --before-color: gray
+
+  }
+  .inp:before {
+    content: 'Желаемая дата праздника';
+    width: 300px;
+    position: absolute;
+    color: var(--before-color);
+    font-weight: lighter;
+    font-family: 'Jura', sans-serif;
+    -webkit-appearance: none;
+  }
+  .aftbtn {
+    width: 90%;
+    text-align: center;
+  }
+  .baggyMargin {
+    margin-top: 0;
+  }
+}

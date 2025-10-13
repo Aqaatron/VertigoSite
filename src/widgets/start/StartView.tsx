@@ -9,6 +9,7 @@ import React, {useEffect} from "react";
 import {PopUpForm} from "@/widgets/form/popUpForm";
 import {PopUpGlobal} from "@/widgets/popup/PopupGLobal";
 import {texts} from "@/texts";
+import promoStyles from "@/widgets/promo/promoCommon.module.scss";
 
 export const StartView = ({showP}: { showP: Function }) => {
     const [isMobile, setIsMobile] = React.useState(false)
@@ -60,8 +61,8 @@ export const StartView = ({showP}: { showP: Function }) => {
             <div className={compStyles.fillerText}>{texts.start.main}
             </div>
             <div style={{display: 'flex', justifyContent: 'start'}}>
-                <div className={compStyles.gradientBorder}>
-                    <div className={compStyles.cardContent} onClick={show}>Связаться со мной</div>
+                <div className={promoStyles.gradientBorder}>
+                    <div className={promoStyles.cardContent} onClick={show}>Связаться со мной</div>
                 </div>
                 {/*<div className={compStyles.gradientBorder}>*/}
                 {/*    <div className={compStyles.cardContent} style={{backgroundColor: 'black'}}></div>*/}
