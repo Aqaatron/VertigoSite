@@ -6,7 +6,10 @@ export interface CounterState {
     chat: Object,
     roles: number[],
     premium: Boolean,
-    balance: number
+    balance: number,
+    pic: string,
+    scroll: number,
+    showGal: Boolean
 }
 
 const initialState: CounterState = {
@@ -14,7 +17,10 @@ const initialState: CounterState = {
     chat: {dialogId: '', avatar: ''},
     roles: [],
     premium: false,
-    balance: 0
+    balance: 0,
+    scroll: 0,
+    pic: 'pic1',
+    showGal: false
 }
 
 export const counterSlice = createSlice({
@@ -35,11 +41,29 @@ export const counterSlice = createSlice({
         },
         setBalance: (state, action: PayloadAction<number>) => {
             state.balance = action.payload
+        },
+        setScroll: (state, action: PayloadAction<number>) => {
+            state.scroll = action.payload
+        },
+        setPic: (state, action: PayloadAction<string>) => {
+            state.pic = action.payload
+        },
+        setShowGal: (state, action: PayloadAction<boolean>) => {
+            state.showGal = action.payload
         }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const {setAuthed, setChat, setRoles, setPremium, setBalance} = counterSlice.actions
+export const {
+    setAuthed,
+    setChat,
+    setRoles,
+    setPremium,
+    setBalance,
+    setPic,
+    setScroll,
+    setShowGal
+} = counterSlice.actions
 
 export default counterSlice.reducer

@@ -21,6 +21,10 @@ import {MyFormDes} from "@/widgets/promo/formDes/MyFormDes";
 import {MyFormM} from "@/widgets/mobile/formM/MyFormM";
 import {FaqMtwo} from "@/widgets/promo/faqMtwo/FaqMtwo";
 import {texts} from "@/texts";
+import {SingleGallery} from "@/widgets/promo/SingleGallery/SingleGallery";
+import {Gallery} from "@/widgets/promo/SingleGallery/Gallery";
+import {useSelector} from "react-redux";
+import {RootState} from "@/store/store";
 
 export const pack = React.createContext('start')
 export default function Birthday() {
@@ -45,14 +49,15 @@ export default function Birthday() {
         setPackagge(event.target.dataset.name)
         //console.log(event.target.dataset.name)
     }
-    const handleSmm = (val:any) => {
+    const handleSmm = (val: any) => {
         setHidesmm(val)
     }
-
+    const showGal = useSelector((state: RootState) => state.counter.showGal)
     return <div>
         <pack.Provider value={packagge}>
             {!hideSmm && <SmmPromo/>}
             <BookBtn/>
+            {showGal && <SingleGallery/>}
             {(isMobile && !show) && <BurgerMenu smmToggle={handleSmm}/>}
             <StartViewPromo/>
             <Merits/>
@@ -63,6 +68,7 @@ export default function Birthday() {
             <Special/>
             <Packages action={handlePackagge}/>
             <Adults/>
+            {/*<Gallery/>*/}
             {isMobile && <FaqMtwo/> || <Faq questions={texts.promo.faq} isPromo={true} showP={() => {
             }}/>}
             {/*<PromoForm/>*/}

@@ -45,17 +45,14 @@ export const PopUpFormDes = () => {
         try {
             const res = await fetch(`https://api.telegram.org/bot8486915093:AAE9-gQFLsKbydaA-dZPn-O4OWu-pMKc8AA/getUpdates`);
             const data = await res.json();
-
             if (!data.ok) {
                 console.error("Error:", data);
                 return;
             }
-
             if (data.result.length === 0) {
                 console.log("No messages found. Send a message to your bot first!");
                 return;
             }
-
             // Берём chat.id последнего сообщения
             const chatId = data.result[data.result.length - 1].message.chat.id;
             //console.log("Your chat ID is:", chatId);

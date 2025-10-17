@@ -9,7 +9,7 @@ import line from '../../../../public/lineHeader.png'
 import classNames from "classnames";
 
 export const Packages = ({action}: { action: any }) => {
-    const slideTo = (event:any) => {
+    const slideTo = (event: any) => {
         anchorTo('form')
         action(event)
     }

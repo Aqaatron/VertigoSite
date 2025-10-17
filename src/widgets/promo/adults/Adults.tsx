@@ -6,17 +6,25 @@ import promoStyles from '../promoCommon.module.scss'
 import {anchorTo} from "@/helpers/helpers";
 import Image from "next/image";
 import pic from '../../../../public/gallery/pic2.png'
+import {setPic, setScroll, setShowGal} from "@/store/slices/slice";
+import {useDispatch} from "react-redux";
 
 export const Adults = () => {
+    const dispatch=useDispatch()
     const slideTo = () => {
         anchorTo('form')
+    }
+    const envocePic = (event: any) => {
+        dispatch(setScroll(window.scrollY + 50))
+        dispatch(setShowGal(true))
+        dispatch(setPic(event.target.dataset.name))
     }
     return <div className={promoStyles.contentBlock}>
         <h1 className={promoStyles.title}>{texts.promo.adults.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.adults.subtitle}</h2>
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
-                <Image src={pic} alt={'pic'} className={compStyles.video}/>
+                <Image data-name={'pic3'} onClick={envocePic} src={pic} alt={'pic'} className={compStyles.video}/>
                 <h3 className={compStyles.cardTitle}>{texts.promo.adults.sub1}</h3>
                 <div className={compStyles.cardText}>{texts.promo.adults.subText1}</div>
             </div>
