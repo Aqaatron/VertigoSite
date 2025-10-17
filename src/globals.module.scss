@@ -48,6 +48,25 @@ $theme-font-color: #F74D80;
   //vertical-align: middle;
 }
 
+
+@mixin contentBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: white;
+  z-index: 30;
+  font-family: Jura, sans-serif;
+
+  font-weight: 400;
+}
+
+@mixin simpleFlex {
+  display: flex;
+  align-items: center;
+}
+
 @mixin transparency40 {
   opacity: 40%;
 }
@@ -88,6 +107,12 @@ $theme-font-color: #F74D80;
   width: fit-content;
   font-size: 22px;
   text-align: center;
-  color:white;
+  color: white;
   //font-family: 'Space Ranger', sans-serif;
+}
+
+@media (max-width: 490px) {
+  @mixin contentBlock {
+
+  }
 }

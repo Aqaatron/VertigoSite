@@ -5,10 +5,13 @@ import React from "react";
 import promoStyles from '../promoCommon.module.scss'
 import Image from "next/image";
 import uruyk from './uryuk.jpg'
+import {anchorTo} from "@/helpers/helpers";
 
 export const Reviews = () => {
-
-    return <div className={globals.contentBlock} style={{backgroundColor: 'lightgray'}}>
+    const slideTo = () => {
+        anchorTo('form')
+    }
+    return <div className={promoStyles.contentBlock} style={{backgroundColor: 'lightgray'}}>
         <h1 className={promoStyles.title}>{texts.promo.reviews.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.reviews.subtitle}</h2>
         <div className={compStyles.videoWrapper}>
@@ -52,14 +55,14 @@ export const Reviews = () => {
             }>7 лет</span> <p/> успешной работы в сфере VR
             </div>
         </div>
-        <h3 style={{color: '#555555', fontSize: '26px'}}>Нам доверяют партнеры по доставке еды:</h3>
-        <div className={compStyles.blocks} style={{width: '500px', marginBottom: '60px'}}>
+        <h3 className={compStyles.namdov}>Нам доверяют партнеры по доставке еды:</h3>
+        <div className={compStyles.blocksLogo}>
             <Image src={uruyk} alt={'uruyk'} className={compStyles.pLogo}/>
             <Image src={uruyk} alt={'uruyk'} className={compStyles.pLogo}/>
             <Image src={uruyk} alt={'uruyk'} className={compStyles.pLogo}/>
         </div>
 
-        <div className={promoStyles.gradientBorder}>
+        <div className={promoStyles.gradientBorder} onClick={slideTo}>
             <div className={promoStyles.cardContent}>{texts.promo.reviews.btn}</div>
         </div>
     </div>

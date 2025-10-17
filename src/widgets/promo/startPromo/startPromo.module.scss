@@ -23,11 +23,11 @@
 
 .header {
   position: relative;
-  margin-top: 30px;
+  //margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-left: 300px;
+  //margin-left: 300px;
 }
 
 .contentWrapper {
@@ -43,25 +43,36 @@
   border-radius: 20px;
 }
 
-.logoImg {
-  z-index: 1000;
-  margin-right: 80px;
-  //scale: (0.5);
-  width: 260px;
-  height: 30px;
-}
+
 
 .logoImg2 {
   position: absolute;
   z-index: 1000;
-  left: -500px;
-  top: -40px;
+  left: 140px;
+  top: -10px;
   //margin-right: 80px;
   //scale: (0.5);
   width: 680px;
   height: 200px;
 }
+.header {
+  position: relative;
+  //margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
+.logoImg {
+  //margin-right: 80px;
+  height: 180px;
+  width: 100vw;
+  top: -45px;
+  position: absolute;
+  //overflow: hidden;
+  object-position: center;
+  object-fit: cover;
+}
 .light {
   position: absolute;
   left: 500px;
@@ -80,7 +91,7 @@
   font-size: 60px;
   font-weight: bold;
   margin: 30px 0;
-  //font-family: 'Space Ranger', sans-serif;
+  font-family: 'Space Ranger', sans-serif;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -92,7 +103,7 @@
   line-height: 150%;
   letter-spacing: 3px;
   vertical-align: middle;
- //margin: 140px 0 100px 0;
+  //margin: 140px 0 100px 0;
   text-align: center;
 }
 
@@ -142,9 +153,7 @@
     width: 1030px;
     //margin-top: 140px;
   }
-  .mainTitle {
 
-  }
   .fillerText {
     font-weight: lighter;
   }
@@ -183,5 +192,71 @@
                     rgba(0, 0, 0, 0) 10%, /* transparent in the middle */
                     rgba(20, 25, 28, 1) 75% /* almost black at corners */
     );
+  }
+}
+
+@media (max-width: 490px) {
+
+  .contentWrapper {
+    margin-top: 80px;
+    //margin-bottom: 100px;
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 0;
+  }
+
+  .logoImg2 {
+    position: absolute;
+    z-index: 1000;
+    left: 15%;
+    top: -10px;
+    //margin-right: 80px;
+    //scale: (0.5);
+    width: 320px;
+    height: 100px;
+  }
+  .mainTitle {
+    width: 95%;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+    font-family: 'Space Ranger', sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  .fillerText {
+    width: 85%;
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 150%;
+    letter-spacing: 2px;
+    vertical-align: middle;
+    //margin: 140px 0 100px 0;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .videoWrapper {
+    //position: absolute;
+    //top: 80px;
+    //left: 30%;
+    height: 200px;
+    width: 80%;
+    overflow: hidden;
+    z-index: -1;
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+  .backgroundVideo {
+
+    height: 220px;
+    width: 100%;
+    z-index: -1;
+    //transform: translate(-50%, -50%);
+    object-fit: cover;
   }
 }

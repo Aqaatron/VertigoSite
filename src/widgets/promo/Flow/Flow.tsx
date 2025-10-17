@@ -5,51 +5,56 @@ import compStyles from './flow.module.scss'
 import promoStyles from '../promoCommon.module.scss'
 import Image from "next/image";
 import ico from '../../../../public/events/PS5.png'
+import {anchorTo} from "@/helpers/helpers";
+
+import pic from '../../../../public/gallery/pic2.png'
 
 export const Flow = () => {
-    return <div className={globals.contentBlock} style={{backgroundColor: "#F05018"}}>
+    const slideTo = () => {
+        anchorTo('form')
+    }
+    return <div className={promoStyles.contentBlock} style={{backgroundColor: "#F05018"}}>
         <h1 className={promoStyles.title}>{texts.promo.flow.title}</h1>
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={compStyles.ico}/>
+                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub1}</div>
-                <div className={compStyles.video}></div>
+                <Image src={pic} alt={'pic'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText1}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={compStyles.ico}/>
+                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub2}</div>
-                <div className={compStyles.video}></div>
+                <Image src={pic} alt={'pic'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText2}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={compStyles.ico}/>
+                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub3}</div>
-                <div className={compStyles.video}></div>
+                <Image src={pic} alt={'pic'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText3}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={compStyles.ico}/>
+                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub4}</div>
-                <div className={compStyles.video}></div>
+                <Image src={pic} alt={'pic'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText4}</div>
             </div>
             <div className={compStyles.card}>
                 <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub5}</div>
-                <div className={compStyles.video}></div>
+                <Image src={pic} alt={'pic'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText5}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={compStyles.ico}/>
+                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub6}</div>
-                <div className={compStyles.video}></div>
+                <Image src={pic} alt={'pic'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText6}</div>
             </div>
-
         </div>
-        <div className={promoStyles.gradientBorder}>
-            <div className={promoStyles.cardContent}>{texts.promo.flow.btn}</div>
+        <div className={promoStyles.gradientBorder} onClick={slideTo}>
+            <div className={promoStyles.cardContent} style={{backgroundColor: '#685BC7'}}>{texts.promo.flow.btn}</div>
         </div>
     </div>
 }

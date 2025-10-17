@@ -25,6 +25,7 @@
   min-height: 856px;
   min-width: 1126px;
   z-index: 30;
+  font-family: 'Jura', sans-serif;
 }
 
 .invertLine {
@@ -33,17 +34,14 @@
 
 .formText {
   height: 426px;
-
   opacity: 0.59;
-
-  font-weight: 400;
-
-  font-size: 36px;
-
+  font-weight: lighter;
+  font-size: 30px;
   line-height: 120%;
-  letter-spacing: 8%;
   width: 533px;
   margin-top: 60px;
+  font-family: 'Jura', sans-serif;
+
 }
 
 .formInp {
@@ -52,15 +50,11 @@
   border-radius: 10px;
   margin: 20px 0;
   padding: 10px;
-  font-family: Jura;
   font-weight: 400;
-  font-style: Regular;
-  font-size: 24px;
-  leading-trim: NONE;
+  font-size: 18px;
   line-height: 120%;
-  letter-spacing: 0%;
   vertical-align: middle;
-
+  font-family: 'Jura', sans-serif;
 }
 
 .formInpTall {
@@ -69,14 +63,11 @@
   border-radius: 10px;
   margin: 20px 0;
   padding: 10px;
-  font-family: Jura;
   font-weight: 400;
-  font-style: Regular;
-  font-size: 24px;
-  leading-trim: NONE;
+  font-size: 18px;
   line-height: 120%;
-  letter-spacing: 0%;
   vertical-align: middle;
+  font-family: 'Jura', sans-serif;
 
 }
 

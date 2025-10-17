@@ -1,11 +1,7 @@
 @use '../../../globals.module';
 
-.cardsWrapper {
-  width: 60vw;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: start;
-  justify-content: space-around;
+.cardsWrapperLocal {
+  margin-bottom: 20px;
 }
 
 .title {
@@ -45,6 +41,15 @@
   text-align: center;
 }
 
+.cardTextSmall {
+  margin-top: 20px;
+  font-weight: lighter;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  font-style: italic;
+}
+
 .photo {
   border-radius: 100px;
   min-height: 188px;
@@ -58,5 +63,56 @@
     width: 80vw;
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 490px) {
+  .cardTitle {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .cardText {
+    margin-top: 20px;
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+  }
+}
+
+@media (max-width: 490px) {
+  .card {
+    width: 300px;
+    height: fit-content;
+    margin: 0 5px 30px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    //border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    padding: 20px;
+    border-radius: 30px;
+  }
+  .cardText {
+    font-size: 14px;
+    min-height: 0;
+  }
+  .cardTextSmall {
+    font-size: 12px;
+    min-height: 0;
+    font-style: normal;
+  }
+
+  .photo {
+    border-radius: 100px;
+    min-height: 128px;
+    min-width: 128px;
+    border: solid 1px #1a1a1a;
+    margin: 20px 0;
   }
 }

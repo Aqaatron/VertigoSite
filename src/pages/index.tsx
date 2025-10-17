@@ -20,6 +20,7 @@ import {SertificateM} from "@/widgets/mobile/sertificateM/SertificateM";
 import {Smm} from "@/widgets/smm/Smm";
 import {BurgerMenu} from "@/widgets/mobile/Burger/BurgerMenu";
 import type {Metadata} from 'next'
+import {texts} from "@/texts";
 
 export const metadata: Metadata = {
     title: 'VERTIGO VR',
@@ -44,12 +45,12 @@ export default function Page() {
     return <div className={globals.page}>
         {show && <PopUpGlobal closeMe={closeMe}/>}
         {(!show) && <Smm/>}
-        {(isMobile && !show) && <BurgerMenu/>}
+        {(isMobile && !show) && <BurgerMenu smmToggle={()=>{}}/>}
         {!isMobile && <StartView showP={showP}/> || <Header showP={showP}/>}
         {!isMobile && <Events showP={showP}/> || <EventsM showP={showP}/>}
         {!isMobile && <Gallery/>}
         {!isMobile && <Slider/> || <SliderM/>}
-        {!isMobile && <Faq showP={showP}/> || <FaqM showP={showP}/>}
+        {!isMobile && <Faq showP={showP} isPromo={false} questions={texts.faq}/> || <FaqM showP={showP}/>}
         {!isMobile && <Sertificate showP={showP}/> || <SertificateM showP={showP}/>}
         {/*{!isMobile && <MyForm/> || <MyFormM/>}*/}
         {!isMobile && <Footer/> || <FooterM/>}

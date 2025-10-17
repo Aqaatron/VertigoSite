@@ -1,0 +1,111 @@
+@use '../../../globals.module';
+
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 10px;
+  bottom: 100px;
+  z-index: 1000;
+  align-items: center;
+}
+
+.el {
+  margin: 10px 0;
+  transition: 0.2s;
+  width: 66px;
+  height: 66px;
+}
+.elphone {
+  margin: 10px 0;
+  transition: 0.2s;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+  background-color: orange;
+  padding: 10px;
+}
+
+.insta {
+  margin: 10px 0;
+  transition: 0.2s;
+  width: 70px;
+  height: 70px;
+}
+
+.up {
+  margin: 10px 0;
+  transition: 0.2s;
+  cursor: pointer;
+  transform: rotate(-90deg);
+  width: 70px;
+  height: 70px;
+}
+
+.el:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+.up:hover {
+  transform: scale(1.1) rotate(-90deg);
+  transition: 0.2s;
+}
+
+@media (max-width: 490px) {
+  .cont {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 3px;
+    bottom: 3px;
+    z-index: 1000;
+    align-items: center;
+  }
+  .up {
+    width: 50px;
+    height: 50px;
+    margin: 0 0 10px 0;
+  }
+  .el {
+    margin: 10px 0;
+    transition: 0.2s;
+    width: 50px;
+    height: 50px;
+  }
+  .elphone {
+    margin: 10px 0;
+    transition: 0.2s;
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+    background-color: orange;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 490px) and (max-width: 1920px) {
+  .el {
+    margin: 10px 0;
+    transition: 0.2s;
+    width: 50px;
+    height: 50px;
+  }
+  .elphone {
+    margin: 10px 0;
+    transition: 0.2s;
+    width: 33px;
+    height: 33px;
+    border-radius: 40px;
+    background-color: orange;
+    padding: 10px;
+  }
+  .up {
+    transition: 0.2s;
+    width: 50px;
+    height: 50px;
+    transform: scale(1.1) rotate(-90deg);
+    cursor: pointer;
+  }
+}

@@ -1,27 +1,26 @@
 @use '../../../globals.module';
 
-.cardsWrapper {
+
+
+.subtitleLocal{
   width: 1200px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
 }
-
-
 .card {
+  position: relative;
   //width: 520px;
   height: 650px;
   margin: 0 0 10px 0;
   padding: 20px;
   border-radius: 8px;
-  border: 1px solid #e0e0e0;
+  //border: 0 solid #e0e0e0;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: 0.3s;
   justify-content: space-between;
-  border-top: 6px solid #666666;
+  //border-top: 6px solid #666666;
+  background-color: #201E1F;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .card:hover {
@@ -34,35 +33,66 @@
 .cardTitle {
   font-weight: bold;
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
   font-size: 24px;
   line-height: 1.4;
   width: 300px;
   text-align: center;
   //min-height: 70px;
+  font-family: 'Space Ranger', sans-serif;
+}
+
+.line {
+  width: 450px;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  left: -100px;
 }
 
 .price {
-  font-size: 40px;
+  font-size: 35px;
+  font-weight: lighter;
   margin: 30px 0;
+}
+.lowerWrapper{
+  @include globals.flexColCenter
+}
+.wrapper {
+  background-color: rgba(211, 211, 211, 0.2);
+  border-radius: 40px;
+  padding: 10px;
+  font-weight: lighter;
 }
 
 .advge {
   position: relative;
   font-size: 16px;
-  margin: 10px 10px 10px 30px;
+  margin: 20px 10px 20px 30px;
   align-self: start;
   width: 250px;
 }
 
 .advge::before {
-  content: '✓';
+  content: "";
+  min-height: 5px;
+  min-width: 5px;
+  border-radius: 20px;
+  border: 1px solid white;
   position: absolute;
   left: -20px;
-  top: 0;
-  color: #666666;
-  font-weight: bold;
+  top: 5px;
+
 }
+
+//.advge::before {
+//  content: '✓';
+//  position: absolute;
+//  left: -20px;
+//  top: 0;
+//  color: #666666;
+//  font-weight: bold;
+//}
 
 .cardText {
   margin-top: 20px;
@@ -78,10 +108,26 @@
   border: 1px solid white;
 }
 
+.prebtn {
+  font-weight: lighter;
+  font-size: 18px;
+}
+
 @media (min-width: 490px) and (max-width: 1920px) {
   .cardsWrapper {
     width: 80vw;
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+
+@media (max-width: 490px) {
+  .prebtn {
+    text-align: center;
+    align-self: center;
+  }
+  .subtitleLocal{
+    width: 300px;
   }
 }
