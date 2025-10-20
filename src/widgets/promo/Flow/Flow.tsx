@@ -7,7 +7,10 @@ import Image from "next/image";
 import ico from '../../../../public/events/PS5.png'
 import {anchorTo} from "@/helpers/helpers";
 
-import pic from '../../../../public/gallery/pic2.png'
+import pic from '../../../../public/gallery/pic4_new.png'
+import instruction from '../../../../public/gallery/instruction.png'
+import photos_and_videos from '../../../../public/gallery/photos_and_videos.png'
+import variety_of_gaming_zones from '../../../../public/gallery/variety_of_gaming_zones.png'
 
 export const Flow = () => {
     const slideTo = () => {
@@ -19,13 +22,13 @@ export const Flow = () => {
             <div className={compStyles.card}>
                 <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub1}</div>
-                <Image src={pic} alt={'pic'} className={compStyles.video}/>
+                <Image src={instruction} alt={'instruction'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText1}</div>
             </div>
             <div className={compStyles.card}>
                 <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub2}</div>
-                <Image src={pic} alt={'pic'} className={compStyles.video}/>
+                <Image src={variety_of_gaming_zones} alt={'variety_of_gaming_zones'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText2}</div>
             </div>
             <div className={compStyles.card}>
@@ -37,7 +40,7 @@ export const Flow = () => {
             <div className={compStyles.card}>
                 <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub4}</div>
-                <Image src={pic} alt={'pic'} className={compStyles.video}/>
+                <Image src={variety_of_gaming_zones} alt={'variety_of_gaming_zones'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText4}</div>
             </div>
             <div className={compStyles.card}>
@@ -49,7 +52,7 @@ export const Flow = () => {
             <div className={compStyles.card}>
                 <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub6}</div>
-                <Image src={pic} alt={'pic'} className={compStyles.video}/>
+                <Image src={photos_and_videos} alt={'photos_and_videos'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText6}</div>
             </div>
         </div>

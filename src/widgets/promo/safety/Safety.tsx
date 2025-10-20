@@ -25,28 +25,24 @@ export const Safety = () => {
             <div className={compStyles.card}>
                 <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <h3 className={compStyles.cardTitle}>{texts.promo.safety.sub1}</h3>
-                <div className={compStyles.cardText}>{texts.promo.safety.subText1}</div>
                 <Image data-name={'pic1'} onClick={envocePic} src={pic} alt={'pic'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText1}</div>
             </div>
             <div className={compStyles.card}>
                 <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <h3 className={compStyles.cardTitle}>{texts.promo.safety.sub2}</h3>
-                <div className={compStyles.cardText}>{texts.promo.safety.subText2}</div>
                 <Image data-name={'pic2'} onClick={envocePic} src={pic} alt={'pic'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText2}</div>
             </div>
             <div className={compStyles.card}>
                 <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.safety.sub3}</div>
-                <div className={compStyles.cardText}>{texts.promo.safety.subText3}</div>
                 <Image src={pic} alt={'pic'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText3}</div>
             </div>
             <div className={compStyles.card}>
                 <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.safety.sub4}</div>
-                <div className={compStyles.cardText}>{texts.promo.safety.subText4}</div>
                 <Image src={pic} alt={'pic'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText4}</div>
             </div>
