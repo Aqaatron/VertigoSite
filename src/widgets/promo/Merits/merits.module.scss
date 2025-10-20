@@ -41,7 +41,26 @@
   line-height: 1.6;
   text-align: center;
 }
+.Ppad {
+  width: 100%;
+  height: 1600px;
+  position: absolute;
+  z-index: 10;
+}
+.girlSlider {
+  position: absolute;
+  right: -114px;
+  z-index: 11;
+  scale: 0.8;
+}
 
+.circle {
+  position: absolute;
+  left: -100px;
+  transform: rotate(180deg);
+
+  z-index: 11;
+}
 
 @media (min-width: 490px) and (max-width: 1920px) {
   .cardsWrapper {

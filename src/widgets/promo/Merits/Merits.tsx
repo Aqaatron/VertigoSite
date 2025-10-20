@@ -5,10 +5,16 @@ import compStyles from './merits.module.scss'
 import promoStyles from '../promoCommon.module.scss'
 import Image from "next/image";
 import ico from "../../../../public/events/PS5.png";
+import girlSlider from "../../../../public/girlSlider.png";
+import circle from "../../../../public/circle.png";
+import pad from "../../../../public/purpPadClean.png";
 
 export const Merits = () => {
 
     return <div className={promoStyles.contentBlock} style={{backgroundColor: "#685BC7"}}>
+        <Image src={pad} alt={'pad'} className={compStyles.Ppad}/>
+        <Image src={girlSlider} className={compStyles.girlSlider} alt={'girlSlider'}/>
+        <Image className={compStyles.circle} src={circle} alt={'logo'}/>
         <h1 className={promoStyles.title}>{texts.promo.merits.title}</h1>
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>

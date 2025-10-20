@@ -14,12 +14,16 @@ import comfortable_lounge from '../../../../public/gallery/comfortable_lounge_li
 import variety_of_vr_games_and_play_areas from '../../../../public/gallery/variety_of_vr_games_and_play_areas_little.png'
 import photos_and_videos from '../../../../public/gallery/photos_and_videos.png'
 import variety_of_gaming_zones from '../../../../public/gallery/variety_of_gaming_zones.png'
+import pad from "../../../../public/orPadClean.png";
+import circle from "../../../../public/circle.png";
 
 export const Flow = () => {
     const slideTo = () => {
         anchorTo('form')
     }
     return <div className={promoStyles.contentBlock} style={{backgroundColor: "#F05018"}}>
+        <Image className={compStyles.pad} src={pad} alt={'pad'}/>
+        <Image className={compStyles.circle} src={circle} alt={'logo'}/>
         <h1 className={promoStyles.title}>{texts.promo.flow.title}</h1>
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>

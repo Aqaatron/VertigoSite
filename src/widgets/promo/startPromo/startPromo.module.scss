@@ -23,11 +23,14 @@
 
 .header {
   position: relative;
-  //margin-top: 30px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  //margin-left: 300px;
+  margin-left: 300px;
+  letter-spacing: 3px;
+  font-size: 16px;
+
 }
 
 .contentWrapper {
@@ -43,24 +46,15 @@
   border-radius: 20px;
 }
 
-
-
 .logoImg2 {
   position: absolute;
   z-index: 1000;
-  left: 140px;
-  top: -10px;
+  left: -500px;
+  top: -30px;
   //margin-right: 80px;
   //scale: (0.5);
   width: 680px;
   height: 200px;
-}
-.header {
-  position: relative;
-  //margin-top: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 }
 
 .logoImg {
@@ -73,6 +67,7 @@
   object-position: center;
   object-fit: cover;
 }
+
 .light {
   position: absolute;
   left: 500px;
