@@ -46,21 +46,21 @@ export const Reviews = () => {
         </div>
         <div className={compStyles.blocks}>
             <div className={compStyles.blocksEl}><span className={compStyles.blockTitle
-            }>1238+</span> <p/> счастливых отзывов на Яндекс.Картах
+            }>100+</span> <p/> счастливых отзывов
             </div>
             <div className={compStyles.blocksEl}><span className={compStyles.blockTitle
             }>5.0 / 5 </span>  <p/> средний рейтинг
             </div>
             <div className={compStyles.blocksEl}><span className={compStyles.blockTitle
-            }>7 лет</span> <p/> успешной работы в сфере VR
+            }>5 лет</span> <p/> успешной работы в сфере VR
             </div>
         </div>
-        <h3 className={compStyles.namdov}>Нам доверяют партнеры по доставке еды:</h3>
+        {/* <h3 className={compStyles.namdov}>Нам доверяют партнеры по доставке еды:</h3>
         <div className={compStyles.blocksLogo}>
             <Image src={uruyk} alt={'uruyk'} className={compStyles.pLogo}/>
             <Image src={uruyk} alt={'uruyk'} className={compStyles.pLogo}/>
             <Image src={uruyk} alt={'uruyk'} className={compStyles.pLogo}/>
-        </div>
+        </div> */}
 
         <div className={promoStyles.gradientBorder} onClick={slideTo}>
             <div className={promoStyles.cardContent}>{texts.promo.reviews.btn}</div>
