@@ -38,6 +38,10 @@ export const PopUpFormDes = () => {
         } else {
             setError(false)
         }
+        const val = document.getElementById('date') as HTMLInputElement
+        if (val) {
+            val.value = ''
+        }
     }, [name, phone, agreed])
     const handleInput = (event: any) => {
         switch (event.target.dataset.name) {
@@ -66,9 +70,9 @@ export const PopUpFormDes = () => {
             setSended(true)
             setCanSend(false)
             setTimeout(() => {
-                const val = document.getElementById('date')
+                const val = document.getElementById('date') as HTMLInputElement
                 if (val) {
-                    val.value = undefined
+                    val.value = ''
                 }
                 setSended(false)
                 setName('')
