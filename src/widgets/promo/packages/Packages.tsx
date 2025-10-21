@@ -29,7 +29,7 @@ export const Packages = ({action}: { action: any }) => {
         <div className={classNames(promoStyles.cardsWrapper)}>
             <div className={compStyles.card}>
                 <h3 className={compStyles.cardTitle}>{texts.promo.packages.p1.title}</h3>
-                <Image src={line} className={compStyles.line} alt={'pic'}/>
+                {!isMobile && <Image src={line} className={compStyles.line} alt={'pic'}/>}
                 <div className={compStyles.wrapper}>
                     {texts.promo.packages.p1.advgs.map((advge) => <div className={compStyles.advge}>{advge}</div>)}
                 </div>
@@ -47,7 +47,7 @@ export const Packages = ({action}: { action: any }) => {
             </div>
             <div className={compStyles.card}>
                 <h3 className={compStyles.cardTitle}>{texts.promo.packages.p2.title}</h3>
-                <Image src={line} className={compStyles.line} alt={'pic'}/>
+                {!isMobile && <Image src={line} className={compStyles.line} alt={'pic'}/>}
                 <div className={compStyles.wrapper}>
                     {texts.promo.packages.p2.advgs.map((advge) => <div className={compStyles.advge}>{advge}</div>)}
                 </div>
@@ -65,7 +65,7 @@ export const Packages = ({action}: { action: any }) => {
             </div>
             <div className={compStyles.card}>
                 <h3 className={compStyles.cardTitle}>{texts.promo.packages.p3.title}</h3>
-                <Image src={line} className={compStyles.line} alt={'pic'}/>
+                {!isMobile && <Image src={line} className={compStyles.line} alt={'pic'}/>}
                 <div className={compStyles.wrapper}>
                     {texts.promo.packages.p3.advgs.map((advge) => <div className={compStyles.advge}>{advge}</div>)}
                 </div>

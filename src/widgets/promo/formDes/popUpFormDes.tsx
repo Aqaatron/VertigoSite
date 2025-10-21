@@ -146,16 +146,16 @@ export const PopUpFormDes = () => {
                     <div className={compStyles.personal}> Я согласен на обработку персональных данных
                     </div>
                 </div>
-                {/*<div className={compStyles.gradientBorder}>*/}
-                {/*    {canSend && <div className={compStyles.cardContent} style={{fontSize: '18px'}}*/}
-                {/*                     onClick={sendMessage}> Получить индивидуальный расчет и*/}
-                {/*            забронировать*/}
-                {/*        </div> ||*/}
-                {/*        <div className={compStyles.cardContent} style={{fontSize: '18px', backgroundColor: 'gray'}}*/}
-                {/*             onClick={sendMessage}> Получить индивидуальный расчет и*/}
-                {/*            забронировать*/}
-                {/*        </div>}*/}
-                {/*</div>*/}
+                <div className={compStyles.gradientBorder}>
+                    {canSend && <div className={compStyles.cardContent} style={{fontSize: '18px'}}
+                                     onClick={sendMessage}> Получить индивидуальный расчет и
+                            забронировать
+                        </div> ||
+                        <div className={compStyles.cardContent} style={{fontSize: '18px', backgroundColor: 'gray'}}
+                             onClick={sendMessage}> Получить индивидуальный расчет и
+                            забронировать
+                        </div>}
+                </div>
             </div>
             <h3 className={compStyles.aftbtn}>Предпочитаете общаться
                 голосом? <Link href={'tel:7 902 710 02 10'}><span

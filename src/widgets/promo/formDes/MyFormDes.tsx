@@ -13,7 +13,6 @@ export const MyFormDes = () => {
         const userAgent = navigator.userAgent.toLowerCase();
         const mobile = /iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
         setIsMobile(mobile);
-        //window.innerWidth > 480 ? setIsMobile(false) : setIsMobile(true)
     }, []);
     return <div id={'form'} className={classNames(globals.contentBlock, compStyles.baggyMargin)}
                 style={{"backgroundColor": "#14191C"}}>
