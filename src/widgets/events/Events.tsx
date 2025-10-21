@@ -45,13 +45,13 @@ export const Events = ({showP}: { showP: Function }) => {
                     <Image src={map} alt={'map'} className={compStyles.ico}/>
                     <div className={compStyles.icoTextShort}>Арена</div>
                     <Image src={people} alt={'pistol'} className={compStyles.ico}/>
-                    <div className={compStyles.icoTextLong}>2-20 игроков</div>
+                    <div className={compStyles.icoTextLong}>16 игроков</div>
                 </div>
                 <div className={compStyles.icons}>
                     <Image src={ps} alt={'pistol'} className={compStyles.ico}/>
                     <div className={compStyles.icoTextShort}>PS5</div>
                     <Image src={pizza} alt={'pistol'} className={compStyles.ico}/>
-                    <div className={compStyles.icoTextLong}>Lounge зона</div>
+                    <div className={compStyles.icoTextLong}>Лаундж</div>
                 </div>
                 <div className={compStyles.gradientBorder}>
                     <div className={compStyles.cardContent} onClick={show}>Связаться со мной</div>
@@ -68,13 +68,13 @@ export const Events = ({showP}: { showP: Function }) => {
                     <Image src={map} alt={'map'} className={compStyles.ico}/>
                     <div className={compStyles.icoTextShort}>Арена</div>
                     <Image src={people} alt={'pistol'} className={compStyles.ico}/>
-                    <div className={compStyles.icoTextLong}>2-20 игроков</div>
+                    <div className={compStyles.icoTextLong}>16 игроков</div>
                 </div>
                 <div className={compStyles.icons}>
                     <Image src={ps} alt={'pistol'} className={compStyles.ico}/>
                     <div className={compStyles.icoTextShort}>PS5</div>
                     <Image src={pizza} alt={'pistol'} className={compStyles.ico}/>
-                    <div className={compStyles.icoTextLong}>Lounge зона</div>
+                    <div className={compStyles.icoTextLong}>Лаундж</div>
                 </div>
                 <div className={compStyles.gradientBorder}>
                     <div className={compStyles.cardContent} onClick={show}>Связаться со мной</div>

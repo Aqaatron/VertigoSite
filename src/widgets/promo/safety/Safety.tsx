@@ -7,10 +7,10 @@ import ico from "../../../../public/events/PS5.png";
 import Image from "next/image";
 
 import pic from '../../../../public/gallery/pic2.png'
-import innovative_equipment from '../../../../public/gallery/innovative_equipment_little.png'
-import constant_supervision from '../../../../public/gallery/constant_supervision_little.png'
-import impeccable_hygiene_little from '../../../../public/gallery/impeccable_hygiene_little.png'
-import cleanliness_and_well_thought_out_space from '../../../../public/gallery/cleanliness_and_well_thought_out_space_little.png'
+import innovative_equipment from '../../../../public/gallery/innovative_equipment.png'
+import constant_supervision from '../../../../public/gallery/constant_supervision.png'
+import impeccable_hygiene_little from '../../../../public/gallery/impeccable_hygiene.png'
+import cleanliness_and_well_thought_out_space from '../../../../public/gallery/cleanliness_and_well_thought_out_space.png'
 
 import {inverse} from "next/dist/lib/picocolors";
 import {useDispatch} from "react-redux";
