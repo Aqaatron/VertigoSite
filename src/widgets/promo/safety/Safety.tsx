@@ -25,7 +25,7 @@ export const Safety = () => {
         dispatch(setShowGal(true))
         dispatch(setPic(event.target.dataset.name))
     }
-    return <div className={globals.contentBlock} style={{backgroundColor: ""}}>
+    return <div className={globals.contentBlock} style={{backgroundColor: "#685BC7"}}>
         <h1 className={promoStyles.title}>{texts.promo.safety.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.safety.subtitle}</h2>
         <div className={promoStyles.cardsWrapper}>

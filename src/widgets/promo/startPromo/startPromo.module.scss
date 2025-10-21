@@ -181,11 +181,11 @@
     scale: (1);
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(
-                    ellipse at center,
-                    rgba(0, 0, 0, 0) 10%, /* transparent in the middle */
-                    rgba(20, 25, 28, 1) 75% /* almost black at corners */
-    );
+    //background: radial-gradient(
+    //                ellipse at center,
+    //                rgba(0, 0, 0, 0) 10%, /* transparent in the middle */
+    //                rgba(20, 25, 28, 1) 75% /* almost black at corners */
+    //);
   }
 }
 

@@ -12,7 +12,7 @@ export const Reviews = () => {
     const slideTo = () => {
         anchorTo('form')
     }
-    return <div className={promoStyles.contentBlock} style={{backgroundColor: 'lightgray', color:'#333333'}}>
+    return <div id={'reviews'} className={promoStyles.contentBlock} style={{backgroundColor: '#F05018', color:'white'}}>
         <h1 className={promoStyles.title}>{texts.promo.reviews.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.reviews.subtitle}</h2>
         {/* <div className={compStyles.videoWrapper}>

@@ -21,7 +21,7 @@ export const Adults = () => {
         dispatch(setShowGal(true))
         dispatch(setPic(event.target.dataset.name))
     }
-    return <div className={promoStyles.contentBlock}>
+    return <div className={promoStyles.contentBlock} style={{backgroundColor:"#F05018"}}>
         <h1 className={promoStyles.title}>{texts.promo.adults.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.adults.subtitle}</h2>
         <div className={promoStyles.cardsWrapper}>

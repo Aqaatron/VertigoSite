@@ -35,7 +35,7 @@ export const Flow = () => {
     const slideTo = () => {
         anchorTo('form')
     }
-    return <div className={promoStyles.contentBlock} style={{backgroundColor: "#F05018"}}>
+    return <div id={'flow'} className={promoStyles.contentBlock} style={{backgroundColor: "#685BC7"}}>
         {/*<Image className={compStyles.pad} src={pad} alt={'pad'}/>*/}
         {!isMobile && <Image className={compStyles.circle} src={circle} alt={'logo'}/>}
         <h1 className={promoStyles.title}>{texts.promo.flow.title}</h1>

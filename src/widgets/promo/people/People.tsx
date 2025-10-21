@@ -13,13 +13,12 @@ export const People = () => {
     const slideTo = () => {
         anchorTo('form')
     }
-    return <div className={promoStyles.contentBlock} style={{backgroundColor: "lightgray", color: '#1a1a1a'}}>
+    return <div className={promoStyles.contentBlock} style={{backgroundColor: "#F05018", color: 'white'}}>
         <h1 className={promoStyles.title}>{texts.promo.people.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.people.subtitle}</h2>
         <div className={classNames(promoStyles.cardsWrapper, compStyles.cardsWrapperLocal)}>
             <div className={compStyles.card}>
                 <div className={compStyles.photo}>
-                    
                 </div>
                 <h3 className={compStyles.cardTitle}>{texts.promo.people.p1Name}</h3>
                 <div className={compStyles.cardText}>{texts.promo.people.p1title}</div>
