@@ -33,7 +33,7 @@ export const StartViewPromo = () => {
             <div className={compStyles.header}>
                 <Image className={compStyles.logoImg2} src={logo} alt={'logo'}/>
                 <Image className={compStyles.line} src={lineHeader} alt={'logo'}/>
-                <div style={{display: 'flex', width: '950px', zIndex: '100', fontWeight:'bold'}}>
+                <div style={{display: 'flex', width: '950px', zIndex: '100', fontWeight: 'bold'}}>
                     <div onClick={goTo} data-name={'merits'} className={compStyles.ancorItem}>Главная</div>
                     <div onClick={anchorToo} data-name={'flow'} className={compStyles.ancorItem}>День рождения</div>
                     <div onClick={anchorToo} data-name={'reviews'} className={compStyles.ancorItem}>Отзывы</div>
@@ -50,7 +50,7 @@ export const StartViewPromo = () => {
             <div className={compStyles.mainTitle}>{texts.promo.start.header}
             </div>
             <div className={compStyles.fillerText}>{texts.promo.start.main}
-                <p style={{marginTop: '25px', fontWeight:'bold'}}>{texts.promo.start.sub}</p>
+                <p style={{marginTop: '25px', fontWeight: 'bold'}}>{texts.promo.start.sub}</p>
             </div>
         </div>
         <div className={compStyles.videoWrapper}>

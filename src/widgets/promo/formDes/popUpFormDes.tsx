@@ -133,7 +133,7 @@ export const PopUpFormDes = () => {
                 <input id={'name'} data-name={'name'} onChange={handleInput} className={compStyles.formInp}
                        placeholder={'Ваше Имя'}/>
                 <input id={'phone'} data-name={'phone'} onChange={handleInput} className={compStyles.formInp}
-                       placeholder={'Номер телефона +7 (ХХХ) ХХХ ХХ ХХ'}/>
+                       placeholder={'Номер телефона 7 ХХХ ХХХ ХХ ХХ'}/>
                 <input id={'date'} data-name={'date'} onChange={handleDate}
                        className={classNames(compStyles.inp, compStyles.formInp)} type={"date"}
                 />
@@ -142,8 +142,8 @@ export const PopUpFormDes = () => {
                 <input id={'comment'} data-name={'comment'} onChange={handleInput} className={compStyles.formInpTall}
                        placeholder={'Дополнительные пожелания:'}/>
                 <div className={compStyles.contt}>
-                    <input onChange={handleAgreed} type={'checkbox'} style={{margin: '10px 10px 10px 0'}}/>
-                    <div className={compStyles.personal}> Я согласен на обработку персональных данных
+                    <input onChange={handleAgreed} type={'checkbox'} style={{margin: '10px 10px 10px 0',width:'30px',height:'30px'}}/>
+                    <div className={compStyles.personal}> Я согласен на обработку моих персональных данных
                     </div>
                 </div>
                 <div className={compStyles.gradientBorder}>
