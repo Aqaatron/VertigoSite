@@ -70,7 +70,7 @@ export default function Birthday() {
             <Adults/>
             {isMobile && <FaqMtwo/> || <Faq questions={texts.promo.faq} isPromo={true} showP={() => {
             }}/>}
-            {/*<MyFormDes/>*/}
+            <MyFormDes/>
             <FooterNew/>
         </pack.Provider>
     </div>
