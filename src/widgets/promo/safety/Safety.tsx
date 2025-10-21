@@ -38,8 +38,9 @@ export const Safety = () => {
             dispatch(setPic(event.target.dataset.name))
         }
     }
+    
     return <div className={globals.contentBlock} style={{backgroundColor: "#685BC7"}}>
-        {!isMobile &&<Image className={compStyles.pad} src={pad} alt={'pad'}/>}
+        {!isMobile && <Image className={compStyles.pad} src={pad} alt={'pad'}/>}
         <h1 className={promoStyles.title}>{texts.promo.safety.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.safety.subtitle}</h2>
         <div className={promoStyles.cardsWrapper}>

@@ -7,12 +7,14 @@
   align-items: center;
   justify-content: space-around;
 }
+
 .Ppad {
   width: 100%;
   position: absolute;
   z-index: 10;
   top: -75px;
 }
+
 .card {
   width: 520px;
   height: fit-content;
@@ -21,7 +23,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   background-color: #071B26;
-  color:white;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +47,7 @@
   border-radius: 8px;
   margin-bottom: 20px;
   width: 100%;
-  height : auto;
+  height: auto;
 }
 
 .cardText {
@@ -54,7 +56,6 @@
   font-size: 16px;
   line-height: 1.6;
 }
-
 
 @media (min-width: 490px) and (max-width: 1920px) {
   .cardsWrapper {
@@ -82,7 +83,6 @@
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e0e0e0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,7 +101,7 @@
   .video {
     min-height: 200px;
     min-width: 300px;
-    border: 1px solid white;
+
   }
   .cardText {
     margin-top: 20px;
