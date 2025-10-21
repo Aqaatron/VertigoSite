@@ -7,6 +7,7 @@ import compStyles from '@/widgets/promo/startPromo/startPromo.module.scss'
 import {anchorTo} from "@/helpers/helpers";
 import logo from "@/widgets/start/logo.png";
 import vertigo from "@/widgets/mobile/header/logo.png";
+import lineHeader from "../../../../public/lineHeader.png";
 
 export const StartViewPromo = () => {
     const [isMobile, setIsMobile] = React.useState(false)
@@ -21,10 +22,24 @@ export const StartViewPromo = () => {
     }
 
     return <div className={promoStyles.contentBlock}>
-        {!isMobile && <Image className={compStyles.logoImg2} src={logo} alt={'logo'}/> ||
+        {!isMobile &&
+            <div className={compStyles.header}>
+                <Image className={compStyles.logoImg2} src={logo} alt={'logo'}/>
+                <Image className={compStyles.line} src={lineHeader} alt={'logo'}/>
+                <div style={{display: 'flex', width: '950px', zIndex: '100'}}>
+                    <div className={compStyles.ancorItem}>Главная</div>
+                    <div onClick={anchorTo} data-name={'events'} className={compStyles.ancorItem}>Мероприятия</div>
+                    <div onClick={anchorTo} data-name={'gallery'} className={compStyles.ancorItem}>Галерея</div>
+                    <div onClick={anchorTo} data-name={'games'} className={compStyles.ancorItem}>Игры</div>
+                    <div onClick={anchorTo} data-name={'faq'} className={compStyles.ancorItem}>FaQ</div>
+                    <div onClick={anchorTo} data-name={'sert'} className={compStyles.ancorItem}>Сертификаты</div>
+                    <div onClick={anchorTo} data-name={'contacts'} className={compStyles.ancorItem}>Контакты</div>
+                </div>
+            </div> ||
             <div id={'main'} className={compStyles.header}>
                 <Image className={compStyles.logoImg} src={vertigo} alt={'logo'}/>
-            </div>}
+            </div>
+        }
         <div className={compStyles.contentWrapper}>
             <div className={compStyles.mainTitle}>{texts.promo.start.header}
             </div>
@@ -49,6 +64,5 @@ export const StartViewPromo = () => {
                 <div className={promoStyles.cardContent}>{texts.promo.start.btn}</div>
             </div>
         </div>
-
     </div>
 }
