@@ -37,8 +37,8 @@ export const StartView = ({showP}: { showP: Function }) => {
             <Image className={compStyles.logoImg2} src={logo} alt={'logo'}/>
             {/*<Image className={compStyles.light} src={light} alt={'logo'}/>*/}
             <Image className={compStyles.line} src={lineHeader} alt={'logo'}/>
-            <div style={{display: 'flex', width: '950px', zIndex: '100'}}>
-                <div onClick={goTo} className={compStyles.ancorItem} style={{zIndex:'1200',color: '#F05018', minWidth: '160px'}}>День
+            <div style={{display: 'flex', width: '1050px', zIndex: '100', fontWeight:'bold'}}>
+                <div onClick={goTo} className={compStyles.ancorItem} style={{zIndex:'1200',color: '#F05018', minWidth: '160px', fontWeight:'bold'}}>День
                     Рождения
                 </div>
                 <div onClick={anchorTo} data-name={'events'} className={compStyles.ancorItem}>Мероприятия</div>
