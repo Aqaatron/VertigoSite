@@ -61,7 +61,7 @@ export const StartViewPromo = () => {
                 playsInline
                 className={compStyles.backgroundVideo}
             >
-                <source src={'./confrontation.mp4'} type="video/mp4"/>
+                <source src={'./promo_video_v2.mp4'} type="video/mp4"/>
                 Your browser does not support the video tag.
             </video>
         </div>

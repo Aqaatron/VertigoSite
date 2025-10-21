@@ -7,16 +7,19 @@ import ico from "../../../../public/events/PS5.png";
 import Image from "next/image";
 
 import pic from '../../../../public/gallery/pic2.png'
-import innovative_equipment from '../../../../public/gallery/innovative_equipment.png'
-import constant_supervision from '../../../../public/gallery/constant_supervision.png'
-import impeccable_hygiene_little from '../../../../public/gallery/impeccable_hygiene.png'
-import cleanliness_and_well_thought_out_space from '../../../../public/gallery/cleanliness_and_well_thought_out_space.png'
+import innovative_equipment from '../../../../public/gallery/innovative_equipment_little.png'
+import constant_supervision from '../../../../public/gallery/constant_supervision_little.png'
+import impeccable_hygiene_little from '../../../../public/gallery/impeccable_hygiene_little.png'
+import cleanliness_and_well_thought_out_space from '../../../../public/gallery/cleanliness_and_well_thought_out_space_little.png'
 
 import {inverse} from "next/dist/lib/picocolors";
 import {useDispatch} from "react-redux";
 import {setPic, setScroll, setShowGal} from "@/store/slices/slice";
 
 import gamepad from '../../../../public/events/gamepad_white.png'
+import eye from '../../../../public/events/eye_white.png'
+import gigiena from '../../../../public/events/gigiena_white.png'
+import home from '../../../../public/events/home_white.png'
 
 export const Safety = () => {
     const dispatch = useDispatch()
@@ -36,19 +39,19 @@ export const Safety = () => {
                 <div className={compStyles.cardText}>{texts.promo.safety.subText1}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={eye} alt={'eye'} className={promoStyles.ico}/>
                 <h3 className={compStyles.cardTitle}>{texts.promo.safety.sub2}</h3>
                 <Image data-name={'constant_supervision'} onClick={envocePic} src={constant_supervision} alt={'constant_supervision'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText2}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={gigiena} alt={'gigiena'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.safety.sub3}</div>
                 <Image src={impeccable_hygiene_little} alt={'impeccable_hygiene_little'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText3}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={home} alt={'home'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.safety.sub4}</div>
                 <Image src={cleanliness_and_well_thought_out_space} alt={'cleanliness_and_well_thought_out_space'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText4}</div>

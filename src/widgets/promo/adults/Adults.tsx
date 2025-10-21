@@ -5,7 +5,7 @@ import compStyles from './adults.module.scss'
 import promoStyles from '../promoCommon.module.scss'
 import {anchorTo} from "@/helpers/helpers";
 import Image from "next/image";
-import adults_with_children1 from '../../../../public/gallery/adults_with_children1.png'
+import adults_with_children1 from '../../../../public/gallery/adults_with_children1_little.png'
 import adults_with_children2 from '../../../../public/gallery/adults_with_children1.png'
 import adults_with_children3 from '../../../../public/gallery/adults_with_children3_little.png'
 import {setPic, setScroll, setShowGal} from "@/store/slices/slice";

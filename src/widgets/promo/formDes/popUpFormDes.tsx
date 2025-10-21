@@ -135,7 +135,7 @@ export const PopUpFormDes = () => {
             <div> Мы скоро свяжемся с Вами</div>
         </div>}
         {error && <div className={compStyles.done}>
-            <div> Заполните поле номер телефона корректно</div>
+            <div> Заполните номер телефона в нужном формате</div>
         </div>}
     </div>
 }

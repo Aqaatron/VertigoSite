@@ -17,14 +17,14 @@ export const People = () => {
         <h1 className={promoStyles.title}>{texts.promo.people.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.people.subtitle}</h2>
         <div className={classNames(promoStyles.cardsWrapper, compStyles.cardsWrapperLocal)}>
-            <div className={compStyles.card}>
+            {/* <div className={compStyles.card}>
                 <div className={compStyles.photo}>
                 </div>
                 <h3 className={compStyles.cardTitle}>{texts.promo.people.p1Name}</h3>
                 <div className={compStyles.cardText}>{texts.promo.people.p1title}</div>
                 <div className={compStyles.cardText}>{texts.promo.people.p1subtitle}</div>
                 <div className={compStyles.cardTextSmall}>{texts.promo.people.p1text}</div>
-            </div>
+            </div> */}
             <div className={compStyles.card}>
                 <div className={compStyles.photo}>
                     <Image src={operator_yarik} alt={'operator_yarik'}/>
