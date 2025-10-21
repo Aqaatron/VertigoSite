@@ -8,10 +8,10 @@ import ico from '../../../../public/events/PS5.png'
 import {anchorTo} from "@/helpers/helpers";
 
 import pic from '../../../../public/gallery/pic4_new.png'
-import instruction from '../../../../public/gallery/instruction2_little.png'
-import spacious_arena from '../../../../public/gallery/spacious_arena_little.png'
-import comfortable_lounge from '../../../../public/gallery/comfortable_lounge_little.png'
-import variety_of_vr_games_and_play_areas from '../../../../public/gallery/variety_of_vr_games_and_play_areas_little.png'
+import instruction from '../../../../public/gallery/instruction2.png'
+import spacious_arena from '../../../../public/gallery/spacious_arena.png'
+import comfortable_lounge from '../../../../public/gallery/comfortable_lounge.png'
+import variety_of_vr_games_and_play_areas from '../../../../public/gallery/variety_of_vr_games_and_play_areas.png'
 import photos_and_videos from '../../../../public/gallery/photos_and_videos.png'
 import variety_of_gaming_zones from '../../../../public/gallery/variety_of_gaming_zones.png'
 
