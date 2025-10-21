@@ -1,5 +1,5 @@
 import {texts} from "@/texts";
-import React from "react";
+import React, {useEffect} from "react";
 import globals from "@/globals.module.scss";
 import compStyles from './safety.module.scss'
 import promoStyles from '../promoCommon.module.scss'
@@ -20,8 +20,15 @@ import gamepad from '../../../../public/events/gamepad_white.png'
 import eye from '../../../../public/events/eye_white.png'
 import gigiena from '../../../../public/events/gigiena_white.png'
 import home from '../../../../public/events/home_white.png'
+import pad from "../../../../public/purpPadClean.png";
 
 export const Safety = () => {
+    const [isMobile, setIsMobile] = React.useState(false)
+    useEffect(() => {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobile = /iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
+        setIsMobile(mobile);
+    }, []);
     const dispatch = useDispatch()
     const envocePic = (event: any) => {
         dispatch(setScroll(window.scrollY + 50))
@@ -29,6 +36,7 @@ export const Safety = () => {
         dispatch(setPic(event.target.dataset.name))
     }
     return <div className={globals.contentBlock} style={{backgroundColor: "#685BC7"}}>
+        <Image className={compStyles.pad} src={pad} alt={'pad'}/>
         <h1 className={promoStyles.title}>{texts.promo.safety.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.safety.subtitle}</h2>
         <div className={promoStyles.cardsWrapper}>

@@ -33,9 +33,9 @@
 }
 
 .contentWrapper {
-  margin-top: 60px;
+  margin-top: 30px;
   //margin-bottom: 100px;
-  width: 1200px;
+  width: 1300px;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -81,8 +81,8 @@
 
 .mainTitle {
   //height: 86px;
-  width: 1100px;
-  font-size: 60px;
+  width: 1300px;
+  font-size: 55px;
   font-weight: 500;
   margin: 30px 0;
   font-family: 'Space Ranger', sans-serif;
@@ -91,7 +91,7 @@
 }
 
 .fillerText {
-  width: 900px;
+  width: 1300px;
   font-size: 20px;
   font-weight: lighter;
   line-height: 150%;
@@ -108,8 +108,7 @@
 }
 
 .backgroundVideo {
-
-  height: 450px;
+  height: 600px;
   width: 1200px;
   z-index: -1;
   //transform: translate(-50%, -50%);
@@ -120,7 +119,7 @@
   //position: absolute;
   //top: 80px;
   //left: 30%;
-  height: 450px;
+  height: 600px;
   width: 1200px;
   overflow: hidden;
   z-index: -1;
@@ -146,8 +145,12 @@
   .contentWrapper {
     width: 1030px;
     //margin-top: 140px;
+    margin-top: 30px;
   }
-
+  .mainTitle{
+    width: 1300px;
+    font-size: 55px;
+  }
   .fillerText {
     font-weight: lighter;
   }
@@ -161,7 +164,7 @@
     scale: 2;
   }
   .backgroundVideo {
-    height: 450px;
+    height: 600px;
     width: 1200px;
     z-index: -1;
     //transform: translate(-50%, -50%);
@@ -169,7 +172,7 @@
   }
 
   .videoWrapper {
-    height: 450px;
+    height: 600px;
     width: 1200px;
     overflow: hidden;
     z-index: -1;
