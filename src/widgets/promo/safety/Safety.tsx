@@ -16,6 +16,8 @@ import {inverse} from "next/dist/lib/picocolors";
 import {useDispatch} from "react-redux";
 import {setPic, setScroll, setShowGal} from "@/store/slices/slice";
 
+import gamepad from '../../../../public/events/gamepad_white.png'
+
 export const Safety = () => {
     const dispatch = useDispatch()
     const envocePic = (event: any) => {
@@ -28,7 +30,7 @@ export const Safety = () => {
         <h2 className={promoStyles.subtitle}>{texts.promo.safety.subtitle}</h2>
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={gamepad} alt={'gamepad'} className={promoStyles.ico}/>
                 <h3 className={compStyles.cardTitle}>{texts.promo.safety.sub1}</h3>
                 <Image data-name={'innovative_equipment'} onClick={envocePic} src={innovative_equipment} alt={'innovative_equipment'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText1}</div>
