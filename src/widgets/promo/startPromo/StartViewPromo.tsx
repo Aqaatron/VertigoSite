@@ -27,12 +27,11 @@ export const StartViewPromo = () => {
                 <Image className={compStyles.logoImg2} src={logo} alt={'logo'}/>
                 <Image className={compStyles.line} src={lineHeader} alt={'logo'}/>
                 <div style={{display: 'flex', width: '950px', zIndex: '100'}}>
-                    <div className={compStyles.ancorItem}>Главная</div>
-                    <div onClick={anchorTo} data-name={'events'} className={compStyles.ancorItem}>Мероприятия</div>
-                    <div onClick={anchorTo} data-name={'gallery'} className={compStyles.ancorItem}>Галерея</div>
-                    <div onClick={anchorTo} data-name={'games'} className={compStyles.ancorItem}>Игры</div>
-                    <div onClick={anchorTo} data-name={'faq'} className={compStyles.ancorItem}>FaQ</div>
-                    <div onClick={anchorTo} data-name={'sert'} className={compStyles.ancorItem}>Сертификаты</div>
+                    <div onClick={anchorTo} data-name={'merits'} className={compStyles.ancorItem}>Главная</div>
+                    <div onClick={anchorTo} data-name={'gallery'} className={compStyles.ancorItem}>День рождения</div>
+                    <div onClick={anchorTo} data-name={'reviews'} className={compStyles.ancorItem}>Отзывы</div>
+                    <div onClick={anchorTo} data-name={'faq'} className={compStyles.ancorItem}>Тарифы</div>
+                    <div onClick={anchorTo} data-name={'sert'} className={compStyles.ancorItem}>FaQ</div>
                     <div onClick={anchorTo} data-name={'contacts'} className={compStyles.ancorItem}>Контакты</div>
                 </div>
             </div> ||
