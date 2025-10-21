@@ -4,6 +4,7 @@
 .subtitleLocal {
   width: 1200px;
 }
+
 .pad {
   position: absolute;
   z-index: 10;
@@ -12,6 +13,7 @@
   height: 92%;
 
 }
+
 .card {
   position: relative;
   //width: 520px;
@@ -141,7 +143,12 @@
   .subtitleLocal {
     width: 300px;
   }
-  .wrapper{
+  .wrapper {
     min-height: 200px;
-  };
+    padding: 5px;
+  }
+
+  .advge {
+    width: 300px;
+  }
 }

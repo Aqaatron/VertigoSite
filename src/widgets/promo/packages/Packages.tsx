@@ -23,7 +23,7 @@ export const Packages = ({action}: { action: any }) => {
     }
 
     return <div id={'tarifs'} className={promoStyles.contentBlock} style={{backgroundColor: '#685BC7'}}>
-        <Image className={compStyles.pad} src={pad} alt={'pad'}/>
+        {!isMobile && <Image className={compStyles.pad} src={pad} alt={'pad'}/>}
         <h1 className={promoStyles.title}>{texts.promo.packages.title}</h1>
         <h2 className={classNames(promoStyles.subtitle, compStyles.subtitleLocal)}>{texts.promo.packages.subtitle}</h2>
         <div className={classNames(promoStyles.cardsWrapper)}>

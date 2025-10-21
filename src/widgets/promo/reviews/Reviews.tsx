@@ -25,18 +25,6 @@ export const Reviews = () => {
         {!isMobile && <Image src={pad} alt={'pad'} className={compStyles.Ppad}/>}
         <h1 className={promoStyles.title}>{texts.promo.reviews.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.reviews.subtitle}</h2>
-        {/* <div className={compStyles.videoWrapper}>
-            <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className={compStyles.backgroundVideo}
-            >
-                <source src={'./confrontation.mp4'} type="video/mp4"/>
-                Your browser does not support the video tag.
-            </video>
-        </div> */}
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
                 <h3 className={compStyles.cardTitle}>{texts.promo.reviews.sub1}</h3>

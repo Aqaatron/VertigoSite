@@ -15,7 +15,8 @@ export const MyFormDes = () => {
         setIsMobile(mobile);
         //window.innerWidth > 480 ? setIsMobile(false) : setIsMobile(true)
     }, []);
-    return <div id={'form'} className={classNames(globals.contentBlock, compStyles.baggyMargin)} style={{"backgroundColor": "#14191C"}}>
+    return <div id={'form'} className={classNames(globals.contentBlock, compStyles.baggyMargin)}
+                style={{"backgroundColor": "#14191C"}}>
         {!isMobile && <Image src={circle} alt={'pad'} className={compStyles.pad}/>}
         <PopUpFormDes/>
     </div>

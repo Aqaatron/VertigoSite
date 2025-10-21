@@ -47,7 +47,7 @@ export const Flow = () => {
         }
     }
     return <div id={'flow'} className={promoStyles.contentBlock} style={{backgroundColor: "#685BC7"}}>
-        <Image className={compStyles.pad} src={pad} alt={'pad'}/>
+        {!isMobile && <Image className={compStyles.pad} src={pad} alt={'pad'}/>}
         {!isMobile && <Image className={compStyles.circle} src={circle} alt={'logo'}/>}
         <h1 className={promoStyles.title}>{texts.promo.flow.title}</h1>
         <div className={promoStyles.cardsWrapper}>

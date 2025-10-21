@@ -19,7 +19,7 @@ export const PopUpFormDes = () => {
     const [canSend, setCanSend] = React.useState(false)
     const [sended, setSended] = React.useState(false)
     const [error, setError] = React.useState(false)
-
+    const [peopleCount, setPeopleCount] = React.useState(0)
 
     useEffect(() => {
         const userAgent = navigator.userAgent.toLowerCase();
@@ -50,19 +50,23 @@ export const PopUpFormDes = () => {
             case 'comment':
                 setComment(event.target.value)
                 break
+            case 'peopleCount':
+                setPeopleCount(event.target.value)
+                break
+
         }
     }
     const handleAgreed = () => {
         setAgreed(!agreed)
     }
     const sendMessage = async () => {
-        const body = ` ФИО - ${name}\n Тел - ${phone}\n Комментарий - ${comment}+ n\ Дата - ${date}`
+        const body = ` ФИО - ${name}\n Тел - ${phone}\n Комментарий - ${comment}+ \n Дата - ${date}`
         if (canSend) {
             //ym(104030838, 'reachGoal', 'fos');
             if (typeof window !== "undefined" && typeof (window as any).ym === "function") {
                 (window as any).ym(104030838, "reachGoal", "button_click");
             }
-            await fetch(`https://api.telegram.org/bot8486915093:AAE9-gQFLsKbydaA-dZPn-O4OWu-pMKc8AA/sendMessage`, {
+            await fetch(`https://api.telegram.org/bot7501081910:AAGytPZaG4g_LYbCf1ifjjD4HnPFrfUOfPY/sendMessage`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
@@ -78,7 +82,7 @@ export const PopUpFormDes = () => {
                     {
                         "name": name,
                         "phone": phone,
-                        "comment": comment
+                        "comment": `${comment} Date: ${date} People: ${peopleCount} `
                     })
             })
             setSended(true)
@@ -133,7 +137,7 @@ export const PopUpFormDes = () => {
                 <input id={'date'} data-name={'date'} onChange={handleDate}
                        className={classNames(compStyles.inp, compStyles.formInp)} type={"date"}
                 />
-                <input id={'people'} data-name={'peopleCount'} className={compStyles.formInp}
+                <input id={'people'} data-name={'peopleCount'} className={compStyles.formInp} onChange={handleInput}
                        placeholder={'Количество детей и взрослых:'}/>
                 <input id={'comment'} data-name={'comment'} onChange={handleInput} className={compStyles.formInpTall}
                        placeholder={'Дополнительные пожелания:'}/>
@@ -142,16 +146,16 @@ export const PopUpFormDes = () => {
                     <div className={compStyles.personal}> Я согласен на обработку персональных данных
                     </div>
                 </div>
-                <div className={compStyles.gradientBorder}>
-                    {canSend && <div className={compStyles.cardContent} style={{fontSize: '18px'}}
-                                     onClick={sendMessage}> Получить индивидуальный расчет и
-                            забронировать
-                        </div> ||
-                        <div className={compStyles.cardContent} style={{fontSize: '18px', backgroundColor: 'gray'}}
-                             onClick={sendMessage}> Получить индивидуальный расчет и
-                            забронировать
-                        </div>}
-                </div>
+                {/*<div className={compStyles.gradientBorder}>*/}
+                {/*    {canSend && <div className={compStyles.cardContent} style={{fontSize: '18px'}}*/}
+                {/*                     onClick={sendMessage}> Получить индивидуальный расчет и*/}
+                {/*            забронировать*/}
+                {/*        </div> ||*/}
+                {/*        <div className={compStyles.cardContent} style={{fontSize: '18px', backgroundColor: 'gray'}}*/}
+                {/*             onClick={sendMessage}> Получить индивидуальный расчет и*/}
+                {/*            забронировать*/}
+                {/*        </div>}*/}
+                {/*</div>*/}
             </div>
             <h3 className={compStyles.aftbtn}>Предпочитаете общаться
                 голосом? <Link href={'tel:7 902 710 02 10'}><span
