@@ -7,6 +7,7 @@ import {anchorTo} from "@/helpers/helpers";
 import Image from "next/image";
 import adults_with_children1 from '../../../../public/gallery/adults_with_children1.png'
 import adults_with_children2 from '../../../../public/gallery/adults_with_children1.png'
+import adults_with_children3 from '../../../../public/gallery/adults_with_children3_little.png'
 import {setPic, setScroll, setShowGal} from "@/store/slices/slice";
 import {useDispatch} from "react-redux";
 
@@ -30,7 +31,7 @@ export const Adults = () => {
                 <div className={compStyles.cardText}>{texts.promo.adults.subText1}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={adults_with_children2} alt={'adults_with_children2'} className={compStyles.video}/>
+                <Image src={adults_with_children3} alt={'adults_with_children3'} className={compStyles.video}/>
                 <h3 className={compStyles.cardTitle}>{texts.promo.adults.sub2}</h3>
                 <div className={compStyles.cardText}>{texts.promo.adults.subText2}</div>
             </div>

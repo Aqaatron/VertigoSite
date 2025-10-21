@@ -51,11 +51,12 @@
 }
 
 .photo {
-  border-radius: 100px;
-  min-height: 188px;
-  min-width: 188px;
+  width: 200px;          /* задайте нужный размер */
+  height: 200px;  
   border: solid 1px #1a1a1a;
   margin: 20px 0;
+  border-radius: 50%;    /* делает форму круглой */
+  overflow: hidden;  
 }
 
 @media (min-width: 490px) and (max-width: 1920px) {

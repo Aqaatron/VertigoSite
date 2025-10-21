@@ -14,7 +14,7 @@ export const Reviews = () => {
     return <div className={promoStyles.contentBlock} style={{backgroundColor: 'lightgray'}}>
         <h1 className={promoStyles.title}>{texts.promo.reviews.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.reviews.subtitle}</h2>
-        <div className={compStyles.videoWrapper}>
+        {/* <div className={compStyles.videoWrapper}>
             <video
                 autoPlay
                 muted
@@ -25,7 +25,7 @@ export const Reviews = () => {
                 <source src={'./confrontation.mp4'} type="video/mp4"/>
                 Your browser does not support the video tag.
             </video>
-        </div>
+        </div> */}
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
                 <h3 className={compStyles.cardTitle}>{texts.promo.reviews.sub1}</h3>
