@@ -1,14 +1,14 @@
 @use '../../../globals.module';
 
 
-
-.subtitleLocal{
+.subtitleLocal {
   width: 1200px;
 }
+
 .card {
   position: relative;
   //width: 520px;
-  height: 1000px;
+  //min-height: 800px;
   margin: 0 0 10px 0;
   padding: 20px;
   border-radius: 8px;
@@ -36,17 +36,17 @@
   margin-bottom: 25px;
   font-size: 24px;
   line-height: 1.4;
-  width: 300px;
+  width: 400px;
   text-align: center;
   //min-height: 70px;
   font-family: 'Space Ranger', sans-serif;
 }
 
 .line {
-  width: 450px;
+  width: 550px;
   height: 40px;
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: -100px;
 }
 
@@ -55,14 +55,17 @@
   font-weight: lighter;
   margin: 20px 0;
 }
-.lowerWrapper{
+
+.lowerWrapper {
   @include globals.flexColCenter
 }
+
 .wrapper {
   background-color: rgba(211, 211, 211, 0.2);
   border-radius: 40px;
-  min-height: 600px;
+  min-height: 560px;
   padding: 10px;
+  //width: 400px;
   font-weight: lighter;
 }
 
@@ -71,7 +74,7 @@
   font-size: 16px;
   margin: 20px 10px 20px 30px;
   align-self: start;
-  width: 250px;
+  width: 350px;
 }
 
 .advge::before {
@@ -128,7 +131,10 @@
     text-align: center;
     align-self: center;
   }
-  .subtitleLocal{
+  .subtitleLocal {
     width: 300px;
   }
+  .wrapper{
+    min-height: 200px;
+  };
 }

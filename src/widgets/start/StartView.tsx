@@ -10,6 +10,7 @@ import {PopUpForm} from "@/widgets/form/popUpForm";
 import {PopUpGlobal} from "@/widgets/popup/PopupGLobal";
 import {texts} from "@/texts";
 import promoStyles from "@/widgets/promo/promoCommon.module.scss";
+import {router} from "next/client";
 
 export const StartView = ({showP}: { showP: Function }) => {
     const [isMobile, setIsMobile] = React.useState(false)
@@ -27,14 +28,19 @@ export const StartView = ({showP}: { showP: Function }) => {
     const show = () => {
         showP()
     }
-
+    const goTo = () => {
+        router.push('/birthday').then(() => {
+        })
+    }
     return <div className={globals.contentBlock}>
         <div id={'main'} className={compStyles.header}>
             <Image className={compStyles.logoImg2} src={logo} alt={'logo'}/>
             {/*<Image className={compStyles.light} src={light} alt={'logo'}/>*/}
             <Image className={compStyles.line} src={lineHeader} alt={'logo'}/>
             <div style={{display: 'flex', width: '950px', zIndex: '100'}}>
-                <div className={compStyles.ancorItem}>Главная</div>
+                <div onClick={goTo} className={compStyles.ancorItem} style={{zIndex:'1200',color: '#F05018', minWidth: '160px'}}>День
+                    Рождения
+                </div>
                 <div onClick={anchorTo} data-name={'events'} className={compStyles.ancorItem}>Мероприятия</div>
                 <div onClick={anchorTo} data-name={'gallery'} className={compStyles.ancorItem}>Галерея</div>
                 <div onClick={anchorTo} data-name={'games'} className={compStyles.ancorItem}>Игры</div>

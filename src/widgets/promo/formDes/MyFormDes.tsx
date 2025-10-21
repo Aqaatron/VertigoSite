@@ -15,11 +15,8 @@ export const MyFormDes = () => {
         setIsMobile(mobile);
         //window.innerWidth > 480 ? setIsMobile(false) : setIsMobile(true)
     }, []);
-    return <div id={'form'} className={classNames(globals.contentBlock, compStyles.baggyMargin)}>
+    return <div id={'form'} className={classNames(globals.contentBlock, compStyles.baggyMargin)} style={{"backgroundColor": "#14191C"}}>
         {!isMobile && <Image src={circle} alt={'pad'} className={compStyles.pad}/>}
         <PopUpFormDes/>
-        <h3 className={compStyles.aftbtn}>Предпочитаете общаться
-            голосом? <Link href={'tel:7 902 710 02 10'} ><span
-                style={{textDecoration: 'underline', color:'white'}}>Позвоните нам по номеру 8 902 710 02 10!</span></Link></h3>
     </div>
 }

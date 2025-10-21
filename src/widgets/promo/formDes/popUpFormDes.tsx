@@ -7,25 +7,39 @@ import classNames from "classnames";
 import React, {useEffect} from "react";
 import promoStyles from "@/widgets/promo/promoCommon.module.scss";
 import {texts} from "@/texts";
+import Link from "next/link";
 
 export const PopUpFormDes = () => {
     const [isMobile, setIsMobile] = React.useState(false)
+    const [date, setDate] = React.useState('')
+    const [name, setName] = React.useState('')
+    const [phone, setPhone] = React.useState('')
+    const [comment, setComment] = React.useState('')
+    const [agreed, setAgreed] = React.useState(false)
+    const [canSend, setCanSend] = React.useState(false)
+    const [sended, setSended] = React.useState(false)
+    const [error, setError] = React.useState(false)
+
+
     useEffect(() => {
         const userAgent = navigator.userAgent.toLowerCase();
         const mobile = /iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
         setIsMobile(mobile);
-        //window.innerWidth > 480 ? setIsMobile(false) : setIsMobile(true)
     }, []);
 
-    const [date, setDate] = React.useState(undefined)
-    const [name, setName] = React.useState('')
-    const [phone, setPhone] = React.useState('')
-    const [comment, setComment] = React.useState('')
-    const [argeed, setAgreed] = React.useState(false)
-
+    React.useEffect(() => {
+        if (name && phone && phone.length === 11 && agreed) {
+            setCanSend(true)
+        } else {
+            setCanSend(false)
+        }
+        if (phone.length !== 11) {
+            setError(true)
+        } else {
+            setError(false)
+        }
+    }, [name, phone, agreed])
     const handleInput = (event: any) => {
-        console.log(event.target.dataset.name)
-        console.log(event.target.value)
         switch (event.target.dataset.name) {
             case 'name':
                 setName(event.target.value)
@@ -39,39 +53,28 @@ export const PopUpFormDes = () => {
         }
     }
     const handleAgreed = () => {
-        setAgreed(!argeed)
-    }
-    const getChatId = async () => {
-        try {
-            const res = await fetch(`https://api.telegram.org/bot8486915093:AAE9-gQFLsKbydaA-dZPn-O4OWu-pMKc8AA/getUpdates`);
-            const data = await res.json();
-            if (!data.ok) {
-                console.error("Error:", data);
-                return;
-            }
-            if (data.result.length === 0) {
-                console.log("No messages found. Send a message to your bot first!");
-                return;
-            }
-            // Берём chat.id последнего сообщения
-            const chatId = data.result[data.result.length - 1].message.chat.id;
-            //console.log("Your chat ID is:", chatId);
-        } catch (err) {
-            //console.error("Fetch error:", err);
-        }
+        setAgreed(!agreed)
     }
     const sendMessage = async () => {
-        const body = ` ФИО - ${name}\n Тел - ${phone}\n Комментарий - ${comment}`
-        if (argeed) {
-            await fetch(`https://api.telegram.org/bot8486915093:AAE9-gQFLsKbydaA-dZPn-O4OWu-pMKc8AA/sendMessage`, {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
-                    chat_id: '-1003055161566',
-                    text: body,
-                    parse_mode: "Markdown"
-                })
-            });
+        const body = ` ФИО - ${name}\n Тел - ${phone}\n Комментарий - ${comment}+ n\ Дата - ${date}`
+        if (canSend) {
+            //ym(104030838, 'reachGoal', 'fos');
+            if (typeof window !== "undefined" && typeof (window as any).ym === "function") {
+                (window as any).ym(104030838, "reachGoal", "button_click");
+            }
+
+            setSended(true)
+            setCanSend(false)
+            setTimeout(() => {
+                const val = document.getElementById('date')
+                if (val) {
+                    val.value = undefined
+                }
+                setSended(false)
+                setName('')
+                setPhone('')
+                setComment('')
+            }, 2000)
         }
     }
     const handleDate = (event: any) => {
@@ -86,38 +89,49 @@ export const PopUpFormDes = () => {
         {/*<Image src={circleInside} alt={'pad'} className={compStyles.padPopUp}/>*/}
         <div className={compStyles.content}>
             <Image src={line} alt={'line'} className={compStyles.invertLine} style={{height: '20px'}}/>
-            <h1 className={promoStyles.title} style={{margin: '0 0 20px 0'}}>{texts.promo.form.title}</h1>
+            <h1 className={compStyles.title}>{texts.promo.form.title}</h1>
             <Image src={line} alt={'line'} className={compStyles.line} style={{height: '20px'}}/>
-            <div className={globals.flexContRow}>
-                <div className={globals.flexContColumn} style={{marginTop: '40px'}}>
-                    <input onChange={handleInput} className={compStyles.formInp} placeholder={'Ваше Имя'}/>
-                    <input onChange={handleInput} className={compStyles.formInp}
-                           placeholder={'Номер телефона +7 (ХХХ) ХХХ ХХ ХХ'}/>
-                    <input id={'date'} data-name={'date'} onChange={handleDate}
-                           className={classNames(compStyles.inp, compStyles.formInp)} type={"date"}
-                    />
-                    <input data-name={'peopleCount'} className={compStyles.formInp}
-                           placeholder={'Количество детей и взрослых:'}/>
-                    <input onChange={handleInput} className={compStyles.formInpTall}
-                           placeholder={'Дополнительные пожелания:'}/>
-                    <div className={compStyles.contt}>
-                        <input onChange={handleAgreed} type={'checkbox'} style={{margin: '10px 10px 10px 0'}}/>
-                        <div className={compStyles.personal}> Я согласен на обработку персональных данных
-                        </div>
-                    </div>
-                    <div className={compStyles.gradientBorder}>
-                        <div className={compStyles.cardContent} style={{fontSize: '18px'}}
-                             onClick={sendMessage}> Получить индивидуальный расчет и
-                            забронировать
-                        </div>
+            <div className={globals.flexContColumn} style={{marginTop: '40px'}}>
+                <input data-name={'name'} onChange={handleInput} className={compStyles.formInp}
+                       placeholder={'Ваше Имя'}/>
+                <input data-name={'phone'} onChange={handleInput} className={compStyles.formInp}
+                       placeholder={'Номер телефона +7 (ХХХ) ХХХ ХХ ХХ'}/>
+                <input id={'date'} data-name={'date'} onChange={handleDate}
+                       className={classNames(compStyles.inp, compStyles.formInp)} type={"date"}
+                />
+                <input data-name={'peopleCount'} className={compStyles.formInp}
+                       placeholder={'Количество детей и взрослых:'}/>
+                <input data-name={'comment'} onChange={handleInput} className={compStyles.formInpTall}
+                       placeholder={'Дополнительные пожелания:'}/>
+                <div className={compStyles.contt}>
+                    <input onChange={handleAgreed} type={'checkbox'} style={{margin: '10px 10px 10px 0'}}/>
+                    <div className={compStyles.personal}> Я согласен на обработку персональных данных
                     </div>
                 </div>
-                {/*<div className={compStyles.formText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do*/}
-                {/*    eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur*/}
-                {/*    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod*/}
-                {/*    tempor incididunt ut labore et dolore magna aliqua.*/}
-                {/*</div>*/}
+                <div className={compStyles.gradientBorder}>
+                    {canSend && <div className={compStyles.cardContent} style={{fontSize: '18px'}}
+                                     onClick={sendMessage}> Получить индивидуальный расчет и
+                            забронировать
+                        </div> ||
+                        <div className={compStyles.cardContent} style={{fontSize: '18px', backgroundColor: 'gray'}}
+                             onClick={sendMessage}> Получить индивидуальный расчет и
+                            забронировать
+                        </div>}
+                </div>
             </div>
+            <h3 className={compStyles.aftbtn}>Предпочитаете общаться
+                голосом? <Link href={'tel:7 902 710 02 10'}><span
+                    style={{
+                        textDecoration: 'underline',
+                        color: 'white'
+                    }}>Позвоните нам по номеру 8 902 710 02 10!</span></Link></h3>
         </div>
+        {sended && <div className={compStyles.done}>
+            <h1>СПАСИБО!</h1>
+            <div> Мы скоро свяжемся с Вами</div>
+        </div>}
+        {error && <div className={compStyles.done}>
+            <div> Заполните поле номер телефона корректно</div>
+        </div>}
     </div>
 }

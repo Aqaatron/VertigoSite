@@ -9,5 +9,4 @@ export const BookBtn = () => {
     return <div className={classNames(compStyles.btn, compStyles.gradientBorder)} onClick={slideTo}>
         <div className={compStyles.cardContent}>Забронировать праздник</div>
     </div>
-
 }

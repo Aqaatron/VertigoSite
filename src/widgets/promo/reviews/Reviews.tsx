@@ -6,12 +6,13 @@ import promoStyles from '../promoCommon.module.scss'
 import Image from "next/image";
 import uruyk from './uryuk.jpg'
 import {anchorTo} from "@/helpers/helpers";
+import Link from "next/link";
 
 export const Reviews = () => {
     const slideTo = () => {
         anchorTo('form')
     }
-    return <div className={promoStyles.contentBlock} style={{backgroundColor: 'lightgray'}}>
+    return <div className={promoStyles.contentBlock} style={{backgroundColor: 'lightgray', color:'#333333'}}>
         <h1 className={promoStyles.title}>{texts.promo.reviews.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.reviews.subtitle}</h2>
         {/* <div className={compStyles.videoWrapper}>
@@ -61,9 +62,11 @@ export const Reviews = () => {
             <Image src={uruyk} alt={'uruyk'} className={compStyles.pLogo}/>
             <Image src={uruyk} alt={'uruyk'} className={compStyles.pLogo}/>
         </div> */}
+        <Link href={'https://yandex.ru/maps/org/vertigo/103489904717/?indoorLevel=1&ll=46.026944%2C51.531349&z=17'}>
+            <div className={promoStyles.gradientBorder} onClick={slideTo}>
+                <div className={promoStyles.cardContent}>{texts.promo.reviews.btn}</div>
+            </div>
+        </Link>
 
-        <div className={promoStyles.gradientBorder} onClick={slideTo}>
-            <div className={promoStyles.cardContent}>{texts.promo.reviews.btn}</div>
-        </div>
     </div>
 }

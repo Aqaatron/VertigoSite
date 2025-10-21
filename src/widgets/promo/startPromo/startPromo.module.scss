@@ -30,11 +30,10 @@
   margin-left: 300px;
   letter-spacing: 3px;
   font-size: 16px;
-
 }
 
 .contentWrapper {
-  margin-top: 120px;
+  margin-top: 60px;
   //margin-bottom: 100px;
   width: 1200px;
   align-self: center;
@@ -48,7 +47,7 @@
 
 .logoImg2 {
   position: absolute;
-  z-index: 1000;
+  z-index: 10;
   left: -500px;
   top: -30px;
   //margin-right: 80px;
@@ -191,7 +190,12 @@
 }
 
 @media (max-width: 490px) {
-
+  .header {
+    margin-left: 0;
+  }
+  .logoImg {
+    top: -75px;
+  }
   .contentWrapper {
     margin-top: 80px;
     //margin-bottom: 100px;

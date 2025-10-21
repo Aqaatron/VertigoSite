@@ -1,5 +1,5 @@
 import {texts} from "@/texts";
-import React from "react";
+import React, {useEffect} from "react";
 import globals from "@/globals.module.scss";
 import compStyles from './flow.module.scss'
 import promoStyles from '../promoCommon.module.scss'
@@ -18,12 +18,18 @@ import pad from "../../../../public/orPadClean.png";
 import circle from "../../../../public/circle.png";
 
 export const Flow = () => {
+    const [isMobile, setIsMobile] = React.useState(false)
+    useEffect(() => {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobile = /iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
+        setIsMobile(mobile);
+    }, []);
     const slideTo = () => {
         anchorTo('form')
     }
     return <div className={promoStyles.contentBlock} style={{backgroundColor: "#F05018"}}>
-        <Image className={compStyles.pad} src={pad} alt={'pad'}/>
-        <Image className={compStyles.circle} src={circle} alt={'logo'}/>
+        {/*<Image className={compStyles.pad} src={pad} alt={'pad'}/>*/}
+        {!isMobile && <Image className={compStyles.circle} src={circle} alt={'logo'}/>}
         <h1 className={promoStyles.title}>{texts.promo.flow.title}</h1>
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
@@ -47,13 +53,15 @@ export const Flow = () => {
             <div className={compStyles.card}>
                 <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub4}</div>
-                <Image src={variety_of_vr_games_and_play_areas} alt={'variety_of_vr_games_and_play_areas'} className={compStyles.video}/>
+                <Image src={variety_of_vr_games_and_play_areas} alt={'variety_of_vr_games_and_play_areas'}
+                       className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText4}</div>
             </div>
             <div className={compStyles.card}>
                 <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub5}</div>
-                <Image src={variety_of_vr_games_and_play_areas} alt={'variety_of_vr_games_and_play_areas'} className={compStyles.video}/>
+                <Image src={variety_of_vr_games_and_play_areas} alt={'variety_of_vr_games_and_play_areas'}
+                       className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText5}</div>
             </div>
             <div className={compStyles.card}>

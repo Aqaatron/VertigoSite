@@ -8,6 +8,7 @@ import tg from "@/widgets/smm/Tg.png";
 import vk from "@/widgets/smm/VK.png";
 import wa from "@/widgets/smm/whatsappp.png";
 import insta from "@/widgets/smm/insta.png";
+import {router} from "next/client";
 
 export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
     const [open, setOpen] = useState(false);
@@ -34,6 +35,18 @@ export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
         }
         setOpen(false)
 
+    }
+    const goTo = (event: any) => {
+        const target = event.target.dataset.name
+        console.log(target)
+        if (target === 'bday') {
+            console.log('push bday')
+            router.push('/birthday').then(r => {
+            })
+        } else {
+            router.push('/').then(r => {
+            })
+        }
     }
     return (
         <div className={compStyles.burgerMenu}>
@@ -67,10 +80,14 @@ export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
             <div className={open ? compStyles.overLopened : compStyles.overLclosed}>
                 <Image className={compStyles.logoImg} src={vertigo} alt={'logo'}/>
                 {/*<Image className={compStyles.light} src={light} alt={'logo'}/>*/}
-                <div onClick={anchorTo} data-name={'main'} className={compStyles.ancorItem}
-                     style={{marginTop: '100px'}}>Главная
+                <div onClick={goTo} data-name={'main'} className={compStyles.ancorItem}
+                     style={{marginTop: '100px', zIndex: '1200'}}>Главная
                 </div>
-                <div onClick={anchorTo} data-name={'events'} className={compStyles.ancorItem}>Мероприятия</div>
+                < div onClick={goTo} data-name={'bday'} className={compStyles.ancorItem}
+                >День рождения
+                </div>
+                <div onClick={anchorTo} data-name={'events'} className={compStyles.ancorItem}>Мероприятия
+                </div>
                 <div onClick={anchorTo} data-name={'gallery'} className={compStyles.ancorItem}>Галерея</div>
                 <div onClick={anchorTo} data-name={'games'} className={compStyles.ancorItem}>Игры</div>
                 <div onClick={anchorTo} data-name={'faq'} className={compStyles.ancorItem}>FaQ</div>
@@ -95,6 +112,7 @@ export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
                 </div>
             </div>
         </div>
-    );
+    )
+        ;
 };
 
