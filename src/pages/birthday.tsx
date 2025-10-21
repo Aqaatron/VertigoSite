@@ -65,7 +65,7 @@ export default function Birthday() {
             <People/>
             <Safety/>
             <Reviews/>
-             {/*<Special/>*/}
+            {/*<Special/>*/}
             <Packages action={handlePackagge}/>
             <Adults/>
             {isMobile && <FaqMtwo/> || <Faq questions={texts.promo.faq} isPromo={true} showP={() => {

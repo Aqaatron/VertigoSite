@@ -1,5 +1,5 @@
 import {texts} from "@/texts";
-import React from "react";
+import React, {useEffect} from "react";
 import globals from "@/globals.module.scss";
 import compStyles from './adults.module.scss'
 import promoStyles from '../promoCommon.module.scss'
@@ -10,8 +10,15 @@ import adults_with_children2 from '../../../../public/gallery/adults_with_childr
 import adults_with_children3 from '../../../../public/gallery/adults_with_children3_little.png'
 import {setPic, setScroll, setShowGal} from "@/store/slices/slice";
 import {useDispatch} from "react-redux";
+import pad from "../../../../public/orPadClean.png";
 
 export const Adults = () => {
+    const [isMobile, setIsMobile] = React.useState(false)
+    useEffect(() => {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobile = /iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
+        setIsMobile(mobile);
+    }, []);
     const dispatch=useDispatch()
     const slideTo = () => {
         anchorTo('form')
@@ -22,6 +29,7 @@ export const Adults = () => {
         dispatch(setPic(event.target.dataset.name))
     }
     return <div className={promoStyles.contentBlock} style={{backgroundColor:"#F05018"}}>
+        {!isMobile && <Image src={pad} alt={'pad'} className={compStyles.Ppad}/>}
         <h1 className={promoStyles.title}>{texts.promo.adults.title}</h1>
         <h2 className={promoStyles.subtitle}>{texts.promo.adults.subtitle}</h2>
         <div className={promoStyles.cardsWrapper}>

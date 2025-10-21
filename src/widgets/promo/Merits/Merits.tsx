@@ -7,7 +7,7 @@ import Image from "next/image";
 import ico from "../../../../public/events/PS5.png";
 import girlSlider from "../../../../public/girlSlider.png";
 import circle from "../../../../public/circle.png";
-import pad from "../../../../public/purpPadClean.png";
+import pad from "../../../../public/orPadClean.png";
 import smile from "../../../../public/events/smile_white.png";
 import safety from "../../../../public/events/savefty.png";
 import present from "../../../../public/events/present_white.png";
@@ -21,7 +21,7 @@ export const Merits = () => {
         setIsMobile(mobile);
     }, []);
     return <div className={promoStyles.contentBlock} style={{backgroundColor: "#F05018"}}>
-        {/*{!isMobile && <Image src={pad} alt={'pad'} className={compStyles.Ppad}/>}*/}
+        {!isMobile && <Image src={pad} alt={'pad'} className={compStyles.Ppad}/>}
         {!isMobile && <Image src={girlSlider} className={compStyles.girlSlider} alt={'girlSlider'}/>}
         {!isMobile && <Image className={compStyles.circle} src={circle} alt={'logo'}/>}
         <h1 className={promoStyles.title}>{texts.promo.merits.title}</h1>

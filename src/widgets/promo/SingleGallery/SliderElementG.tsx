@@ -4,7 +4,6 @@ import pic2 from '../../../../public/gallery/2.jpg'
 import pic3 from '../../../../public/gallery/3.jpg'
 import pic4 from '../../../../public/gallery/4.jpg'
 import pic5 from '../../../../public/gallery/5.jpg'
-
 import Image from "next/image";
 import React, {useRef} from "react";
 

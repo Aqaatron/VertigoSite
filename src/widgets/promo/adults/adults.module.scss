@@ -7,7 +7,12 @@
   align-items: center;
   justify-content: space-around;
 }
-
+.Ppad {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  top: -75px;
+}
 .card {
   width: 520px;
   height: fit-content;

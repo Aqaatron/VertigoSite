@@ -15,6 +15,7 @@ const pics = ['', 'pic1', 'pic2', 'pic3', 'pic4', 'pic5', '']
 export const SingleGallery = () => {
 
     const dispatch = useDispatch()
+    const chapter = useSelector((state: RootState) => state.counter.chapter)
     const scroll = useSelector((state: RootState) => state.counter.scroll)
     const activePic = useSelector((state: RootState) => state.counter.pic)
     const [index, setIndex] = React.useState(activePic)
@@ -73,10 +74,6 @@ export const SingleGallery = () => {
             };
         }
     }, []);
-    // React.useEffect(() => {
-    //     window.scrollTo({top: 5861, behavior: 'smooth'})
-    // }, [])
-
 
     const slide = (event: any) => {
 

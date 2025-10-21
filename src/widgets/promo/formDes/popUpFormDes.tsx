@@ -38,10 +38,6 @@ export const PopUpFormDes = () => {
         } else {
             setError(false)
         }
-        const val = document.getElementById('date') as HTMLInputElement
-        if (val) {
-            val.value = ''
-        }
     }, [name, phone, agreed])
     const handleInput = (event: any) => {
         switch (event.target.dataset.name) {
@@ -66,13 +62,47 @@ export const PopUpFormDes = () => {
             if (typeof window !== "undefined" && typeof (window as any).ym === "function") {
                 (window as any).ym(104030838, "reachGoal", "button_click");
             }
-
+            await fetch(`https://api.telegram.org/bot8486915093:AAE9-gQFLsKbydaA-dZPn-O4OWu-pMKc8AA/sendMessage`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    chat_id: '-1003055161566',
+                    text: body,
+                    parse_mode: "Markdown"
+                })
+            });
+            await fetch('/api/sendForm', {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(
+                    {
+                        "name": name,
+                        "phone": phone,
+                        "comment": comment
+                    })
+            })
             setSended(true)
             setCanSend(false)
             setTimeout(() => {
-                const val = document.getElementById('date') as HTMLInputElement
-                if (val) {
-                    val.value = ''
+                const mydate = document.getElementById('date') as HTMLInputElement
+                if (mydate) {
+                    mydate.value = ''
+                }
+                const myname = document.getElementById('name') as HTMLInputElement
+                if (myname) {
+                    myname.value = ''
+                }
+                const myphone = document.getElementById('phone') as HTMLInputElement
+                if (myphone) {
+                    myphone.value = ''
+                }
+                const mycomment = document.getElementById('comment') as HTMLInputElement
+                if (mycomment) {
+                    mycomment.value = ''
+                }
+                const mypeople = document.getElementById('people') as HTMLInputElement
+                if (mypeople) {
+                    mypeople.value = ''
                 }
                 setSended(false)
                 setName('')
@@ -96,16 +126,16 @@ export const PopUpFormDes = () => {
             <h1 className={compStyles.title}>{texts.promo.form.title}</h1>
             <Image src={line} alt={'line'} className={compStyles.line} style={{height: '20px'}}/>
             <div className={globals.flexContColumn} style={{marginTop: '40px'}}>
-                <input data-name={'name'} onChange={handleInput} className={compStyles.formInp}
+                <input id={'name'} data-name={'name'} onChange={handleInput} className={compStyles.formInp}
                        placeholder={'Ваше Имя'}/>
-                <input data-name={'phone'} onChange={handleInput} className={compStyles.formInp}
+                <input id={'phone'} data-name={'phone'} onChange={handleInput} className={compStyles.formInp}
                        placeholder={'Номер телефона +7 (ХХХ) ХХХ ХХ ХХ'}/>
                 <input id={'date'} data-name={'date'} onChange={handleDate}
                        className={classNames(compStyles.inp, compStyles.formInp)} type={"date"}
                 />
-                <input data-name={'peopleCount'} className={compStyles.formInp}
+                <input id={'people'} data-name={'peopleCount'} className={compStyles.formInp}
                        placeholder={'Количество детей и взрослых:'}/>
-                <input data-name={'comment'} onChange={handleInput} className={compStyles.formInpTall}
+                <input id={'comment'} data-name={'comment'} onChange={handleInput} className={compStyles.formInpTall}
                        placeholder={'Дополнительные пожелания:'}/>
                 <div className={compStyles.contt}>
                     <input onChange={handleAgreed} type={'checkbox'} style={{margin: '10px 10px 10px 0'}}/>

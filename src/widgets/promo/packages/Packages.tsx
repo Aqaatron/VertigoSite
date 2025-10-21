@@ -1,5 +1,5 @@
 import {texts} from "@/texts";
-import React from "react";
+import React, {useEffect} from "react";
 import globals from "@/globals.module.scss";
 import compStyles from './packages.module.scss'
 import promoStyles from '../promoCommon.module.scss'
@@ -7,14 +7,23 @@ import {anchorTo} from "@/helpers/helpers";
 import Image from "next/image";
 import line from '../../../../public/lineHeader.png'
 import classNames from "classnames";
+import pad from "../../../../public/purpPadClean.png";
 
 export const Packages = ({action}: { action: any }) => {
+    const [isMobile, setIsMobile] = React.useState(false)
+    useEffect(() => {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobile = /iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
+        setIsMobile(mobile);
+    }, []);
+
     const slideTo = (event: any) => {
         anchorTo('form')
         action(event)
     }
 
     return <div id={'tarifs'} className={promoStyles.contentBlock} style={{backgroundColor: '#685BC7'}}>
+        <Image className={compStyles.pad} src={pad} alt={'pad'}/>
         <h1 className={promoStyles.title}>{texts.promo.packages.title}</h1>
         <h2 className={classNames(promoStyles.subtitle, compStyles.subtitleLocal)}>{texts.promo.packages.subtitle}</h2>
         <div className={classNames(promoStyles.cardsWrapper)}>
