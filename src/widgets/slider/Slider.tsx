@@ -33,7 +33,6 @@ export const Slider = () => {
                     left: moduleInitLeft,
                     behavior: 'smooth',
                 })
-                console.log(oneElScroll, moduleInitLeft)
                 setScrl(oneElScroll)
                 setInitLeft(moduleInitLeft)
             }

@@ -21,22 +21,25 @@ export const StartViewPromo = () => {
     const slideTo = () => {
         anchorTo('form')
     }
+    const anchorToo = (event: any) => {
+        anchorTo(event.target.dataset.name)
+    }
     const goTo = () => {
         router.push('/').then(() => {
         })
     }
-    return <div className={promoStyles.contentBlock} style={{backgroundColor:'#685BC7'}}>
+    return <div className={promoStyles.contentBlock} style={{backgroundColor: '#685BC7'}}>
         {!isMobile &&
             <div className={compStyles.header}>
                 <Image className={compStyles.logoImg2} src={logo} alt={'logo'}/>
                 <Image className={compStyles.line} src={lineHeader} alt={'logo'}/>
                 <div style={{display: 'flex', width: '950px', zIndex: '100'}}>
                     <div onClick={goTo} data-name={'merits'} className={compStyles.ancorItem}>Главная</div>
-                    <div onClick={anchorTo} data-name={'flow'} className={compStyles.ancorItem}>День рождения</div>
-                    <div onClick={anchorTo} data-name={'reviews'} className={compStyles.ancorItem}>Отзывы</div>
-                    <div onClick={anchorTo} data-name={'tarifs'} className={compStyles.ancorItem}>Тарифы</div>
-                    <div onClick={anchorTo} data-name={'faq'} className={compStyles.ancorItem}>FaQ</div>
-                    <div onClick={anchorTo} data-name={'contacts'} className={compStyles.ancorItem}>Контакты</div>
+                    <div onClick={anchorToo} data-name={'flow'} className={compStyles.ancorItem}>День рождения</div>
+                    <div onClick={anchorToo} data-name={'reviews'} className={compStyles.ancorItem}>Отзывы</div>
+                    <div onClick={anchorToo} data-name={'tarifs'} className={compStyles.ancorItem}>Тарифы</div>
+                    <div onClick={anchorToo} data-name={'faq'} className={compStyles.ancorItem}>FaQ</div>
+                    <div onClick={anchorToo} data-name={'contacts'} className={compStyles.ancorItem}>Контакты</div>
                 </div>
             </div> ||
             <div id={'main'} className={compStyles.header}>

@@ -13,7 +13,7 @@ import {Taplink} from "@/widgets/taplink/Taplink";
 
 export const FooterNew = () => {
 
-    return <div className={compStyles.footer}>
+    return <div id={'contacts'} className={compStyles.footer}>
         <div className={promoStyles.title}>контакты</div>
         <div className={compStyles.flipper}>
             <div className={compStyles.left}>
@@ -31,7 +31,7 @@ export const FooterNew = () => {
         </div>
         <Taplink/>
         <div className={compStyles.el}>© 2025 Vertigo. Все права защищены.</div>
-        <div className={compStyles.flipper} style={{justifyContent: 'center', alignItems: 'center'}}>
+        <div className={compStyles.flipper} style={{justifyContent: 'center', alignItems: 'center',zIndex:100}}>
             <div className={compStyles.el}>ИП Сидорова Лилия Григорьевна</div>
             <div className={compStyles.el}>ОГРНИП 324784700063938</div>
             <div className={compStyles.el}>ИНН 643969513393</div>
