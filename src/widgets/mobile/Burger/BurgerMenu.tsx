@@ -92,8 +92,9 @@ export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
                 < div onClick={goTo} data-name={'bday'} className={compStyles.ancorItem}
                 >День рождения
                 </div>
-                {menu === 'main' && <div onClick={anchorTo} data-name={'events'} className={compStyles.ancorItem}>Мероприятия
-                </div>}
+                {menu === 'main' &&
+                    <div onClick={anchorTo} data-name={'events'} className={compStyles.ancorItem}>Мероприятия
+                    </div>}
                 {menu === 'main' &&
                     <div onClick={anchorTo} data-name={'gallery'} className={compStyles.ancorItem}>Галерея</div> ||
                     <div onClick={anchorTo} data-name={'reviews'} className={compStyles.ancorItem}>Отзывы</div>}
