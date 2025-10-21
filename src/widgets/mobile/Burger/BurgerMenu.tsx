@@ -1,6 +1,6 @@
 import globals from '../../../globals.module.scss'
 import compStyles from './burger.module.scss'
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import vertigo from "@/widgets/mobile/header/logo.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +12,7 @@ import {router} from "next/client";
 
 export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
     const [open, setOpen] = useState(false);
+    const [menu, setMenu] = React.useState('main')
     React.useEffect(() => {
 
         if (open) {
@@ -40,7 +41,6 @@ export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
         const target = event.target.dataset.name
         console.log(target)
         if (target === 'bday') {
-            console.log('push bday')
             router.push('/birthday').then(r => {
             })
         } else {
@@ -48,9 +48,15 @@ export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
             })
         }
     }
+    useEffect(() => {
+        if (window.location.pathname === '/') {
+            setMenu('main')
+        } else if (window.location.pathname === '/birthday') {
+            setMenu('birthday')
+        }
+    }, [])
     return (
         <div className={compStyles.burgerMenu}>
-            {/* Burger Button */}
             <div onClick={() => setOpen(!open)}
                  className={compStyles.burger}>
         <span
@@ -86,12 +92,17 @@ export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
                 < div onClick={goTo} data-name={'bday'} className={compStyles.ancorItem}
                 >День рождения
                 </div>
-                <div onClick={anchorTo} data-name={'events'} className={compStyles.ancorItem}>Мероприятия
-                </div>
-                <div onClick={anchorTo} data-name={'gallery'} className={compStyles.ancorItem}>Галерея</div>
-                <div onClick={anchorTo} data-name={'games'} className={compStyles.ancorItem}>Игры</div>
+                {menu === 'main' && <div onClick={anchorTo} data-name={'events'} className={compStyles.ancorItem}>Мероприятия
+                </div>}
+                {menu === 'main' &&
+                    <div onClick={anchorTo} data-name={'gallery'} className={compStyles.ancorItem}>Галерея</div> ||
+                    <div onClick={anchorTo} data-name={'reviews'} className={compStyles.ancorItem}>Отзывы</div>}
+                {menu === 'main' &&
+                    <div onClick={anchorTo} data-name={'games'} className={compStyles.ancorItem}>Игры</div> ||
+                    <div onClick={anchorTo} data-name={'tarifs'} className={compStyles.ancorItem}>Тарифы</div>}
                 <div onClick={anchorTo} data-name={'faq'} className={compStyles.ancorItem}>FaQ</div>
-                <div onClick={anchorTo} data-name={'sert'} className={compStyles.ancorItem}>Сертификаты</div>
+                {menu === 'main' &&
+                    <div onClick={anchorTo} data-name={'sert'} className={compStyles.ancorItem}>Сертификаты</div>}
                 <div onClick={anchorTo} data-name={'contacts'} className={compStyles.ancorItem}>Контакты</div>
                 <Link href={'tel:7 902 710 02 10'} style={{textDecoration: 'none'}}>
                     <div className={compStyles.phone}> 8 902 710 02 10</div>

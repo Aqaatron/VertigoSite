@@ -142,7 +142,8 @@ export const PopUpFormDes = () => {
                 <input id={'comment'} data-name={'comment'} onChange={handleInput} className={compStyles.formInpTall}
                        placeholder={'Дополнительные пожелания:'}/>
                 <div className={compStyles.contt}>
-                    <input onChange={handleAgreed} type={'checkbox'} style={{margin: '10px 10px 10px 0',width:'30px',height:'30px'}}/>
+                    <input onChange={handleAgreed} type={'checkbox'}
+                           style={{margin: '10px 10px 10px 0', width: '30px', height: '30px'}}/>
                     <div className={compStyles.personal}> Я согласен на обработку моих персональных данных
                     </div>
                 </div>

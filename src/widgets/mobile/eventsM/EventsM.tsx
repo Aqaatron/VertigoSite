@@ -62,13 +62,13 @@ export const EventsM = ({showP}: { showP: Function }) => {
             <Image src={map} alt={'map'} className={compStyles.ico}/>
             <div className={compStyles.icoTextShort}>Арена</div>
             <Image src={people} alt={'people'} className={compStyles.ico}/>
-            <div className={compStyles.icoTextLong}>2-20 игроков</div>
+            <div className={compStyles.icoTextLong}>16 игроков</div>
         </div>
         <div className={compStyles.icons}>
             <Image src={ps} alt={'pistol'} className={compStyles.ico}/>
             <div className={compStyles.icoTextShort}>PS5</div>
             <Image src={pizza} alt={'pizza'} className={compStyles.ico}/>
-            <div className={compStyles.icoTextLong}>Lounge зона</div>
+            <div className={compStyles.icoTextLong}>Лаунж зона</div>
         </div>
         <div className={compStyles.gradientBorder}>
             <div className={compStyles.cardContent} onClick={show}>Связаться со мной</div>

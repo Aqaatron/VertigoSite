@@ -57,7 +57,7 @@ export const Events = ({showP}: { showP: Function }) => {
                     <Image src={ps} alt={'pistol'} className={compStyles.ico}/>
                     <div className={compStyles.icoTextShort}>PS5</div>
                     <Image src={pizza} alt={'pistol'} className={compStyles.ico}/>
-                    <div className={compStyles.icoTextLong}>Лаундж</div>
+                    <div className={compStyles.icoTextLong}>Лаунж</div>
                 </div>
                 <div className={compStyles.gradientBorder}>
                     <div className={compStyles.cardContent} onClick={goTo}>Подробнее</div>
