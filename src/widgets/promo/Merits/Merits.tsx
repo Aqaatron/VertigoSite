@@ -8,6 +8,10 @@ import ico from "../../../../public/events/PS5.png";
 import girlSlider from "../../../../public/girlSlider.png";
 import circle from "../../../../public/circle.png";
 import pad from "../../../../public/purpPadClean.png";
+import smile from "../../../../public/events/smile_white.png";
+import safety from "../../../../public/events/savefty.png";
+import present from "../../../../public/events/present_white.png";
+import team from "../../../../public/events/team.png";
 
 export const Merits = () => {
 
@@ -18,22 +22,22 @@ export const Merits = () => {
         <h1 className={promoStyles.title}>{texts.promo.merits.title}</h1>
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={smile} alt={'smile'} className={promoStyles.ico}/>
                 <h3 className={compStyles.cardTitle}>{texts.promo.merits.sub1}</h3>
                 <div className={compStyles.cardText}>{texts.promo.merits.subText1}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={safety} alt={'safety'} className={promoStyles.ico}/>
                 <h3 className={compStyles.cardTitle}>{texts.promo.merits.sub2}</h3>
                 <div className={compStyles.cardText}>{texts.promo.merits.subText2}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={present} alt={'present'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.merits.sub3}</div>
                 <div className={compStyles.cardText}>{texts.promo.merits.subText3}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={team} alt={'team'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.merits.sub4}</div>
                 <div className={compStyles.cardText}>{texts.promo.merits.subText4}</div>
             </div>

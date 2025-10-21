@@ -16,6 +16,14 @@ import photos_and_videos from '../../../../public/gallery/photos_and_videos.png'
 import variety_of_gaming_zones from '../../../../public/gallery/variety_of_gaming_zones.png'
 import pad from "../../../../public/orPadClean.png";
 import circle from "../../../../public/circle.png";
+import instructionico from "../../../../public/events/instruction.png";
+import oculus from "../../../../public/events/oculus_white.png";
+import gamepadico from "../../../../public/events/gamepad_white.png";
+import lounge from "../../../../public/events/lounge_white.png";
+import diversify_games from "../../../../public/events/diversify_games_white.png";
+import key_organization from "../../../../public/events/key_organization_white.png";
+import photos_white from "../../../../public/events/photos_white.png";
+
 
 export const Flow = () => {
     const slideTo = () => {
@@ -27,37 +35,37 @@ export const Flow = () => {
         <h1 className={promoStyles.title}>{texts.promo.flow.title}</h1>
         <div className={promoStyles.cardsWrapper}>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={instructionico} alt={'instructionico'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub1}</div>
                 <Image src={instruction} alt={'instruction'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText1}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={oculus} alt={'oculus'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub2}</div>
                 <Image src={spacious_arena} alt={'spacious_arena'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText2}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={lounge} alt={'lounge'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub3}</div>
                 <Image src={comfortable_lounge} alt={'comfortable_lounge'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText3}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={diversify_games} alt={'diversify_games'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub4}</div>
                 <Image src={variety_of_vr_games_and_play_areas} alt={'variety_of_vr_games_and_play_areas'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText4}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={key_organization} alt={'key_organization'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub5}</div>
                 <Image src={variety_of_vr_games_and_play_areas} alt={'variety_of_vr_games_and_play_areas'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText5}</div>
             </div>
             <div className={compStyles.card}>
-                <Image src={ico} alt={'ico'} className={promoStyles.ico}/>
+                <Image src={photos_white} alt={'photos_white'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.flow.sub6}</div>
                 <Image src={photos_and_videos} alt={'photos_and_videos'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.flow.subText6}</div>
