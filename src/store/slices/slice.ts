@@ -28,7 +28,7 @@ export const counterSlice = createSlice({
         setShowGal: (state, action: PayloadAction<boolean>) => {
             state.showGal = action.payload
         },
-        setChapter: (state, action: PayloadAction<boolean>) => {
+        setChapter: (state, action: PayloadAction<string>) => {
             state.chapter = action.payload
         }
     },
