@@ -8,6 +8,10 @@ import ico from "../../../../public/events/PS5.png";
 import girlSlider from "../../../../public/girlSlider.png";
 import circle from "../../../../public/circle.png";
 import pad from "../../../../public/purpPadClean.png";
+import smile from "../../../../public/events/smile_white.png";
+import safety from "../../../../public/events/savefty.png";
+import present from "../../../../public/events/present_white.png";
+import team from "../../../../public/events/team.png";
 
 export const Merits = () => {
     const [isMobile, setIsMobile] = React.useState(false)
