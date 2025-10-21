@@ -134,7 +134,7 @@
   pointer-events: none;
   background: radial-gradient(
                   ellipse at center,
-                  rgba(0, 0, 0, 0) 10%, /* transparent in the middle */
+                  rgba(0, 0, 0, 0) 20%, /* transparent in the middle */
 
                   rgba(104, 91, 199, 1) 75% /* almost black at corners */
   );
@@ -151,7 +151,7 @@
     font-size: 60px;
   }
   .fillerText {
-    font-weight: lighter;
+    font-weight: normal;
   }
   .line {
     position: absolute;
