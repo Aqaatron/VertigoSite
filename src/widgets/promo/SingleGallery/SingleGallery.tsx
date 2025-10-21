@@ -10,7 +10,20 @@ import {RootState} from "@/store/store";
 import {useDispatch, useSelector} from "react-redux";
 import {setShowGal} from "@/store/slices/slice";
 
-const pics = ['', 'pic1', 'pic2', 'pic3', 'pic4', 'pic5', '']
+const pics = ['',
+    'pic1',
+    'pic2',
+    'pic3',
+    'pic4',
+    'pic5',
+    'pic6',
+    'pic7',
+    'pic8',
+    'pic9',
+    'pic10',
+    'pic11',
+    'pic12',
+    '']
 
 export const SingleGallery = () => {
 
@@ -45,6 +58,27 @@ export const SingleGallery = () => {
             case 'pic5':
                 scroll = 4696
                 break
+            case 'pic6':
+                scroll = 5706
+                break
+            case 'pic7':
+                scroll = 6716
+                break
+            case 'pic8':
+                scroll = 7726
+                break
+            case 'pic9':
+                scroll = 8736
+                break
+            case 'pic10':
+                scroll = 9746
+                break
+            case 'pic11':
+                scroll = 10756
+                break
+            case 'pic12':
+                scroll = 11766
+                break
             default:
                 scroll = 654;
         }
@@ -56,12 +90,7 @@ export const SingleGallery = () => {
             left: getScroll(name),
             behavior: 'smooth',
         })
-        //console.log(document.getElementById('gg').scrollLeft)
     }
-    // useEffect(() => document.getElementById('gg')?.scrollTo({
-    //     left: 652,
-    //     behavior: 'smooth',
-    // }), [])
     useEffect(() => {
         getIdx(activePic)
     }, [activePic]);
@@ -81,8 +110,8 @@ export const SingleGallery = () => {
         console.log('name = ', index, idx)
         if (event.target.dataset.name === 'right') {
             console.log('right')
-            if (idx < 6) {
-                if (idx === 5) {
+            if (idx < 13) {
+                if (idx === 12) {
                     document.getElementById('gg')?.scrollTo({
                         left: getScroll('pic1'),
                         behavior: 'smooth',
@@ -93,13 +122,13 @@ export const SingleGallery = () => {
                         behavior: 'smooth',
                     })
                 }
-                idx === 5 ? setIndex('pic1') : setIndex('pic' + (idx + 1))
+                idx === 12 ? setIndex('pic1') : setIndex('pic' + (idx + 1))
             }
         } else {
             console.log('left')
             if (idx === 1) {
                 document.getElementById('gg')?.scrollTo({
-                    left: getScroll('pic5'),
+                    left: getScroll('pic12'),
                     behavior: 'smooth',
                 })
             } else {
@@ -108,7 +137,7 @@ export const SingleGallery = () => {
                     behavior: 'smooth',
                 })
             }
-            idx === 1 ? setIndex('pic5') : setIndex('pic' + (idx - 1))
+            idx === 1 ? setIndex('pic12') : setIndex('pic' + (idx - 1))
         }
     }
     console.log('1', activePic, scroll)

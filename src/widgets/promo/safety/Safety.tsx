@@ -10,7 +10,8 @@ import pic from '../../../../public/gallery/pic2.png'
 import innovative_equipment from '../../../../public/gallery/innovative_equipment_little.png'
 import constant_supervision from '../../../../public/gallery/constant_supervision_little.png'
 import impeccable_hygiene_little from '../../../../public/gallery/impeccable_hygiene_little.png'
-import cleanliness_and_well_thought_out_space from '../../../../public/gallery/cleanliness_and_well_thought_out_space_little.png'
+import cleanliness_and_well_thought_out_space
+    from '../../../../public/gallery/cleanliness_and_well_thought_out_space_little.png'
 
 import {inverse} from "next/dist/lib/picocolors";
 import {useDispatch} from "react-redux";
@@ -31,9 +32,11 @@ export const Safety = () => {
     }, []);
     const dispatch = useDispatch()
     const envocePic = (event: any) => {
-        dispatch(setScroll(window.scrollY + 50))
-        dispatch(setShowGal(true))
-        dispatch(setPic(event.target.dataset.name))
+        if (!isMobile) {
+            dispatch(setScroll(window.scrollY + 50))
+            dispatch(setShowGal(true))
+            dispatch(setPic(event.target.dataset.name))
+        }
     }
     return <div className={globals.contentBlock} style={{backgroundColor: "#685BC7"}}>
         <Image className={compStyles.pad} src={pad} alt={'pad'}/>
@@ -43,25 +46,30 @@ export const Safety = () => {
             <div className={compStyles.card}>
                 <Image src={gamepad} alt={'gamepad'} className={promoStyles.ico}/>
                 <h3 className={compStyles.cardTitle}>{texts.promo.safety.sub1}</h3>
-                <Image data-name={'innovative_equipment'} onClick={envocePic} src={innovative_equipment} alt={'innovative_equipment'} className={compStyles.video}/>
+                <Image data-name={'pic7'} onClick={envocePic} src={innovative_equipment}
+                       alt={'innovative_equipment'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText1}</div>
             </div>
             <div className={compStyles.card}>
                 <Image src={eye} alt={'eye'} className={promoStyles.ico}/>
                 <h3 className={compStyles.cardTitle}>{texts.promo.safety.sub2}</h3>
-                <Image data-name={'constant_supervision'} onClick={envocePic} src={constant_supervision} alt={'constant_supervision'} className={compStyles.video}/>
+                <Image data-name={'pic8'} onClick={envocePic} src={constant_supervision}
+                       alt={'constant_supervision'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText2}</div>
             </div>
             <div className={compStyles.card}>
                 <Image src={gigiena} alt={'gigiena'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.safety.sub3}</div>
-                <Image src={impeccable_hygiene_little} alt={'impeccable_hygiene_little'} className={compStyles.video}/>
+                <Image data-name={'pic9'} onClick={envocePic} src={impeccable_hygiene_little}
+                       alt={'impeccable_hygiene_little'} className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText3}</div>
             </div>
             <div className={compStyles.card}>
                 <Image src={home} alt={'home'} className={promoStyles.ico}/>
                 <div className={compStyles.cardTitle}>{texts.promo.safety.sub4}</div>
-                <Image src={cleanliness_and_well_thought_out_space} alt={'cleanliness_and_well_thought_out_space'} className={compStyles.video}/>
+                <Image data-name={'pic10'} onClick={envocePic}
+                       src={cleanliness_and_well_thought_out_space} alt={'cleanliness_and_well_thought_out_space'}
+                       className={compStyles.video}/>
                 <div className={compStyles.cardText}>{texts.promo.safety.subText4}</div>
             </div>
         </div>
