@@ -6,6 +6,7 @@ import lineHeader from '../../../../public/lineHeader.png'
 import Image from "next/image";
 import React, {useEffect} from "react";
 import {texts} from "@/texts";
+import {router} from "next/client";
 
 export const Header = ({showP}: { showP: Function }) => {
 
@@ -18,7 +19,7 @@ export const Header = ({showP}: { showP: Function }) => {
         }
     }
     const show = () => {
-        showP(true)
+        router.push('/birthday').then(r => {})
     }
     return <div className={globals.contentBlock} style={{minHeight: '90vh'}}>
         <div id={'main'} className={compStyles.header}>
@@ -42,7 +43,7 @@ export const Header = ({showP}: { showP: Function }) => {
             <div className={compStyles.fillerText}>{texts.start.main}</div>
             <div style={{display: 'flex', justifyContent: 'start', margin: '0 0 0 20px'}}>
                 <div className={compStyles.gradientBorder}>
-                    <div className={compStyles.cardContent} onClick={show}>Связаться со мной</div>
+                    <div className={compStyles.cardContent} onClick={show}>Подробнее</div>
                 </div>
                 {/*<div className={compStyles.gradientBorder}>*/}
                 {/*    <div className={compStyles.cardContent} style={{backgroundColor: 'black'}}>Связаться со мной</div>*/}
