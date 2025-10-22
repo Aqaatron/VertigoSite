@@ -39,7 +39,7 @@ export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
     }
     const goTo = (event: any) => {
         const target = event.target.dataset.name
-        console.log(target)
+        //console.log(target)
         if (target === 'bday') {
             router.push('/birthday').then(r => {
             })

@@ -7,7 +7,7 @@ import {pack} from "@/pages/birthday";
 
 export const PromoForm = () => {
     const packk = React.useContext(pack)
-    console.log(packk, 'packk')
+    //console.log(packk, 'packk')
     const [open, setOpen] = React.useState(true)
     const [name, setName] = React.useState('')
     const [phone, setPhone] = React.useState('')
@@ -26,8 +26,8 @@ export const PromoForm = () => {
         }
     }, [name, phone, agreed])
     const handleInput = (event: any) => {
-        console.log(event.target.dataset.name)
-        console.log(event.target.value)
+        //console.log(event.target.dataset.name)
+        //console.log(event.target.value)
         switch (event.target.dataset.name) {
             case 'name':
                 setName(event.target.value)
@@ -82,7 +82,7 @@ export const PromoForm = () => {
             setPhoneVal('valOk')
         }
     }, [phone]);
-    console.log(date)
+    //console.log(date)
     const handleDate = (event: any) => {
         setDate(event.target.value)
     }

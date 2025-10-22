@@ -12,6 +12,7 @@ import pistol from "@/widgets/events/pistol.png";
 import people from "../../../../public/events/peopls.png";
 import ps from "../../../../public/events/PS5.png";
 import pizza from "../../../../public/events/lauge.png";
+import {router} from "next/client";
 
 const textsBday = {
     name: 'bday',
@@ -31,7 +32,7 @@ export const EventsM = ({showP}: { showP: Function }) => {
         setContent(event.target.dataset.name)
     }
     const show = () => {
-        showP(true)
+        router.push('/birthday').then(r => {})
     }
     return <div id={'events'} className={globals.contentBlock} style={{minHeight: '700px', backgroundColor: '#F05018'}}>
         {/*<Image className={compStyles.pad} src={padd} alt={'logo'}/>*/}
@@ -71,7 +72,7 @@ export const EventsM = ({showP}: { showP: Function }) => {
             <div className={compStyles.icoTextLong}>Лаунж зона</div>
         </div>
         <div className={compStyles.gradientBorder}>
-            <div className={compStyles.cardContent} onClick={show}>Связаться со мной</div>
+            <div className={compStyles.cardContent} onClick={show}>Подробнее</div>
         </div>
     </div>
 }

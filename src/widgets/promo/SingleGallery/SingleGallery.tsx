@@ -107,9 +107,9 @@ export const SingleGallery = () => {
     const slide = (event: any) => {
 
         const idx = pics.findIndex((name) => name === index)
-        console.log('name = ', index, idx)
+        //console.log('name = ', index, idx)
         if (event.target.dataset.name === 'right') {
-            console.log('right')
+            //console.log('right')
             if (idx < 13) {
                 if (idx === 12) {
                     document.getElementById('gg')?.scrollTo({
@@ -125,7 +125,7 @@ export const SingleGallery = () => {
                 idx === 12 ? setIndex('pic1') : setIndex('pic' + (idx + 1))
             }
         } else {
-            console.log('left')
+            //console.log('left')
             if (idx === 1) {
                 document.getElementById('gg')?.scrollTo({
                     left: getScroll('pic12'),
@@ -140,7 +140,7 @@ export const SingleGallery = () => {
             idx === 1 ? setIndex('pic12') : setIndex('pic' + (idx - 1))
         }
     }
-    console.log('1', activePic, scroll)
+    //console.log('1', activePic, scroll)
     return <div id={'pics'} data-name={'gallery'} className={classNames(compStyles.slider, globals.contentBlock)}
                 style={{position: 'absolute', top: `${scroll}px`, zIndex: '1000'}}>
         <div className={compStyles.close} onClick={closeMe}>

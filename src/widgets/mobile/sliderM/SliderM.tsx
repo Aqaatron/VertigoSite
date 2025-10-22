@@ -43,7 +43,7 @@ export const SliderM = () => {
 
     }
     const getIdxPlus = (idx: number) => {
-        console.log(idx)
+        //console.log(idx)
         setIndex(idx)
         if (idx === 10) {
             document.getElementById('gg')?.scrollTo({
@@ -115,7 +115,7 @@ export const SliderM = () => {
             getIdxPlus(index)
             index < 10 ? setIndex(index + 1) : setIndex(1)
         } else {
-            console.log(index, 'INDEEX!!!')
+            //console.log(index, 'INDEEX!!!')
             getIdxMinus(index)
             if (index === 1) {
                 setIndex(10)

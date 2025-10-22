@@ -34,8 +34,8 @@ export const PopUpGlobal = ({closeMe}: { closeMe: Function }) => {
         }
     }, [name, phone, agreed])
     const handleInput = (event: any) => {
-        console.log(event.target.dataset.name)
-        console.log(event.target.value)
+        //console.log(event.target.dataset.name)
+        //console.log(event.target.value)
         switch (event.target.dataset.name) {
             case 'name':
                 setName(event.target.value)
