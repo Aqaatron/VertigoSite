@@ -10,6 +10,7 @@ import bp from "../../../../public/games/bpp.png";
 import ss from "../../../../public/games/sss.png";
 import sh from "../../../../public/games/shh.png";
 import js from "../../../../public/games/jss.png";
+import React from "react";
 
 export const SliderElementM = ({data}: { data: any }) => {
 
@@ -40,10 +41,14 @@ export const SliderElementM = ({data}: { data: any }) => {
                 return ps
         }
     }
-    return <div data-name={data.src} id={data.src}
-                className={data.src === '' ? compStyles.sliderElEmpty : !data.active ? compStyles.sliderEl : compStyles.sliderElActive}>
-        {data.src !== '' && <Image src={processImg()} alt={data.title}
-                                   className={data.active ? compStyles.picActive : compStyles.pic}/>}
+    return <div>
+        <div data-name={data.src} id={data.src}
+             className={data.src === '' ? compStyles.sliderElEmpty : !data.active ? compStyles.sliderEl : compStyles.sliderElActive}>
+            {data.src !== '' && <Image src={processImg()} alt={data.title}
+                                       className={data.active ? compStyles.picActive : compStyles.pic}/>}
 
+        </div>
+        <h1 className={compStyles.gameTitle}>{data.title}</h1>
+        <div className={compStyles.gameBody}>{data.body}</div>
     </div>
 }

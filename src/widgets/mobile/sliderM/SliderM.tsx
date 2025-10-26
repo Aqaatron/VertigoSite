@@ -4,7 +4,7 @@ import Image from "next/image";
 import pad from './pPad.png'
 import line from '../../../../public/Vector7.png'
 import {SliderElementM} from "@/widgets/mobile/sliderM/SliderElementM";
-import triangle from '../../../../public/ui/btnSlider.png'
+import triangle from './btn.png'
 import React, {useEffect} from "react";
 import {texts} from "@/texts";
 
@@ -145,7 +145,7 @@ export const SliderM = () => {
             slideSwype('left')
         }
     };
-    return <div id={'games'} className={globals.contentBlock} style={{backgroundColor: '#685BC7', minHeight: '850px'}}>
+    return <div id={'games'} className={globals.contentBlock} style={{backgroundColor: '#685BC7', minHeight: '650px'}}>
         <div className={compStyles.content}>
             <h1 style={{fontSize: '30px'}} className={compStyles.spaceF}>НАШИ ИГРЫ</h1>
             <div onTouchStart={handleTouchStart}
@@ -156,11 +156,11 @@ export const SliderM = () => {
             <div className={compStyles.navs}>
                 <Image onClick={slide} data-name='left' src={triangle} alt={'triangle'}
                        className={compStyles.triRight}/>
-                <h1 className={compStyles.gameTitle}>{games[index + 1].title}</h1>
+
                 <Image onClick={slide} data-name='right' src={triangle} alt={'triangle'}
                        className={compStyles.triLeft}/>
             </div>
-            <div className={compStyles.gameBody}>{games[index + 1].body}</div>
+
         </div>
 
         {/*<Image src={pad} alt={'pad'} className={compStyles.Ppad}/>*/}
