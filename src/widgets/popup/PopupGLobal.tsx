@@ -62,7 +62,7 @@ export const PopUpGlobal = ({closeMe}: { closeMe: Function }) => {
         if (canSend) {
             //ym(104030838, 'reachGoal', 'fos');
             if (typeof window !== "undefined" && typeof (window as any).ym === "function") {
-                (window as any).ym(104030838, "reachGoal", "button_click");
+                (window as any).ym(104030838, "reachGoal", "fos");
             }
             await fetch(`https://api.telegram.org/bot7501081910:AAGytPZaG4g_LYbCf1ifjjD4HnPFrfUOfPY/sendMessage`, {
                 method: "POST",
