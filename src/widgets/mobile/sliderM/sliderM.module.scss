@@ -195,7 +195,7 @@
   text-align: center;
 }
 
-@media (min-width: 320px) and (max-width: 400px) {
+@media (min-width: 320px) and (max-width: 490px) {
 
   .triLeft {
     cursor: pointer;
@@ -286,22 +286,4 @@
     box-shadow: 14.34px 14.34px 7.17px 0 #00000040;
   }
 
-}
-
-@media (min-width: 400px) and (max-width: 490px) {
-
-  .triLeft {
-    cursor: pointer;
-    margin: 5px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .triRight {
-    cursor: pointer;
-    margin: 5px;
-    width: 50px;
-    height: 50px;
-    transform: rotate(180deg);
-  }
 }
