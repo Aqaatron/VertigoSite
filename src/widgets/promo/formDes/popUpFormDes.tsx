@@ -65,6 +65,7 @@ export const PopUpFormDes = () => {
             //ym(104030838, 'reachGoal', 'fos');
             if (typeof window !== "undefined" && typeof (window as any).ym === "function") {
                 (window as any).ym(104030838, "reachGoal", "fos");
+                console.log('goal reached')
             }
             await fetch(`https://api.telegram.org/bot7501081910:AAGytPZaG4g_LYbCf1ifjjD4HnPFrfUOfPY/sendMessage`, {
                 method: "POST",
