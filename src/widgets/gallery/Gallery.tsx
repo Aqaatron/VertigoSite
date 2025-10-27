@@ -31,12 +31,7 @@ export const Gallery = () => {
             setFs(false);
         }
     }
-    //     if (name.includes('pic') || event.target.dataset.name === 'left' || event.target.dataset.name === 'right') {
-    //     } else {
-    //         setFs(false);
-    //         console.log("Clicked outside!");
-    //     }
-    // };
+
     const closeFs = () => {
         setFs(false)
     }

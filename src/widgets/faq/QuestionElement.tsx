@@ -25,7 +25,7 @@ export const QuestionElement = ({data}: { data: any }) => {
     }, [active])
     return <div onClick={changeActive} className={compStyles.questionEl}>
         <div onClick={changeActive} className={compStyles.headLine}>
-            <h1 id={data.title} className={compStyles.qTitle}>{toUpperCase(data.title)}</h1>
+            <h1 id={data.title} className={compStyles.qTitle}>{data.title}</h1>
             <Image onClick={changeActive} src={triangle} alt={'triangle'}
                    className={!active ? compStyles.triangleOpened : compStyles.triangleClosed}/></div>
         <div className={active ? compStyles.bodyTextOpened : compStyles.bodyTextClosed}>{data.body}</div>

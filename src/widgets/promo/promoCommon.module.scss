@@ -1,0 +1,164 @@
+.contentBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: white;
+  z-index: 30;
+  font-family: Jura, sans-serif;
+  font-weight: 400;
+  //line-height: 150%;
+  //vertical-align: middle;
+  padding-bottom: 100px;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 40px;
+  width: 1200px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  font-family: 'Space Ranger', sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+  z-index: 20;
+}
+
+.subtitle {
+  width: 800px;
+  font-size: 18px;
+  margin: 0 200px 20px 200px;
+  font-weight: lighter;
+  letter-spacing: 0.05em;
+  text-align: center;
+  line-height: 1.6;
+  z-index: 20;
+}
+
+.cardsWrapper {
+  width: 1400px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 60px;
+  z-index: 20;
+}
+
+.gradientBorder {
+  padding: 2px; /* border width */
+  border-radius: 16px;
+  background: linear-gradient(to bottom, white, black);
+  display: inline-block;
+  width: fit-content;
+  margin: 10px;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.cardContent {
+  background: #F05018;
+  border-radius: 14px; /* slightly smaller than outer for visible border */
+  padding: 20px 50px;
+  width: fit-content;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+  font-family: 'Space Ranger', sans-serif;
+  cursor: pointer;
+}
+
+.gradientBorderBlockEnd {
+  padding: 2px; /* border width */
+  border-radius: 16px;
+  background: linear-gradient(to bottom, white, black);
+  display: inline-block;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.cardContentBlockEnd {
+  background: #F05018;
+  border-radius: 14px; /* slightly smaller than outer for visible border */
+  padding: 20px 50px;
+  width: fit-content;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+  font-family: 'Space Ranger', sans-serif;
+  cursor: pointer;
+}
+
+.ico {
+  align-self: center;
+  width: 50px;
+  height: 50px;
+}
+
+@media (max-width: 490px) {
+  .contentBlock {
+    padding-bottom: 20px;
+  }
+  .title {
+    font-size: 30px;
+    padding: 0;
+    width: 90%;
+    margin-bottom: 40px;
+    margin-top: 60px;
+  }
+  .cardsWrapper {
+    width: 90%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .gradientBorder {
+    padding: 2px; /* border width */
+    border-radius: 16px;
+    background: linear-gradient(to bottom, white, black);
+    display: inline-block;
+    width: fit-content;
+    margin: 0 0 50px 0;
+    cursor: pointer;
+  }
+
+  .cardContent {
+    background: #F05018;
+    border-radius: 14px; /* slightly smaller than outer for visible border */
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: white;
+    width: 300px;
+  }
+  .gradientBorderBlockEnd {
+    padding: 2px; /* border width */
+    border-radius: 16px;
+    background: linear-gradient(to bottom, white, black);
+    display: inline-block;
+    width: fit-content;
+    margin: 0 0 20px 0;
+    cursor: pointer;
+  }
+
+  .cardContentBlockEnd {
+    background: #F05018;
+    border-radius: 14px; /* slightly smaller than outer for visible border */
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: white;
+    width: 300px;
+  }
+  .subtitle {
+    width: 90%;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+}

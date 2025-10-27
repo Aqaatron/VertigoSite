@@ -7,15 +7,15 @@ import Script from "next/script";
 //const base = "https://example.ru";
 
 export default function Metrika() {
-    const pathName = usePathname();
-    const searchParams = useSearchParams();
-
-    useEffect(() => {
-        const params = searchParams.toString();
-        //const url = base + pathName + (params ? "?" + params : "");
-
-        ym(104030838, "reachGoal", 'fos');
-    }, [pathName, searchParams]);
+    // const pathName = usePathname();
+    // const searchParams = useSearchParams();
+    //
+    // useEffect(() => {
+    //     const params = searchParams.toString();
+    //     //const url = base + pathName + (params ? "?" + params : "");
+    //
+    //     ym(104030838, "reachGoal", 'fos');
+    // }, [pathName, searchParams]);
 
     return (
         <Script id="metrika">

@@ -12,6 +12,7 @@ import React from "react";
 import robot from '../../../public/robot.png'
 import classNames from "classnames";
 import circle from "../../../public/circle.png";
+import {router} from "next/client";
 
 const textsBday = {
     name: 'bday',
@@ -31,6 +32,11 @@ export const Events = ({showP}: { showP: Function }) => {
     const show = () => {
         showP()
     }
+    const goTo = () => {
+
+        router.push('/birthday').then(() => {
+        })
+    }
     const [content, setContent] = React.useState('bday')
     return <div id={'events'} className={classNames(globals.contentBlock, compStyles.block)}>
         <Image className={compStyles.pad} src={padd} alt={'logo'}/>
@@ -45,16 +51,16 @@ export const Events = ({showP}: { showP: Function }) => {
                     <Image src={map} alt={'map'} className={compStyles.ico}/>
                     <div className={compStyles.icoTextShort}>Арена</div>
                     <Image src={people} alt={'pistol'} className={compStyles.ico}/>
-                    <div className={compStyles.icoTextLong}>2-20 игроков</div>
+                    <div className={compStyles.icoTextLong}>16 игроков</div>
                 </div>
                 <div className={compStyles.icons}>
                     <Image src={ps} alt={'pistol'} className={compStyles.ico}/>
                     <div className={compStyles.icoTextShort}>PS5</div>
                     <Image src={pizza} alt={'pistol'} className={compStyles.ico}/>
-                    <div className={compStyles.icoTextLong}>Lounge зона</div>
+                    <div className={compStyles.icoTextLong}>Лаунж</div>
                 </div>
                 <div className={compStyles.gradientBorder}>
-                    <div className={compStyles.cardContent} onClick={show}>Связаться со мной</div>
+                    <div className={compStyles.cardContent} onClick={goTo}>Подробнее</div>
                 </div>
             </div>
             <div className={compStyles.eventPad}>
@@ -68,13 +74,13 @@ export const Events = ({showP}: { showP: Function }) => {
                     <Image src={map} alt={'map'} className={compStyles.ico}/>
                     <div className={compStyles.icoTextShort}>Арена</div>
                     <Image src={people} alt={'pistol'} className={compStyles.ico}/>
-                    <div className={compStyles.icoTextLong}>2-20 игроков</div>
+                    <div className={compStyles.icoTextLong}>16 игроков</div>
                 </div>
                 <div className={compStyles.icons}>
                     <Image src={ps} alt={'pistol'} className={compStyles.ico}/>
                     <div className={compStyles.icoTextShort}>PS5</div>
                     <Image src={pizza} alt={'pistol'} className={compStyles.ico}/>
-                    <div className={compStyles.icoTextLong}>Lounge зона</div>
+                    <div className={compStyles.icoTextLong}>Лаундж</div>
                 </div>
                 <div className={compStyles.gradientBorder}>
                     <div className={compStyles.cardContent} onClick={show}>Связаться со мной</div>
