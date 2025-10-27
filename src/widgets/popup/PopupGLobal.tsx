@@ -34,8 +34,8 @@ export const PopUpGlobal = ({closeMe}: { closeMe: Function }) => {
         }
     }, [name, phone, agreed])
     const handleInput = (event: any) => {
-        console.log(event.target.dataset.name)
-        console.log(event.target.value)
+        //console.log(event.target.dataset.name)
+        //console.log(event.target.value)
         switch (event.target.dataset.name) {
             case 'name':
                 setName(event.target.value)
@@ -64,7 +64,7 @@ export const PopUpGlobal = ({closeMe}: { closeMe: Function }) => {
             if (typeof window !== "undefined" && typeof (window as any).ym === "function") {
                 (window as any).ym(104030838, "reachGoal", "button_click");
             }
-            await fetch(`https://api.telegram.org/bot8486915093:AAE9-gQFLsKbydaA-dZPn-O4OWu-pMKc8AA/sendMessage`, {
+            await fetch(`https://api.telegram.org/bot7501081910:AAGytPZaG4g_LYbCf1ifjjD4HnPFrfUOfPY/sendMessage`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({

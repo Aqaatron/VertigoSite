@@ -78,9 +78,9 @@ export const SliderG = ({close}: SliderGProps) => {
     const slide = (event: any) => {
 
         const idx = pics.findIndex((name) => name === index)
-        console.log('name = ', index, idx)
+        //console.log('name = ', index, idx)
         if (event.target.dataset.name === 'right') {
-            console.log('right')
+           // console.log('right')
             if (idx < 6) {
                 if (idx === 5) {
                     document.getElementById('gg')?.scrollTo({
@@ -96,7 +96,7 @@ export const SliderG = ({close}: SliderGProps) => {
                 idx === 5 ? setIndex('pic1') : setIndex('pic' + (idx + 1))
             }
         } else {
-            console.log('left')
+            //console.log('left')
             if (idx === 1) {
                 document.getElementById('gg')?.scrollTo({
                     left: getScroll('pic5'),

@@ -43,7 +43,6 @@
   border-radius: 20px;
 }
 
-
 .logoImg {
   z-index: 1000;
   margin-right: 80px;
@@ -54,9 +53,9 @@
 
 .logoImg2 {
   position: absolute;
-  z-index: 1000;
+  z-index: 10;
   left: -500px;
-  top: -40px;
+  top: -30px;
   //margin-right: 80px;
   //scale: (0.5);
   width: 680px;
@@ -164,10 +163,8 @@
     width: 1030px;
     margin-top: 140px;
   }
-  .mainTitle{
 
-  }
-  .fillerText{
+  .fillerText {
     font-weight: lighter;
   }
   .line {

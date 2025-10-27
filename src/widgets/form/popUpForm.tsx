@@ -12,9 +12,9 @@ export const PopUpForm = () => {
     const [comment, setComment] = React.useState('')
     const [argeed, setAgreed] = React.useState(false)
 
-    const handleInput = (event:any) => {
-        console.log(event.target.dataset.name)
-        console.log(event.target.value)
+    const handleInput = (event: any) => {
+        //console.log(event.target.dataset.name)
+        //console.log(event.target.value)
         switch (event.target.dataset.name) {
             case 'name':
                 setName(event.target.value)
@@ -41,15 +41,15 @@ export const PopUpForm = () => {
             }
 
             if (data.result.length === 0) {
-                console.log("No messages found. Send a message to your bot first!");
+               // console.log("No messages found. Send a message to your bot first!");
                 return;
             }
 
             // Берём chat.id последнего сообщения
             const chatId = data.result[data.result.length - 1].message.chat.id;
-            console.log("Your chat ID is:", chatId);
+            //console.log("Your chat ID is:", chatId);
         } catch (err) {
-            console.error("Fetch error:", err);
+            //console.error("Fetch error:", err);
         }
     }
     const sendMessage = async () => {
@@ -88,11 +88,11 @@ export const PopUpForm = () => {
                         <div className={compStyles.cardContent} onClick={sendMessage}> СВЯЖИТЕСЬ СО МНОЙ</div>
                     </div>
                 </div>
-                <div className={compStyles.formText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.
-                </div>
+                {/*<div className={compStyles.formText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do*/}
+                {/*    eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur*/}
+                {/*    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod*/}
+                {/*    tempor incididunt ut labore et dolore magna aliqua.*/}
+                {/*</div>*/}
             </div>
         </div>
 

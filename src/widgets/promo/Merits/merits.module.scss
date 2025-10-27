@@ -1,0 +1,118 @@
+@use '../../../globals.module';
+
+.cardsWrapper {
+  width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.title {
+  font-size: 40px;
+  width: 1200px;
+  text-align: center;
+  margin-bottom: 60px;
+
+}
+.ico {
+  align-self: start;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 520px;
+  margin: 30px 0 30px 0;
+  align-items: start;
+  min-height: 250px;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.cardTitle {
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-family: 'Space Ranger', sans-serif;
+  font-size: 1.6em;
+  line-height: 1.4;
+  width: 90%;
+  text-align: start;
+}
+
+.cardText {
+  margin-top: 20px;
+  font-weight: lighter;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: start;
+}
+
+.Ppad {
+  width: 100%;
+  height: 1600px;
+  position: absolute;
+  z-index: 10;
+  top:-75px;
+}
+
+.girlSlider {
+  position: absolute;
+  right: -114px;
+  z-index: 11;
+  scale: 0.8;
+}
+
+.circle {
+  position: absolute;
+  left: -100px;
+  transform: rotate(180deg);
+
+  z-index: 11;
+}
+
+@media (min-width: 490px) and (max-width: 1920px) {
+  .cardsWrapper {
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 490px) {
+  .cardsWrapper {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 100%;
+    margin: 30px 0 30px 0;
+  }
+
+  .cardTitle {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 22px;
+    line-height: 1.4;
+    text-align: center;
+    width: 100%;
+  }
+
+  .cardText {
+    margin-top: 20px;
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+}
