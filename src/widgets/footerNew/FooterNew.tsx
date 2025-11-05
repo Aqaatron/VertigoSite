@@ -23,8 +23,7 @@ export const FooterNew = () => {
                 <div className={compStyles.el}>Телефон:</div>
                 <div className={compStyles.el}>E-mail:</div>
                 <div className={compStyles.el}>Часы работы:</div>
-                <div className={compStyles.el}>ПН - ПТ: 11:00 - 23:00</div>
-                <div className={compStyles.el}>СБ - ВС: 10:00 - 23:00</div>
+                <div className={compStyles.el}>ПН - ВС: 10:00 - 22:00</div>
             </div>
             <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=103489904717" className={compStyles.map}
                     frameBorder="0"></iframe>
