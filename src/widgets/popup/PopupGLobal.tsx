@@ -65,7 +65,7 @@ export const PopUpGlobal = ({closeMe}: { closeMe: Function }) => {
                 (window as any).ym(104030838, "reachGoal", "fos");
                 console.log('goal reached')
             }
-            await fetch(`https://api.telegram.org/bot7501081910:AAGytPZaG4g_LYbCf1ifjjD4HnPFrfUOfPY/sendMessage`, {
+            await fetch(`https://api.telegram.org/bot8341433626:AAFLFWm2ExJH3RuHfgVQ3QbPTCye9RSo-xU/sendMessage`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({

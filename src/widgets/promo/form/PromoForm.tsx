@@ -52,7 +52,7 @@ export const PromoForm = () => {
             if (typeof window !== "undefined" && typeof (window as any).ym === "function") {
                 (window as any).ym(104030838, "reachGoal", "button_click");
             }
-            await fetch(`https://api.telegram.org/bot8486915093:AAE9-gQFLsKbydaA-dZPn-O4OWu-pMKc8AA/sendMessage`, {
+            await fetch(`https://api.telegram.org/bot8341433626:AAFLFWm2ExJH3RuHfgVQ3QbPTCye9RSo-xU/sendMessage`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({

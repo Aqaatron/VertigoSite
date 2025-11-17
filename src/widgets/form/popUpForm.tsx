@@ -32,7 +32,7 @@ export const PopUpForm = () => {
     }
     const getChatId = async () => {
         try {
-            const res = await fetch(`https://api.telegram.org/bot8486915093:AAE9-gQFLsKbydaA-dZPn-O4OWu-pMKc8AA/getUpdates`);
+            const res = await fetch(`https://api.telegram.org/bot8341433626:AAFLFWm2ExJH3RuHfgVQ3QbPTCye9RSo-xU/getUpdates`);
             const data = await res.json();
 
             if (!data.ok) {
@@ -55,7 +55,7 @@ export const PopUpForm = () => {
     const sendMessage = async () => {
         const body = ` ФИО - ${name}\n Тел - ${phone}\n Комментарий - ${comment}`
         if (argeed) {
-            await fetch(`https://api.telegram.org/bot8486915093:AAE9-gQFLsKbydaA-dZPn-O4OWu-pMKc8AA/sendMessage`, {
+            await fetch(`https://api.telegram.org/bot8341433626:AAFLFWm2ExJH3RuHfgVQ3QbPTCye9RSo-xU/sendMessage`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
