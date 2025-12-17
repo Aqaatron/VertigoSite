@@ -105,7 +105,7 @@ export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
                 {menu === 'main' &&
                     <div onClick={anchorTo} data-name={'sert'} className={compStyles.ancorItem}>Сертификаты</div>}
                 <div onClick={anchorTo} data-name={'contacts'} className={compStyles.ancorItem}>Контакты</div>
-                <Link href={'tel:7 902 710 02 10'} style={{textDecoration: 'none'}}>
+                <Link href={'tel:8 902 710 02 10'} style={{textDecoration: 'none'}}>
                     <div className={compStyles.phone}> 8 902 710 02 10</div>
                 </Link>
                 <div className={globals.flexContRow} style={{margin: '40px 0 0 20px', alignItems: 'center'}}>

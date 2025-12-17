@@ -160,7 +160,7 @@ export const PopUpFormDes = () => {
                 </div>
             </div>
             <h3 className={compStyles.aftbtn}>Предпочитаете общаться
-                голосом? <Link href={'tel:7 902 710 02 10'}><span
+                голосом? <Link href={'tel:8 902 710 02 10'}><span
                     style={{
                         textDecoration: 'underline',
                         color: 'white'

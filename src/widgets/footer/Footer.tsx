@@ -36,7 +36,7 @@ export const Footer = () => {
                 <div className={compStyles.conyColumn}>
                     <h1 style={{margin: '0', width: '450px'}} className={compStyles.spaceF}>ОТкРОЙ НОВЫЙ МИР ВИРТУАЛЬНЫх
                         ПРИкЛЮЧЕНИЙ</h1>
-                    <Link href={'tel:7 902 710 02 10'} style={{
+                    <Link href={'tel:8 902 710 02 10'} style={{
                         marginLeft: '50px',
                         marginTop: '20px',
                         textDecoration: 'none',

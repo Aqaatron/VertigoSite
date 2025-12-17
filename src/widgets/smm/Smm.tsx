@@ -30,7 +30,7 @@ export const Smm = () => {
     }, []);
     return <div className={compStyles.cont}>
         {!up && <Image onClick={scrollUp} src={upp} alt={'smm'} className={compStyles.up}/>}
-        <Link href={'tel:7 902 710 02 10'}>
+        <Link href={'tel:8 902 710 02 10'}>
             <Image src={phone} alt={'smm'} className={compStyles.elphone}/>
         </Link>
         <Link href={'https://t.me/vertigovr'}>
