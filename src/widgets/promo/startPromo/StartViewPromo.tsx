@@ -74,12 +74,10 @@ export const StartViewPromo = () => {
                 Your browser does not support the video tag.
             </video>
         </div>
-        <div style={{display: 'flex', justifyContent: 'start'}}>
+        <div style={{display: 'flex', justifyContent: 'flex-start', gap: '16px', alignItems: 'center'}}>
             <div className={promoStyles.gradientBorder} onClick={slideTo}>
                 <div className={promoStyles.cardContent}>{texts.promo.start.btn}</div>
             </div>
-        </div>
-        <div style={{display: 'flex', justifyContent: 'start'}}>
             <div className={promoStyles.gradientBorder} onClick={openCalc}>
                 <div className={promoStyles.cardContent}>Рассчитать стоимость</div>
             </div>
