@@ -19,6 +19,8 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
   const [players, setPlayers] = React.useState<string>('');
   const [name, setName] = React.useState('');
   const [phone, setPhone] = React.useState('');
+  const [submitted, setSubmitted] = React.useState(false);
+  const [submitting, setSubmitting] = React.useState(false);
 
   const handleNext = () => { if (step < 3) setStep(s => s + 1); };
   const handleBack = () => { if (step > 1) setStep(s => s - 1); };
@@ -40,6 +42,7 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
 
     // ym (метрика), Telegram и внутренний /api/sendForm
     try {
+      setSubmitting(true);
       if (typeof window !== "undefined" && typeof (window as any).ym === "function") {
         (window as any).ym(104030838, "reachGoal", "button_click");
       }
@@ -69,8 +72,14 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
       console.error('Ошибка отправки формы расчёта', err);
     }
 
-    if (onSubmit) onSubmit(data);
-    onClose();
+    // показать сообщение благодарности сразу
+    setSubmitted(true);
+    setSubmitting(false);
+
+    // опционально: сообщаем родителю через небольшой интервал, чтобы сообщение успело отобразиться
+    if (onSubmit) {
+      setTimeout(() => onSubmit(data), 3000);
+    }
   };
 
   // progress circle calculation
@@ -87,81 +96,90 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
         <h2 className={compStyles.calcHeader}>Рассчитайте стоимость</h2>
 
         <div className={compStyles.calcBody}>
-          {step === 1 && (
-            <div className={compStyles.step}>
-              <h3>Выберите мероприятие</h3>
-              <ul className={compStyles.optionsList}>
-                {[
-                  'День рождения',
-                  'Мероприятие для школьников',
-                  'Вечеринка',
-                  'Семейный отдых'
-                ].map(opt => (
-                  <li key={opt} className={compStyles.optionItem}>
-                    <label>
-                      <input
-                        type="radio"
-                        name="eventType"
-                        value={opt}
-                        checked={eventType === opt}
-                        onChange={() => setEventType(opt)}
-                      />
-                      <span>{opt}</span>
-                    </label>
-                  </li>
-                ))}
-              </ul>
+          {submitted ? (
+            <div className={compStyles.step} style={{textAlign: 'center', padding: 20}}>
+              <h3>Спасибо за заявку!</h3>
+              <p>Мы свяжемся с вами в ближайшее время.</p>
             </div>
-          )}
+          ) : (
+            <>
+              {step === 1 && (
+                <div className={compStyles.step}>
+                  <h3>Выберите мероприятие</h3>
+                  <ul className={compStyles.optionsList}>
+                    {[
+                      'День рождения',
+                      'Мероприятие для школьников',
+                      'Вечеринка',
+                      'Семейный отдых'
+                    ].map(opt => (
+                      <li key={opt} className={compStyles.optionItem}>
+                        <label>
+                          <input
+                            type="radio"
+                            name="eventType"
+                            value={opt}
+                            checked={eventType === opt}
+                            onChange={() => setEventType(opt)}
+                          />
+                          <span>{opt}</span>
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
-          {step === 2 && (
-            <div className={compStyles.step}>
-              <h3>Выберите примерное количество участников</h3>
-              <ul className={compStyles.optionsList}>
-                {[
-                  'до 5 человек',
-                  '6-12 человек',
-                  '13-17 человек',
-                  'Более 18 человек',
-                  'Пока не знаю'
-                ].map(opt => (
-                  <li key={opt} className={compStyles.optionItem}>
-                    <label>
-                      <input
-                        type="radio"
-                        name="playersRange"
-                        value={opt}
-                        checked={players === opt}
-                        onChange={() => setPlayers(opt)}
-                      />
-                      <span>{opt}</span>
-                    </label>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+              {step === 2 && (
+                <div className={compStyles.step}>
+                  <h3>Выберите примерное количество участников</h3>
+                  <ul className={compStyles.optionsList}>
+                    {[
+                      'до 5 человек',
+                      '6-12 человек',
+                      '13-17 человек',
+                      'Более 18 человек',
+                      'Пока не знаю'
+                    ].map(opt => (
+                      <li key={opt} className={compStyles.optionItem}>
+                        <label>
+                          <input
+                            type="radio"
+                            name="playersRange"
+                            value={opt}
+                            checked={players === opt}
+                            onChange={() => setPlayers(opt)}
+                          />
+                          <span>{opt}</span>
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
-          {step === 3 && (
-            <form className={compStyles.step} onSubmit={handleSubmit}>
-              <h3>Контакты</h3>
-              <input
-                className={compStyles.input}
-                type="text"
-                placeholder="Имя"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-              <input
-                className={compStyles.input}
-                type="tel"
-                placeholder="Телефон"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-              />
-            </form>
+              {step === 3 && (
+                <form className={compStyles.step} onSubmit={handleSubmit}>
+                  <h3>Контакты</h3>
+                  <input
+                    className={compStyles.input}
+                    type="text"
+                    placeholder="Имя"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                  <input
+                    className={compStyles.input}
+                    type="tel"
+                    placeholder="Телефон"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
+                  />
+                </form>
+              )}
+            </>
           )}
         </div>
 
@@ -193,11 +211,18 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
           </div>
 
           <div className={compStyles.controls}>
-            {step > 1 ? <button className={compStyles.ghostBtn} onClick={handleBack}>Назад</button> : <div style={{width:80}}/>}
-            {step < 3
-              ? <button className={compStyles.orangeBtn} onClick={handleNext}>Далее →</button>
-              : <button className={compStyles.orangeBtn} onClick={() => handleSubmit()}>Отправить</button>
+            {submitted ? (
+              <div style={{width:80}} />
+            ) : (step > 1 ? <button className={compStyles.ghostBtn} onClick={handleBack}>Назад</button> : <div style={{width:80}}/>)
             }
+
+            {submitted ? (
+              <button className={compStyles.orangeBtn} onClick={onClose}>Закрыть</button>
+            ) : (
+              step < 3
+                ? <button className={compStyles.orangeBtn} onClick={handleNext}>Далее →</button>
+                : <button className={compStyles.orangeBtn} onClick={() => handleSubmit()} disabled={submitting}>{submitting ? 'Отправка...' : 'Отправить'}</button>
+            )}
           </div>
         </div>
       </div>
