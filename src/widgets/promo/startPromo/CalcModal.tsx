@@ -41,6 +41,29 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
   // ...added: validation error message...
   const [error, setError] = React.useState('');
 
+  // helper: remove non-digits
+  const digitsOnly = (s: string) => s.replace(/\D/g, '');
+
+  // проверка на российский номер:
+  // допустимы:
+  //  - 11 цифр, начинающихся с 7 или 8 (например 89261234567 или 79261234567)
+  //  - 10 цифр, начинающихся с 9 (например 9261234567) — будем считать российским
+  const isValidRussianPhone = (s: string) => {
+    const d = digitsOnly(s);
+    if (d.length === 11 && (d.startsWith('7') || d.startsWith('8'))) return true;
+    if (d.length === 10 && d.startsWith('9')) return true;
+    return false;
+  };
+
+  // нормализуем к формату +7XXXXXXXXXX для отправки
+  const normalizePhone = (s: string) => {
+    const d = digitsOnly(s);
+    if (d.length === 11 && d.startsWith('8')) return '+7' + d.slice(1);
+    if (d.length === 11 && d.startsWith('7')) return '+' + d;
+    if (d.length === 10) return '+7' + d;
+    return s;
+  };
+
   const handleNext = () => { if (step < 3) setStep(s => s + 1); };
   const handleBack = () => { if (step > 1) setStep(s => s - 1); };
 
@@ -55,10 +78,18 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
       return;
     }
 
+    // проверяем, что номер — российский
+    if (!isValidRussianPhone(phone)) {
+      setStep(3);
+      setError('Введите корректный российский номер телефона, например +7 (912) 345-67-89 или 8 912 345 67 89');
+      return;
+    }
+
     const data: CalcData = { eventType, players, name, phone };
 
     // Подготовка тела сообщения (так же, как в PromoForm.sendMessage)
-    const body = `Форма расчёта:\nТип мероприятия - ${eventType}\nКоличество участников - ${players}\nФИО - ${name}\nТел - ${phone}`;
+    const phoneForSend = normalizePhone(phone);
+    const body = `Форма расчёта:\nТип мероприятия - ${eventType}\nКоличество участников - ${players}\nФИО - ${name}\nТел - ${phoneForSend}`;
 
     // ym (метрика), Telegram и внутренний /api/sendForm
     try {
@@ -82,7 +113,7 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
           name,
-          phone,
+          phone: phoneForSend,
           comment: `Запрос расчёта: ${eventType}; players: ${players}`
         })
       });
@@ -182,7 +213,7 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
                   <input
                     className={compStyles.input}
                     type="tel"
-                    placeholder="Телефон"
+                    placeholder="Телефон, например +7 (912) 345-67-89"
                     value={phone}
                     onChange={(e) => { setPhone(e.target.value); if (error) setError(''); }}
                     required
