@@ -38,6 +38,9 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
   const [submitted, setSubmitted] = React.useState(false);
   const [submitting, setSubmitting] = React.useState(false);
 
+  // ...added: validation error message...
+  const [error, setError] = React.useState('');
+
   const handleNext = () => { if (step < 3) setStep(s => s + 1); };
   const handleBack = () => { if (step > 1) setStep(s => s - 1); };
 
@@ -46,8 +49,9 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
 
     // minimal validation: имя и телефон должны быть заполнены
     if (!name || !phone) {
-      // если не заполнено, переводим пользователя на шаг с контактами
+      // если не заполнено, переводим пользователя на шаг с контактами и показываем сообщение
       setStep(3);
+      setError('Заполните пожалуйста имя и телефон');
       return;
     }
 
@@ -91,6 +95,7 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
     // показать сообщение благодарности сразу
     setSubmitted(true);
     setSubmitting(false);
+    setError(''); // очистить ошибку при успешной отправке
 
     // опционально: сообщаем родителю через небольшой интервал, чтобы сообщение успело отобразиться
     if (onSubmit) {
@@ -171,7 +176,7 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
                     type="text"
                     placeholder="Имя"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => { setName(e.target.value); if (error) setError(''); }}
                     required
                   />
                   <input
@@ -179,9 +184,15 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
                     type="tel"
                     placeholder="Телефон"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={(e) => { setPhone(e.target.value); if (error) setError(''); }}
                     required
                   />
+
+                  {error && (
+                    <div role="alert" aria-live="assertive" style={{color:'#d00', marginTop:8}}>
+                      {error}
+                    </div>
+                  )}
                 </form>
               )}
             </>
