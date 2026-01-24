@@ -9,15 +9,24 @@ import logo from "@/widgets/start/logo.png";
 import vertigo from "@/widgets/mobile/header/logo.png";
 import lineHeader from "../../../../public/lineHeader.png";
 import {router} from "next/client";
+import CalcModal from './CalcModal';
 
 export const StartViewPromo = () => {
     const [isMobile, setIsMobile] = React.useState(false)
+    const [showCalc, setShowCalc] = React.useState(false)
     useEffect(() => {
         const userAgent = navigator.userAgent.toLowerCase();
         const mobile = /iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
         setIsMobile(mobile);
     }, []);
 
+    const openCalc = () => setShowCalc(true)
+    const closeCalc = () => setShowCalc(false)
+    const submitCalc = (data: any) => {
+        // сюда можно добавить отправку на API
+        console.log('calc result', data)
+        closeCalc()
+    }
     const slideTo = () => {
         anchorTo('form')
     }
@@ -70,5 +79,12 @@ export const StartViewPromo = () => {
                 <div className={promoStyles.cardContent}>{texts.promo.start.btn}</div>
             </div>
         </div>
+        <div style={{display: 'flex', justifyContent: 'start'}}>
+            <div className={promoStyles.gradientBorder} onClick={openCalc}>
+                <div className={promoStyles.cardContent}>Рассчитать стоимость</div>
+            </div>
+        </div>
+
+        {showCalc && <CalcModal onClose={closeCalc} onSubmit={submitCalc} />}
     </div>
 }

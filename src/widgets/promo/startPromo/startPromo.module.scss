@@ -140,6 +140,163 @@
   );
 }
 
+.calcOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.calcForm {
+  background: #fff;
+  color: #111;
+  padding: 24px;
+  border-radius: 12px;
+  width: 420px;
+  max-width: 95%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.calcForm h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+}
+
+.calcForm label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.calcForm input {
+  margin-top: 6px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.calcClose {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.calcMultiForm {
+  background: #fff;
+  color: #111;
+  padding: 28px;
+  border-radius: 12px;
+  width: 880px;
+  max-width: 95%;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.calcHeader {
+  margin: 0;
+  font-size: 30px;
+  text-align: left;
+}
+
+.calcBody {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.step {
+  flex: 1 1 60%;
+}
+
+.optionsList {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.optionItem {
+  margin: 12px 0;
+  font-size: 18px;
+}
+.optionItem input {
+  margin-right: 12px;
+  transform: scale(1.15);
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.stepFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #888;
+  font-size: 14px;
+}
+
+.progressRing {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid #eee;
+  border-left-color: #f78b2d;
+  box-sizing: border-box;
+  transform: rotate(-30deg);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.orangeBtn {
+  background-color: #F98B2D;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.ghostBtn {
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 @media (min-width: 490px) and (max-width: 1920px) {
   .contentWrapper {
     width: 1030px;
@@ -272,4 +429,19 @@
     background: none;
   }
 
+  .calcMultiForm {
+    width: 95%;
+    padding: 18px;
+  }
+  .calcBody {
+    flex-direction: column;
+  }
+  .stepFooter {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .controls {
+    justify-content: flex-end;
+  }
 }
