@@ -35,6 +35,7 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
   const [players, setPlayers] = React.useState<string>(playersOptions[0]);
   const [name, setName] = React.useState('');
   const [phone, setPhone] = React.useState('');
+  const [consent, setConsent] = React.useState(false);
   const [submitted, setSubmitted] = React.useState(false);
   const [submitting, setSubmitting] = React.useState(false);
 
@@ -75,6 +76,13 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
       // если не заполнено, переводим пользователя на шаг с контактами и показываем сообщение
       setStep(3);
       setError('Заполните пожалуйста имя и телефон');
+      return;
+    }
+
+    // согласие с политикой обязателен
+    if (!consent) {
+      setStep(3);
+      setError('Необходимо согласиться с Политикой конфиденциальности');
       return;
     }
 
@@ -143,11 +151,19 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
 
   return (
     <div className={compStyles.calcOverlay} onClick={onClose}>
-      <div className={compStyles.calcMultiForm} onClick={(e) => e.stopPropagation()}>
+      <div
+        className={compStyles.calcMultiForm}
+        onClick={(e) => e.stopPropagation()}
+        style={{ width: 500, overflowX: 'hidden' }} // фиксированная ширина модалки + отключена горизонтальная прокрутка
+      >
         <button className={compStyles.calcClose} onClick={onClose} aria-label="Закрыть">×</button>
         <h2 className={compStyles.calcHeader}>Рассчитайте стоимость</h2>
 
-        <div className={compStyles.calcBody}>
+        {/* Зафиксированная высота формы, чтобы она не прыгала при смене шагов */}
+        <div
+          className={compStyles.calcBody}
+          style={{ height: 250, overflowY: 'auto', overflowX: 'hidden' }} // отключаем горизонтальную прокрутку
+        >
           {submitted ? (
             <div className={compStyles.step} style={{textAlign: 'center', padding: 20}}>
               <h3>Спасибо за заявку!</h3>
@@ -201,23 +217,44 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
 
               {step === 3 && (
                 <form className={compStyles.step} onSubmit={handleSubmit}>
-                  <h3>Контакты</h3>
-                  <input
-                    className={compStyles.input}
-                    type="text"
-                    placeholder="Имя"
-                    value={name}
-                    onChange={(e) => { setName(e.target.value); if (error) setError(''); }}
-                    required
-                  />
-                  <input
-                    className={compStyles.input}
-                    type="tel"
-                    placeholder="Телефон, например +7 (912) 345-67-89"
-                    value={phone}
-                    onChange={(e) => { setPhone(e.target.value); if (error) setError(''); }}
-                    required
-                  />
+                  {/* центрируем и ограничиваем ширину полей ввода */}
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, paddingTop: 6 }}>
+                    <input
+                      className={compStyles.input}
+                      type="text"
+                      placeholder="Имя"
+                      value={name}
+                      onChange={(e) => { setName(e.target.value); if (error) setError(''); }}
+                      required
+                      style={{ width: '100%', maxWidth: 420, boxSizing: 'border-box' }}
+                    />
+                    <input
+                      className={compStyles.input}
+                      type="tel"
+                      placeholder="Телефон, например +7 (912) 345-67-89"
+                      value={phone}
+                      onChange={(e) => { setPhone(e.target.value); if (error) setError(''); }}
+                      required
+                      style={{ width: '100%', maxWidth: 420, boxSizing: 'border-box' }}
+                    />
+
+                    <div style={{ marginTop: 6, width: '100%', maxWidth: 420 }}>
+                      <label style={{ display: 'inline-flex', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
+                        <input
+                          type="checkbox"
+                          checked={consent}
+                          onChange={(e) => { setConsent(e.target.checked); if (error) setError(''); }}
+                          aria-checked={consent}
+                        />
+                        <span style={{ fontSize: 14 }}>
+                          Я согласен с&nbsp;
+                          <a href="https://vertigovr.ru//policy" target="_blank" rel="noopener noreferrer">
+                            Политикой конфиденциальности
+                          </a>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
 
                   {error && (
                     <div role="alert" aria-live="assertive" style={{color:'#d00', marginTop:8}}>
