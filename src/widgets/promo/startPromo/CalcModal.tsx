@@ -14,9 +14,25 @@ type Props = {
 };
 
 export default function CalcModal({ onClose, onSubmit }: Props) {
+  const eventOptions = [
+    'День рождения',
+    'Мероприятие для школьников',
+    'Вечеринка',
+    'Семейный отдых'
+  ];
+
+  const playersOptions = [
+    'до 5 человек',
+    '6-12 человек',
+    '13-17 человек',
+    'Более 18 человек',
+    'Пока не знаю'
+  ];
+
   const [step, setStep] = React.useState(1);
-  const [eventType, setEventType] = React.useState('');
-  const [players, setPlayers] = React.useState<string>('');
+  // по умолчанию выбираем первый элемент в каждом списке
+  const [eventType, setEventType] = React.useState<string>(eventOptions[0]);
+  const [players, setPlayers] = React.useState<string>(playersOptions[0]);
   const [name, setName] = React.useState('');
   const [phone, setPhone] = React.useState('');
   const [submitted, setSubmitted] = React.useState(false);
@@ -107,12 +123,7 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
                 <div className={compStyles.step}>
                   <h3>Выберите мероприятие</h3>
                   <ul className={compStyles.optionsList}>
-                    {[
-                      'День рождения',
-                      'Мероприятие для школьников',
-                      'Вечеринка',
-                      'Семейный отдых'
-                    ].map(opt => (
+                    {eventOptions.map(opt => (
                       <li key={opt} className={compStyles.optionItem}>
                         <label>
                           <input
@@ -134,13 +145,7 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
                 <div className={compStyles.step}>
                   <h3>Выберите примерное количество участников</h3>
                   <ul className={compStyles.optionsList}>
-                    {[
-                      'до 5 человек',
-                      '6-12 человек',
-                      '13-17 человек',
-                      'Более 18 человек',
-                      'Пока не знаю'
-                    ].map(opt => (
+                    {playersOptions.map(opt => (
                       <li key={opt} className={compStyles.optionItem}>
                         <label>
                           <input
