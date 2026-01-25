@@ -154,7 +154,16 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
       <div
         className={compStyles.calcMultiForm}
         onClick={(e) => e.stopPropagation()}
-        style={{ width: 500, overflowX: 'hidden' }} // фиксированная ширина модалки + отключена горизонтальная прокрутка
+        // адаптивная ширина: до 560px на больших экранах, иначе 94% ширины экрана;
+        // центрирование по вертикали через вертикальные отступы
+        style={{
+          width: 'min(560px, 94vw)',
+          maxWidth: 560,
+          margin: '6vh auto',
+          overflowX: 'hidden',
+          boxSizing: 'border-box',
+          padding: '16px'
+        }}
       >
         <button className={compStyles.calcClose} onClick={onClose} aria-label="Закрыть">×</button>
         <h2 className={compStyles.calcHeader}>Рассчитайте стоимость</h2>
@@ -162,7 +171,8 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
         {/* Зафиксированная высота формы, чтобы она не прыгала при смене шагов */}
         <div
           className={compStyles.calcBody}
-          style={{ height: 250, overflowY: 'auto', overflowX: 'hidden' }} // отключаем горизонтальную прокрутку
+          // адаптивная высота: максимум 60% высоты окна, минимум 220px — чтобы не «прыгать»
+          style={{ maxHeight: '60vh', minHeight: 220, overflowY: 'auto', overflowX: 'hidden' }}
         >
           {submitted ? (
             <div className={compStyles.step} style={{textAlign: 'center', padding: 20}}>
@@ -226,7 +236,7 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
                       value={name}
                       onChange={(e) => { setName(e.target.value); if (error) setError(''); }}
                       required
-                      style={{ width: '100%', maxWidth: 420, boxSizing: 'border-box' }}
+                      style={{ width: '100%', maxWidth: '520px', boxSizing: 'border-box' }}
                     />
                     <input
                       className={compStyles.input}
@@ -235,7 +245,7 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
                       value={phone}
                       onChange={(e) => { setPhone(e.target.value); if (error) setError(''); }}
                       required
-                      style={{ width: '100%', maxWidth: 420, boxSizing: 'border-box' }}
+                      style={{ width: '100%', maxWidth: '520px', boxSizing: 'border-box' }}
                     />
 
                     <div style={{ marginTop: 6, width: '100%', maxWidth: 420 }}>
