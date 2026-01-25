@@ -74,14 +74,22 @@ export const StartViewPromo = () => {
                 Your browser does not support the video tag.
             </video>
         </div>
-        <div style={{display: 'flex', justifyContent: 'flex-start', gap: '16px', alignItems: 'center'}}>
-            <div className={promoStyles.gradientBorder} onClick={slideTo}>
-                <div className={promoStyles.consultingButton}>{texts.promo.start.btn}</div>
+        {isMobile ? (
+            <div style={{display: 'flex', justifyContent: 'center', gap: '16px', alignItems: 'center'}}>
+                <div className={promoStyles.gradientBorder} onClick={openCalc}>
+                    <div className={promoStyles.cardContent}>Рассчитать стоимость</div>
+                </div>
             </div>
-            <div className={promoStyles.gradientBorder} onClick={openCalc}>
-                <div className={promoStyles.cardContent}>Рассчитать стоимость</div>
+        ) : (
+            <div style={{display: 'flex', justifyContent: 'flex-start', gap: '16px', alignItems: 'center'}}>
+                <div className={promoStyles.gradientBorder} onClick={slideTo}>
+                    <div className={promoStyles.consultingButton}>{texts.promo.start.btn}</div>
+                </div>
+                <div className={promoStyles.gradientBorder} onClick={openCalc}>
+                    <div className={promoStyles.cardContent}>Рассчитать стоимость</div>
+                </div>
             </div>
-        </div>
+        )}
 
         {showCalc && <CalcModal onClose={closeCalc} onSubmit={submitCalc} />}
     </div>
