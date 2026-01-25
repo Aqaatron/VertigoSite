@@ -76,7 +76,7 @@ export const StartViewPromo = () => {
         </div>
         <div style={{display: 'flex', justifyContent: 'flex-start', gap: '16px', alignItems: 'center'}}>
             <div className={promoStyles.gradientBorder} onClick={slideTo}>
-                <div className={promoStyles.cardContent}>{texts.promo.start.btn}</div>
+                <div className={promoStyles.consultingButton}>{texts.promo.start.btn}</div>
             </div>
             <div className={promoStyles.gradientBorder} onClick={openCalc}>
                 <div className={promoStyles.cardContent}>Рассчитать стоимость</div>

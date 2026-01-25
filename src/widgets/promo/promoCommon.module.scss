@@ -70,6 +70,18 @@
   cursor: pointer;
 }
 
+.consultingButton {
+  background: #685BC7;
+  border-radius: 14px; /* slightly smaller than outer for visible border */
+  padding: 20px 50px;
+  width: fit-content;
+  font-size: 22px;
+  text-align: center;
+  color: white;
+  font-family: 'Space Ranger', sans-serif;
+  cursor: pointer;
+}
+
 .gradientBorderBlockEnd {
   padding: 2px; /* border width */
   border-radius: 16px;
