@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import compStyles from '@/widgets/promo/startPromo/startPromo.module.scss';
 
 type CalcData = {
@@ -149,17 +150,28 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
   const circumference = 2 * Math.PI * radius;
   const dashOffset = circumference * (1 - percent / 100);
 
-  return (
-    <div className={compStyles.calcOverlay} onClick={onClose}>
+  const modal = (
+    <div
+      className={compStyles.calcOverlay}
+      onClick={onClose}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 2147483647,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'auto',
+        WebkitOverflowScrolling: 'touch'
+      }}
+    >
       <div
         className={compStyles.calcMultiForm}
         onClick={(e) => e.stopPropagation()}
-        // адаптивная ширина: до 560px на больших экранах, иначе 94% ширины экрана;
-        // центрирование по вертикали через вертикальные отступы
         style={{
           width: 'min(560px, 94vw)',
           maxWidth: 560,
-          margin: '6vh auto',
+          margin: 'auto',
           overflowX: 'hidden',
           boxSizing: 'border-box',
           padding: '16px'
@@ -322,4 +334,10 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
       </div>
     </div>
   );
+
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => { setMounted(true); }, []);
+
+  if (!mounted || typeof document === 'undefined') return null;
+  return ReactDOM.createPortal(modal, document.body);
 }
