@@ -260,15 +260,15 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
                       style={{ width: '100%', maxWidth: '520px', boxSizing: 'border-box' }}
                     />
 
-                    <div style={{ marginTop: 6, width: '100%', maxWidth: 420 }}>
-                      <label style={{ display: 'inline-flex', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
+                    <div style={{ marginTop: 6, width: '100%', maxWidth: 420, alignSelf: 'flex-start' }}>
+                      <label style={{ display: 'inline-flex', alignItems: 'center', gap: 10, cursor: 'pointer' }}>
                         <input
                           type="checkbox"
                           checked={consent}
                           onChange={(e) => { setConsent(e.target.checked); if (error) setError(''); }}
                           aria-checked={consent}
                         />
-                        <span style={{ fontSize: 14 }}>
+                        <span style={{ fontSize: 16 }}>
                           Я согласен с&nbsp;
                           <a href="https://vertigovr.ru//policy" target="_blank" rel="noopener noreferrer">
                             Политикой конфиденциальности
@@ -327,7 +327,15 @@ export default function CalcModal({ onClose, onSubmit }: Props) {
             ) : (
               step < 3
                 ? <button className={compStyles.orangeBtn} onClick={handleNext}>Далее →</button>
-                : <button className={compStyles.orangeBtn} onClick={() => handleSubmit()} disabled={submitting}>{submitting ? 'Отправка...' : 'Отправить'}</button>
+                : <button
+                    className={compStyles.orangeBtn}
+                    onClick={() => handleSubmit()}
+                    disabled={submitting} // <-- убрал блокировку по !consent
+                    aria-disabled={submitting || !consent}
+                    title={!consent ? 'Необходимо согласие с Политикой конфиденциальности' : undefined}
+                  >
+                    {submitting ? 'Отправка...' : 'Отправить'}
+                  </button>
             )}
           </div>
         </div>
