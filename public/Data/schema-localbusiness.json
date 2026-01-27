@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "VERTIGO VR Club",
+  "image": "https://vertigovr.ru/logo.png",
+  "description": "VR-клуб для организации дня рождения ребенка в Саратове",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "проспект им. Петра Столыпина, 27",
+    "addressLocality": "Саратов",
+    "addressRegion": "Саратовская область",
+    "postalCode": "410012",
+    "addressCountry": "RU"
+  },
+  "telephone": "+7 (902) 710-02-10",
+  "url": "https://vertigovr.ru",
+  "priceRange": "₽10000-22000",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "10:00",
+    "closes": "22:00"
+  }
+}

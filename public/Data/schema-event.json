@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "День рождения в виртуальной реальности",
+  "description": "Организация дня рождения ребенка в VR-клубе VERTIGO",
+  "eventAttendanceMode": "OfflineEventAttendanceMode",
+  "eventStatus": "EventScheduled",
+  "startDate": "2026-01-01",
+  "endDate": "2026-12-31",
+  "location": {
+    "@type": "Place",
+    "name": "VERTIGO",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "проспект им. Петра Столыпина, 27",
+      "addressLocality": "Саратов",
+      "addressCountry": "RU"
+    }
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Пакет Минимальный",
+      "price": "10000",
+      "priceCurrency": "RUB"
+    },
+    {
+      "@type": "Offer",
+      "name": "Пакет Оптимальный",
+      "price": "14000",
+      "priceCurrency": "RUB"
+    },
+    {
+      "@type": "Offer",
+      "name": "Пакет Максимальный",
+      "price": "18000",
+      "priceCurrency": "RUB"
+    }
+  ]
+}
+

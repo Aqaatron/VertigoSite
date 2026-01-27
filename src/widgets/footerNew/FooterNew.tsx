@@ -29,7 +29,7 @@ export const FooterNew = () => {
                     frameBorder="0"></iframe>
         </div>
         <Taplink/>
-        <div className={compStyles.el}>© 2025 Vertigo. Все права защищены.</div>
+        <div className={compStyles.el}>© 2026 Vertigo. Все права защищены.</div>
         <div className={compStyles.flipper} style={{justifyContent: 'center', alignItems: 'center',zIndex:100}}>
             <div className={compStyles.el}>ИП Сидорова Лилия Григорьевна</div>
             <div className={compStyles.el}>ОГРНИП 324784700063938</div>
