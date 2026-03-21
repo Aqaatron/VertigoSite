@@ -51,6 +51,19 @@
   font-family: 'Space Ranger', sans-serif;
 }
 
+.cardTitleMax {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 24px;
+  line-height: 1.4;
+  width: 400px;
+  text-align: center;
+  //min-height: 70px;
+  font-family: 'Space Ranger', sans-serif;
+  color: #F05018;
+}
+
 .line {
   width: 550px;
   height: 40px;
@@ -86,6 +99,11 @@
   width: 350px;
 }
 
+.advgeHighlight {
+  color: #F05018; /* orange */
+  font-weight: 700;
+}
+
 .advge::before {
   content: "";
   min-height: 5px;
@@ -96,6 +114,12 @@
   left: -20px;
   top: 5px;
 
+}
+
+/* When the advge is highlighted, color the marker as well */
+.advgeHighlight::before {
+  border-color: #F05018;
+  background-color: #F05018;
 }
 
 //.advge::before {
