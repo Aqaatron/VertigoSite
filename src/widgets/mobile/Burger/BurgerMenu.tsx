@@ -9,6 +9,7 @@ import vk from "@/widgets/smm/VK.png";
 import wa from "@/widgets/smm/whatsappp.png";
 import insta from "@/widgets/smm/insta.png";
 import {router} from "next/client";
+import max from "@/widgets/smm/max.png";
 
 export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
     const [open, setOpen] = useState(false);
@@ -112,15 +113,18 @@ export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
                     <Link href={'https://t.me/vertigovr'}>
                         <Image src={tg} alt={'smm'} className={compStyles.el}/>
                     </Link>
-                    <Link href={'https://vk.com/vertigo_saratov'}>
+                    <Link href={'https://max.ru/u/f9LHodD0cOI0u99Zom2SJFwaHhy8GE52nzqfKjoRm6GyaI3vZlxYx_HJwmc'}>
+                        <Image src={max} alt={'smm'} className={compStyles.el}/>
+                    </Link>
+                     <Link href={'https://vk.com/vertigo_saratov'}>
                         <Image src={vk} alt={'smm'} className={compStyles.el}/>
                     </Link>
                     <Link href={'https://wa.me/79027100210'}>
                         <Image src={wa} alt={'smm'} className={compStyles.el}/>
                     </Link>
-                    <Link href={'https://www.instagram.com/vertigo_saratov?igsh=MXhzZnJybGFmdjc1Zg=='}>
+                    {/*<Link href={'https://www.instagram.com/vertigo_saratov?igsh=MXhzZnJybGFmdjc1Zg=='}>
                         <Image src={insta} alt={'smm'} className={compStyles.insta}/>
-                    </Link>
+                    </Link>*/}
                 </div>
             </div>
         </div>

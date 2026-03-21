@@ -7,6 +7,7 @@ import Link from "next/link";
 import React, {useEffect} from "react";
 import tg from "@/widgets/smm/Tg.png";
 import wa from "@/widgets/smm/whatsappp.png";
+import max from "@/widgets/smm/max.png";
 
 export const Smm = () => {
     const [up, setUp] = React.useState(true)
@@ -39,8 +40,11 @@ export const Smm = () => {
         {/*<Link href={'https://vk.com/vertigo_saratov'}>*/}
         {/*    <Image src={vk} alt={'smm'} className={compStyles.el}/>*/}
         {/*</Link>*/}
-        <Link href={'https://wa.me/79027100210'}>
+        {/*<Link href={'https://wa.me/79027100210'}>
             <Image src={wa} alt={'smm'} className={compStyles.el}/>
+        </Link>*/}
+         <Link href={'https://max.ru/u/f9LHodD0cOI0u99Zom2SJFwaHhy8GE52nzqfKjoRm6GyaI3vZlxYx_HJwmc'}>
+            <Image src={max} alt={'smm'} className={compStyles.el}/>
         </Link>
 
     </div>
