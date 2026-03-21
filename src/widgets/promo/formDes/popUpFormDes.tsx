@@ -11,7 +11,6 @@ import Link from "next/link";
 
 export const PopUpFormDes = () => {
     const [isMobile, setIsMobile] = React.useState(false)
-    const [date, setDate] = React.useState('')
     const [name, setName] = React.useState('')
     const [phone, setPhone] = React.useState('')
     const [comment, setComment] = React.useState('')
@@ -19,7 +18,6 @@ export const PopUpFormDes = () => {
     const [canSend, setCanSend] = React.useState(false)
     const [sended, setSended] = React.useState(false)
     const [error, setError] = React.useState(false)
-    const [peopleCount, setPeopleCount] = React.useState(0)
 
     useEffect(() => {
         const userAgent = navigator.userAgent.toLowerCase();
@@ -50,17 +48,13 @@ export const PopUpFormDes = () => {
             case 'comment':
                 setComment(event.target.value)
                 break
-            case 'peopleCount':
-                setPeopleCount(event.target.value)
-                break
-
         }
     }
     const handleAgreed = () => {
         setAgreed(!agreed)
     }
     const sendMessage = async () => {
-        const body = ` ФИО - ${name}\n Тел - ${phone}\n Комментарий - ${comment}+ \n Дата - ${date}`
+        const body = ` ФИО - ${name}\n Тел - ${phone}\n Комментарий - ${comment}`
         if (canSend) {
             //ym(104030838, 'reachGoal', 'fos');
             if (typeof window !== "undefined" && typeof (window as any).ym === "function") {
@@ -79,20 +73,15 @@ export const PopUpFormDes = () => {
             await fetch('/api/sendForm', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(
-                    {
-                        "name": name,
-                        "phone": phone,
-                        "comment": `${comment} Date: ${date} People: ${peopleCount} `
-                    })
-            })
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    comment: `${comment}`
+                })
+            });
             setSended(true)
             setCanSend(false)
             setTimeout(() => {
-                const mydate = document.getElementById('date') as HTMLInputElement
-                if (mydate) {
-                    mydate.value = ''
-                }
                 const myname = document.getElementById('name') as HTMLInputElement
                 if (myname) {
                     myname.value = ''
@@ -104,23 +93,12 @@ export const PopUpFormDes = () => {
                 const mycomment = document.getElementById('comment') as HTMLInputElement
                 if (mycomment) {
                     mycomment.value = ''
-                }
-                const mypeople = document.getElementById('people') as HTMLInputElement
-                if (mypeople) {
-                    mypeople.value = ''
-                }
+                }               
                 setSended(false)
                 setName('')
                 setPhone('')
                 setComment('')
             }, 2000)
-        }
-    }
-    const handleDate = (event: any) => {
-        setDate(event.target.value)
-        const doc = document.getElementById('date')
-        if (doc) {
-            doc.style.setProperty("--before-color", "transparent")
         }
     }
 
@@ -135,11 +113,7 @@ export const PopUpFormDes = () => {
                        placeholder={'Ваше Имя'}/>
                 <input id={'phone'} data-name={'phone'} onChange={handleInput} className={compStyles.formInp}
                        placeholder={'Номер телефона 7 ХХХ ХХХ ХХ ХХ'}/>
-                <input id={'date'} data-name={'date'} onChange={handleDate}
-                       className={classNames(compStyles.inp, compStyles.formInp)} type={"date"}
-                />
-                <input id={'people'} data-name={'peopleCount'} className={compStyles.formInp} onChange={handleInput}
-                       placeholder={'Количество детей и взрослых:'}/>
+                
                 <input id={'comment'} data-name={'comment'} onChange={handleInput} className={compStyles.formInpTall}
                        placeholder={'Дополнительные пожелания:'}/>
                 <div className={compStyles.contt}>
