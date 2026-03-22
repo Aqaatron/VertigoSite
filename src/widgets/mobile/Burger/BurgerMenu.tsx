@@ -90,7 +90,7 @@ export const BurgerMenu = ({smmToggle}: { smmToggle: Function }) => {
                 <div onClick={goTo} data-name={'main'} className={compStyles.ancorItem}
                      style={{marginTop: '100px', zIndex: '1200'}}>Главная
                 </div>
-                < div onClick={goTo} data-name={'bday'} className={compStyles.ancorItem}
+                < div onClick={goTo} data-name={'bday'} className={compStyles.ancorItemBD}
                 >День рождения
                 </div>
                 {menu === 'main' &&

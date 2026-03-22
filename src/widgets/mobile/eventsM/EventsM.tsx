@@ -63,7 +63,7 @@ export const EventsM = ({showP}: { showP: Function }) => {
             <Image src={map} alt={'map'} className={compStyles.ico}/>
             <div className={compStyles.icoTextShort}>Арена</div>
             <Image src={people} alt={'people'} className={compStyles.ico}/>
-            <div className={compStyles.icoTextLong}>16 игроков</div>
+            <div className={compStyles.icoTextLong}>18 игроков</div>
         </div>
         <div className={compStyles.icons}>
             <Image src={ps} alt={'pistol'} className={compStyles.ico}/>
