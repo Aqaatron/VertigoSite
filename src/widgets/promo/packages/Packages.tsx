@@ -42,8 +42,7 @@ export const Packages = ({action}: { action: any }) => {
                 </div>
                 <div className={compStyles.lowerWrapper}>
                     <div className={compStyles.price}>от <span style={{
-                        color: 'white', textShadow:
-                            '2px 2px 0px #F05018'
+                        color: '#F05018', backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '8px 12px', borderRadius: '6px', fontWeight: 'bold'
                     }}>{texts.promo.packages.p1.price}</span> руб
                     </div>
                     <div className={promoStyles.gradientBorder} style={{color: 'white'}}>
@@ -67,8 +66,7 @@ export const Packages = ({action}: { action: any }) => {
                 </div>
                 <div className={compStyles.lowerWrapper}>
                     <div className={compStyles.price}>от <span style={{
-                        color: 'white', textShadow:
-                            '2px 2px 0px #F05018'
+                        color: '#F05018', backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '8px 12px', borderRadius: '6px', fontWeight: 'bold'
                     }}>{texts.promo.packages.p2.price}</span> руб
                     </div>
                     <div className={promoStyles.gradientBorder} style={{color: 'white'}}>
@@ -92,8 +90,7 @@ export const Packages = ({action}: { action: any }) => {
                 </div>
                 <div className={compStyles.lowerWrapper}>
                     <div className={compStyles.price}>от <span style={{
-                        color: 'white', textShadow:
-                            '2px 2px 0px #F05018'
+                        color: '#F05018', backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '8px 12px', borderRadius: '6px', fontWeight: 'bold'
                     }}>{texts.promo.packages.p3.price}</span> руб
                     </div>
                     <div className={promoStyles.gradientBorder} style={{color: 'white'}}>

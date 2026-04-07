@@ -58,8 +58,8 @@ export const StartViewPromo = () => {
         <div className={compStyles.contentWrapper}>
             <div className={compStyles.mainTitle}>{texts.promo.start.header}
             </div>
-            <div className={compStyles.fillerText}>{texts.promo.start.main}
-                <p style={{marginTop: '25px', fontWeight: 'bold'}}>{texts.promo.start.sub}</p>
+            <div className={compStyles.fillerText}>
+                <p style={{marginTop: '25px', fontWeight: '1500', backgroundColor: 'rgba(0, 0, 0, 0.)', color: '#F05018', padding: '12px 16px', borderRadius: '8px', display: 'inline-block', fontSize: '25px'}}>{texts.promo.start.sub}</p>
             </div>
         </div>
         <div className={compStyles.videoWrapper}>
