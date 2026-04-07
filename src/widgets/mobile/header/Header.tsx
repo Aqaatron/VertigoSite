@@ -5,9 +5,11 @@ import light from '../../../../public/RIM_Light_purple.png'
 import lineHeader from '../../../../public/lineHeader.png'
 import Image from "next/image";
 import React, {useEffect} from "react";
+import {useRouter} from 'next/router';
 import {texts} from "@/texts";
 
 export const Header = ({showP}: { showP: Function }) => {
+    const router = useRouter();
 
     const anchorTo = (event: any) => {
         const name = event.target.dataset.name
@@ -41,8 +43,13 @@ export const Header = ({showP}: { showP: Function }) => {
             </div>
             <div className={compStyles.fillerText}>{texts.start.main}</div>
             <div style={{display: 'flex', justifyContent: 'start', margin: '0 0 0 20px'}}>
-                <div className={compStyles.gradientBorder}>
-                    <div className={compStyles.cardContent} onClick={show}>Связаться со мной</div>
+                <div style={{display: 'flex', flexDirection: 'column', gap: '12px'}}>
+                    <div className={compStyles.gradientBorder}>
+                        <div className={`${compStyles.cardContent} ${compStyles.cardContentPurple}`} onClick={() => router.push('/birthday')}>День Рождения</div>
+                    </div>
+                    <div className={compStyles.gradientBorder}>
+                        <div className={compStyles.cardContent} onClick={show}>Связаться со мной</div>
+                    </div>
                 </div>
                 {/*<div className={compStyles.gradientBorder}>*/}
                 {/*    <div className={compStyles.cardContent} style={{backgroundColor: 'black'}}>Связаться со мной</div>*/}

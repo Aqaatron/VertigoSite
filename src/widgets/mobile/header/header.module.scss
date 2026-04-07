@@ -67,9 +67,11 @@
 .gradientBorder {
   padding: 2px; /* border width */
   border-radius: 16px;
-  background: linear-gradient(to bottom, white, black);
+  /* make the gradient wrap the button rather than stretching full width */
+  background: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.12));
   display: inline-block;
-  width: 100%;
+  /* fixed width so all buttons are identical size */
+  width: 350px;
   margin: 0 10px 0 0;
   cursor: pointer;
 }
@@ -80,12 +82,20 @@
   background: #F05018;
   border-radius: 14px; /* slightly smaller than outer for visible border */
   padding: 15px 20px;
-  width: fit-content;
+  display: block;
+  /* fill the outer gradientBorder width to ensure equal sizing */
+  width: 100%;
+  box-sizing: border-box;
   font-size: 24px;
   font-family: 'Space Ranger', sans-serif;
   @include globals.spaceFont;
   letter-spacing: 2px;
 
+}
+
+.cardContentPurple {
+  background: #685BC7;
+  color: #fff;
 }
 
 
@@ -101,7 +111,7 @@
 
 .fillerText {
   width: 90%;
-  font-size: 20px;
+  font-size: 15px;
   font-family: Jura, sans-serif;
   font-weight: lighter;
   text-align: start;
