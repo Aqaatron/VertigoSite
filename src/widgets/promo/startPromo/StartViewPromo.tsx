@@ -55,24 +55,22 @@ export const StartViewPromo = () => {
                 <Image className={compStyles.logoImg} src={vertigo} alt={'logo'}/>
             </div>
         }
+        <div className={compStyles.videoWrapper}>
+            <Image
+                src={'/birthday.jpg'}
+                alt={'Birthday Background'}
+                fill
+                priority
+                className={compStyles.backgroundVideo}
+                style={{objectFit: 'cover'}}
+            />
+        </div>
         <div className={compStyles.contentWrapper}>
             <div className={compStyles.mainTitle}>{texts.promo.start.header}
             </div>
             <div className={compStyles.fillerText}>
                 <p style={{marginTop: '25px', fontWeight: '1500', backgroundColor: 'rgba(0, 0, 0, 0.)', color: '#F05018', padding: '12px 16px', borderRadius: '8px', display: 'inline-block', fontSize: '25px'}}>{texts.promo.start.sub}</p>
             </div>
-        </div>
-        <div className={compStyles.videoWrapper}>
-            <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className={compStyles.backgroundVideo}
-            >
-                <source src={'./promo_video_v2.mp4'} type="video/mp4"/>
-                Your browser does not support the video tag.
-            </video>
         </div>
         {isMobile ? (
             <div style={{display: 'flex', justifyContent: 'center', gap: '16px', alignItems: 'center'}}>
