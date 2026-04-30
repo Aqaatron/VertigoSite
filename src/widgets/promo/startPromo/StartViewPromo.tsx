@@ -69,7 +69,7 @@ export const StartViewPromo = () => {
             <div className={compStyles.mainTitle}>{texts.promo.start.header}
             </div>
             <div className={compStyles.fillerText}>
-                <p style={{marginTop: '25px', fontWeight: '1500', backgroundColor: 'rgba(0, 0, 0, 0.)', color: '#F05018', padding: '12px 16px', borderRadius: '8px', display: 'inline-block', fontSize: '25px'}}>{texts.promo.start.sub}</p>
+                <p style={{marginTop: '25px', fontWeight: 'bold', color: '#F05018', fontSize: '25px', textShadow: '0 1px 3px rgba(0, 0, 0, 0.5)'}}>{texts.promo.start.sub}</p>
             </div>
         </div>
         {isMobile ? (

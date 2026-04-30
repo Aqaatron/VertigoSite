@@ -109,22 +109,23 @@
 }
 
 .backgroundVideo {
-  height: 900px;
-  width: 1800px;
+  height: 1100px;
+  width: 100vw;
   z-index: -1;
   //transform: translate(-50%, -50%);
   object-fit: cover;
+  transform: scaleX(-1);
 }
 
 .videoWrapper {
   position: absolute;
   top: 80px;
-  //left: 30%;
-  height: 900px;
-  width: 1800px;
+  left: 0;
+  height: 1100px;
+  width: 100vw;
   overflow: hidden;
   z-index: -1;
-  margin-bottom: 50px;
+  margin-bottom: 0;
 }
 
 .videoWrapper::after {
@@ -133,12 +134,7 @@
   scale: (1);
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(
-                  ellipse at center,
-                  rgba(0, 0, 0, 0) 20%, /* transparent in the middle */
-
-                  rgba(104, 91, 199, 1) 75% /* almost black at corners */
-  );
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .calcOverlay {
@@ -321,19 +317,20 @@
     scale: 2;
   }
   .backgroundVideo {
-    height: 900px;
-    width: 1920px;
+    height: 1100px;
+    width: 100vw;
     z-index: -1;
     //transform: translate(-50%, -50%);
     object-fit: cover;
+    transform: scaleX(-1);
   }
 
   .videoWrapper {
     position: absolute;
     top: 0;
     left: 0;
-    height: 900px;
-    width: 1920px;
+    height: 1100px;
+    width: 100vw;
     overflow: hidden;
     z-index: -1;
   }
