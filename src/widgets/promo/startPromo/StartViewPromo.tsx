@@ -57,7 +57,7 @@ export const StartViewPromo = () => {
         }
         <div className={compStyles.videoWrapper}>
             <Image
-                src={'/birthday.jpg'}
+                src={isMobile ? '/birthday_mobile.jpg' : '/birthday.jpg'}
                 alt={'Birthday Background'}
                 fill
                 priority
