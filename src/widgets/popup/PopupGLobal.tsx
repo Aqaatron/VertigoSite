@@ -65,15 +65,15 @@ export const PopUpGlobal = ({closeMe}: { closeMe: Function }) => {
                 (window as any).ym(104030838, "reachGoal", "fos");
                 console.log('goal reached')
             }
-            await fetch(`https://api.telegram.org/bot8341433626:AAFLFWm2ExJH3RuHfgVQ3QbPTCye9RSo-xU/sendMessage`, {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
-                    chat_id: '-1003055161566',
-                    text: body,
-                    parse_mode: "Markdown"
-                })
-            });
+            // await fetch(`https://api.telegram.org/bot8341433626:AAFLFWm2ExJH3RuHfgVQ3QbPTCye9RSo-xU/sendMessage`, {
+            //     method: "POST",
+            //     headers: {"Content-Type": "application/json"},
+            //     body: JSON.stringify({
+            //         chat_id: '-1003055161566',
+            //         text: body,
+            //         parse_mode: "Markdown"
+            //     })
+            // });
             await fetch('/api/sendForm', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},

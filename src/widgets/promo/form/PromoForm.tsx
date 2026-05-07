@@ -52,15 +52,19 @@ export const PromoForm = () => {
             if (typeof window !== "undefined" && typeof (window as any).ym === "function") {
                 (window as any).ym(104030838, "reachGoal", "button_click");
             }
-            await fetch(`https://api.telegram.org/bot8341433626:AAFLFWm2ExJH3RuHfgVQ3QbPTCye9RSo-xU/sendMessage`, {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
-                    chat_id: '-1003055161566',
-                    text: body,
-                    parse_mode: "Markdown"
-                })
-            });
+            // try {
+            // await fetch(`https://api.telegram.org/bot8341433626:AAFLFWm2ExJH3RuHfgVQ3QbPTCye9RSo-xU/sendMessage`, {
+            //     method: "POST",
+            //     headers: {"Content-Type": "application/json"},
+            //     body: JSON.stringify({
+            //         chat_id: '-1003055161566',
+            //         text: body,
+            //         parse_mode: "Markdown"
+            //     })
+            // });
+            // } catch (error) {
+            //     console.error("Ошибка при отправке в Telegram:", error);
+            // }
             await fetch('/api/sendForm', {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},

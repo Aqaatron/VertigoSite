@@ -55,15 +55,15 @@ export const PopUpForm = () => {
     const sendMessage = async () => {
         const body = ` ФИО - ${name}\n Тел - ${phone}\n Комментарий - ${comment}`
         if (argeed) {
-            await fetch(`https://api.telegram.org/bot8341433626:AAFLFWm2ExJH3RuHfgVQ3QbPTCye9RSo-xU/sendMessage`, {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
-                    chat_id: '-1003055161566',
-                    text: body,
-                    parse_mode: "Markdown"
-                })
-            });
+            // await fetch(`https://api.telegram.org/bot8341433626:AAFLFWm2ExJH3RuHfgVQ3QbPTCye9RSo-xU/sendMessage`, {
+            //     method: "POST",
+            //     headers: {"Content-Type": "application/json"},
+            //     body: JSON.stringify({
+            //         chat_id: '-1003055161566',
+            //         text: body,
+            //         parse_mode: "Markdown"
+            //     })
+            // });
         }
     }
     return <div className={classNames(globals.flexContColumn, compStyles.formPad)}>
