@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 // Функция отправки уведомления в MAX
-async function sendToMax(name: string, phone: string, comment: string) {
+async function sendToMax(name: string, phone: string, comment: string, pageUrl?: string) {
     const MAX_BOT_TOKEN = 'f9LHodD0cOLK2Grv7qadueEvh9PJoZOzKptfrbkbR444-bTOSIpyhtRNzJPnGtZhqqMIYZjMwz0EsjfFdrdJ';
     const MAX_CHAT_ID = '-74492045124963'; // user_id или chat_id
 
@@ -11,7 +11,11 @@ async function sendToMax(name: string, phone: string, comment: string) {
     return;
   }
 
-  const messageText = `🔔 *Новая заявка с сайта*\n\n👤 *ФИО:* ${name}\n📞 *Телефон:* ${phone}\n📄 *Комментарий:* ${comment}`;
+  let messageText = `🔔 *Новая заявка с сайта*\n\n👤 *ФИО:* ${name}\n📞 *Телефон:* ${phone}\n📄 *Комментарий:* ${comment}`;
+  
+  if (pageUrl) {
+    messageText += `\n🌐 *Страница:* ${pageUrl}`;
+  }
 
   try {
     const response = await fetch(`https://platform-api.max.ru/messages?chat_id=${MAX_CHAT_ID}`, {
@@ -72,6 +76,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjlkMDNkYWI0MWI0MTBjZmIzY2E1ZjVlOGMyMDM2ODc0MTVkOWUzZjI5MDIyNmFkY2VlMjIwOGY0NjAxMjA2NDRlYzlhNmU3NWViYTZlYzg3In0.eyJhdWQiOiI4ODFiMTk1NS0xMDVhLTRhZmUtYWEzMS03NDljMWRmZDhmMDAiLCJqdGkiOiI5ZDAzZGFiNDFiNDEwY2ZiM2NhNWY1ZThjMjAzNjg3NDE1ZDllM2YyOTAyMjZhZGNlZTIyMDhmNDYwMTIwNjQ0ZWM5YTZlNzVlYmE2ZWM4NyIsImlhdCI6MTc1Nzc2OTg3NywibmJmIjoxNzU3NzY5ODc3LCJleHAiOjE4NjE4MzM2MDAsInN1YiI6IjEyOTUyODE4IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMyNjQ5MDQ2LCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwidXNlcl9mbGFncyI6MCwiaGFzaF91dWlkIjoiYjBhMzMzNjUtZDVhMS00OTU1LTgwMTctMDBlYTU5OTk0YWNiIiwiYXBpX2RvbWFpbiI6ImFwaS1iLmFtb2NybS5ydSJ9.EwaanaSsm5wi49E57h5F9DCtBcvQg4C3g0ixANzzfKSZvl0_Vtl_TsjtZivVjPahzyL6P3yE-hSil_T1nhaKGAaYtE9RwghDMd6SoKEteMOh8XdLb9tFHZPW8FYLDJdq1ZSnLfQfrK3c5lerUnUK8sLsDOlJkwN5p6aJnuyYByus8Kl2ezS6X_aCEhgTMHokYtdJ_reenhtBiApudFzXDJRD-B-okD9R_AI2n-ZZ1xm6aB52pYUxtx-afStgRn08StSVANeZ50RAcvTIFTe674o3f1SJgW3ABIoKhvUxxITtPvyzrZMtI-JdoZzmolTLM3ShoCf510clbqpbarMWkQ'; // лучше вынести в .env
     const payload = req.body;
 
+    // Получаем адрес страницы: из body.page_url или из заголовка Referer
+    const pageUrl = payload.page_url || req.headers.referer || 'не указан';
+
     // Отправка в AmoCRM
     const amoResponse = await fetch("https://vertigosar64.amocrm.ru/api/v4/leads/complex", {
       method: req.method,
@@ -112,9 +119,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // После успешной отправки в AmoCRM – отправляем в MAX (не ждём, чтобы не задерживать ответ)
     // Но если хотите дождаться – используйте await, но это увеличит время ответа.
     // Рекомендуем запустить без await (fire-and-forget)
-    sendToMax(payload.name, payload.phone, payload.comment);
+    // Отправляем в MAX с указанием страницы
+    sendToMax(payload.name, payload.phone, payload.comment, pageUrl);
 
-    // Возвращаем ответ клиенту (успех AmoCRM)
     res.status(amoResponse.status).json(amoData);
   } catch (error: any) {
     console.error('Ошибка в обработчике:', error);
